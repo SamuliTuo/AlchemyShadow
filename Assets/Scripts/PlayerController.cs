@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 0.05f;
+    public Image expBar;
+    public TextMeshProUGUI lvlNumber;
 
     Vector2 inputVector = Vector2.zero;
     PlayerWeapons weapons;
+    private int lvl = 1;
+    private float exp = 0;
+    private float expRequiredForLvlUp = 10;
+
 
     void Awake()
     {
@@ -24,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position += new Vector3(inputVector.x, inputVector.y, 0) * moveSpeed;
     }
+
 
     void GatherInput()
     {
@@ -48,7 +57,7 @@ public class PlayerController : MonoBehaviour
         inputVector = new Vector2(x, y).normalized;
     }
 
-    int exp = 0;
+    // Gather exp
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Loot"))
@@ -56,6 +65,17 @@ public class PlayerController : MonoBehaviour
             exp++;
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
+
+            if (exp >= expRequiredForLvlUp)
+            {
+                exp -= expRequiredForLvlUp;
+                expRequiredForLvlUp *= 1.6f;
+                lvl++;
+                lvlNumber.text = lvl.ToString();
+                print("give a powerup");
+            }
+
+            expBar.fillAmount = exp / expRequiredForLvlUp;
         }
     }
 }
