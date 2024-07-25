@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player")?.transform;
     }
 
     void Update()
