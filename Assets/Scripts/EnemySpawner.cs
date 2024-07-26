@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator Spawner()
     {
         float t = enemySpawnRate;
-        Instantiate(enemy_01, transform.position, Quaternion.identity);
+        Instantiate(enemy_01, GameManager.Instance.GetRandomPosAtScreenEdge(), Quaternion.identity);
         while (t > 0)
         {
             t -= Time.deltaTime;
