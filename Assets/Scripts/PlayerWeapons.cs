@@ -19,7 +19,7 @@ public class PlayerWeapons : MonoBehaviour
         cam = Camera.main;
     }
 
-    public void UpdateWeapons()
+    public void Update()
     {
         if (timer_basicWeapon > 0)
         {

@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public EnemySpawner EnemySpawner { get; private set; }
+    public FriendSpawner FriendSpawner { get; private set; }
     public EXPSpawner EXPSpawner { get; private set; }
     private Coroutine gameLoop = null;
+    private Camera cam;
 
     private void Awake()
     {
@@ -21,7 +23,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         EnemySpawner = GetComponentInChildren<EnemySpawner>();
+        FriendSpawner = GetComponentInChildren<FriendSpawner>();
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
+        cam = Camera.main;
     }
 
     private void Start()
@@ -34,7 +38,33 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameLoop()
     {
-        print("put game logic here");
-        yield return null;
+        float t = 0;
+
+        while (t < 3)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        FriendSpawner.SpawnAFriend();
+
+        StartCoroutine(GameLoop());
+    }
+
+
+    // Helper methods
+    public Vector3 GetRandomPosAtScreenEdge()
+    {
+        Vector2 randomCoordinates;
+        if (Random.Range(0, 2) == 0)
+        {
+            randomCoordinates = new Vector2(Random.Range(0.0f, Screen.width), Random.Range(0, 2));
+        }
+        else
+        {
+            randomCoordinates = new Vector2(Random.Range(0, 2), Random.Range(0.0f, Screen.height));
+        }
+        var point = cam.ScreenToWorldPoint(new Vector3(randomCoordinates.x, randomCoordinates.y, cam.nearClipPlane));
+        return point;
     }
 }

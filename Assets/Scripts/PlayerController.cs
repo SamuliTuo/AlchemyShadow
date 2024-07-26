@@ -6,26 +6,24 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 0.05f;
+    public float moveSpeed = 0.1f;
     public Image expBar;
     public TextMeshProUGUI lvlNumber;
 
     Vector2 inputVector = Vector2.zero;
-    PlayerWeapons weapons;
     private int lvl = 1;
     private float exp = 0;
-    private float expRequiredForLvlUp = 10;
+    private float expRequiredForLvlUp = 5;
 
 
     void Awake()
     {
-        weapons = GetComponent<PlayerWeapons>();
+        //weapons = GetComponent<PlayerWeapons>();
     }
 
     void Update()
     {
         GatherInput();
-        weapons.UpdateWeapons();
     }
 
     void FixedUpdate()
@@ -55,6 +53,11 @@ public class PlayerController : MonoBehaviour
             y -= 1;
         }
         inputVector = new Vector2(x, y).normalized;
+    }
+
+    public void GotHit()
+    {
+        Destroy(gameObject);
     }
 
     // Gather exp
