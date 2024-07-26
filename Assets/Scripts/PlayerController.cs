@@ -7,18 +7,24 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
+    public float acceleration = 10f;
     public Image expBar;
     public TextMeshProUGUI lvlNumber;
 
+    PlayerWeapons weapon;
     Vector2 inputVector = Vector2.zero;
     private int lvl = 1;
     private float exp = 0;
     private float expRequiredForLvlUp = 5;
+    private Rigidbody2D rb;
 
 
     void Awake()
     {
         //weapons = GetComponent<PlayerWeapons>();
+        rb = GetComponent<Rigidbody2D>();
+        weapon = GetComponent<PlayerWeapons>();
+        weapon.StartShooting();
     }
 
     void Update()
@@ -28,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3(inputVector.x, inputVector.y, 0) * moveSpeed;
+        rb.velocity = Vector3.MoveTowards(rb.velocity, inputVector * moveSpeed, acceleration);
     }
 
 

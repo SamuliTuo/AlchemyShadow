@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FriendSpawner : MonoBehaviour
 {
+    public List<GameObject> starterFriends = new List<GameObject>();
+
     public List<GameObject> friends = new List<GameObject>();
+    public float friendSpawnRate = 3;
 
     private Transform player;
     private Camera cam;
@@ -16,15 +19,38 @@ public class FriendSpawner : MonoBehaviour
     }
 
 
-
-    public void SpawnAFriend()
+    // Randomly spawning units
+    public GameObject SpawnAFriend()
     {
-        var f = friends[Random.Range(0, friends.Count)];
+        var f = starterFriends[Random.Range(0, starterFriends.Count)];
         if (f == null)
         {
-            return;
+            return null;
         }
+        var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
+        pos.z = 0;
+        var clone = Instantiate(f, pos, Quaternion.identity);
+        return clone;
+    }
 
-        Instantiate(f, GameManager.Instance.GetRandomPosAtScreenEdge(), Quaternion.identity);
+
+    // When upgrading
+    public GameObject SpawnAFreeFriend(SlaveTypes type, Vector3 pos)
+    {
+        GameObject friend = null;
+        foreach (var f in friends)
+        {
+            if (f.GetComponent<SlaveController>().slaveType == type)
+            {
+                friend = f;
+            }
+        }
+        if (friend == null)
+        {
+            return null;
+        }
+        var clone = Instantiate(friend, pos, Quaternion.identity);
+        clone.GetComponent<SlaveController>().SetFree();
+        return clone;
     }
 }

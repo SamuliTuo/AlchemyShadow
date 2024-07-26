@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8509049040623967357}
   - component: {fileID: 8509049040623967358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: artGoesHere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8509049042707181729}
   - component: {fileID: 8509049042707181731}
   - component: {fileID: 8509049042707181732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
