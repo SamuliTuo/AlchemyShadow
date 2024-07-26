@@ -9,6 +9,7 @@ public class PlayerWeapons : MonoBehaviour
     public float basicWeaponBulletSpeed = 10;
     public float basicWeaponBulletLifetime = 2;
     public GameObject bullet_basic;
+    public bool isShooting = false;
 
     private float timer_basicWeapon;
     private Camera cam;
@@ -21,6 +22,10 @@ public class PlayerWeapons : MonoBehaviour
 
     public void Update()
     {
+        if (isShooting == false)
+        {
+            return;
+        }
         if (timer_basicWeapon > 0)
         {
             timer_basicWeapon -= Time.deltaTime * weaponsCooldownSpeed;
@@ -32,6 +37,11 @@ public class PlayerWeapons : MonoBehaviour
         }
     }
 
+    public void StartShooting()
+    {
+        isShooting = true;
+    }
+    
     void Shoot()
     {
         var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));

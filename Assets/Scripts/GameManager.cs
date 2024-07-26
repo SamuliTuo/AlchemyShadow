@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public EnemySpawner EnemySpawner { get; private set; }
     public FriendSpawner FriendSpawner { get; private set; }
+    public PartyManager PartyManager { get; private set; }
     public EXPSpawner EXPSpawner { get; private set; }
     private Coroutine gameLoop = null;
     private Camera cam;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
         EnemySpawner = GetComponentInChildren<EnemySpawner>();
         FriendSpawner = GetComponentInChildren<FriendSpawner>();
+        PartyManager = GetComponentInChildren<PartyManager>();
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
         cam = Camera.main;
     }
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         float t = 0;
 
-        while (t < 3)
+        while (t < FriendSpawner.friendSpawnRate)
         {
             t += Time.deltaTime;
             yield return null;

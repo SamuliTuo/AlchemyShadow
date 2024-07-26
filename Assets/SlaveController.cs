@@ -2,23 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SlaveTypes
+{
+    slave0_S, slave0_SS, slave0_SSS,
+    slave1_S, slave1_SS, slave1_SSS,
+    slave2_S, slave2_SS, slave2_SSS,
+
+    NULL,
+}
+
 public class SlaveController : MonoBehaviour
 {
     public Vector2 wanderDirChangeIntervalMinMax;
     public float moveSpeed = 0.11f;
+    public float acceleration = 10f;
     public float stopRange = 1;
     public GameObject helpSign;
+    public SlaveTypes slaveType;
 
 
     bool isFree = false;
     Vector2 moveVector = Vector2.zero;
     float t = 0;
     Transform player;
+    Rigidbody2D rb;
     
 
     private void Start()
     {
         player = GameObject.Find("Player")?.transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -33,7 +46,7 @@ public class SlaveController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3(moveVector.x, moveVector.y, 0) * moveSpeed;
+        rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * moveSpeed, acceleration);
     }
 
     void AI()
@@ -78,9 +91,18 @@ public class SlaveController : MonoBehaviour
         {
             if (collision.collider.CompareTag("Player"))
             {
-                helpSign.SetActive(false);
-                isFree = true;
+                SetFree();
             }
         }
+    }
+
+    public void SetFree()
+    {
+        isFree = true;
+        helpSign.SetActive(false);
+        gameObject.layer = LayerMask.NameToLayer("Friend");
+        GetComponent<PlayerWeapons>().StartShooting();
+        GameManager.Instance.PartyManager.FriendDied(gameObject);
+        GameManager.Instance.PartyManager.AddFriend(gameObject);
     }
 }
