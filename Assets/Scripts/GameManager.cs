@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public FriendSpawner FriendSpawner { get; private set; }
     public PartyManager PartyManager { get; private set; }
     public EXPSpawner EXPSpawner { get; private set; }
+    public ParticleEffects ParticleEffects { get; private set; }
     private Coroutine gameLoop = null;
     private Camera cam;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         FriendSpawner = GetComponentInChildren<FriendSpawner>();
         PartyManager = GetComponentInChildren<PartyManager>();
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
+        ParticleEffects = GetComponentInChildren<ParticleEffects>();
         cam = Camera.main;
     }
 
@@ -60,11 +62,25 @@ public class GameManager : MonoBehaviour
         Vector2 randomCoordinates;
         if (Random.Range(0, 2) == 0)
         {
-            randomCoordinates = new Vector2(Random.Range(0.0f, Screen.width), Random.Range(0, 2));
+            if (Random.Range(0, 2) > 0)
+            {
+                randomCoordinates = new Vector2(Random.Range(0.0f, Screen.width), 0);
+            }
+            else
+            {
+                randomCoordinates = new Vector2(Random.Range(0.0f, Screen.width), Screen.height);
+            }
         }
         else
         {
-            randomCoordinates = new Vector2(Random.Range(0, 2), Random.Range(0.0f, Screen.height));
+            if (Random.Range(0, 2) > 0)
+            {
+                randomCoordinates = new Vector2(0, Random.Range(0.0f, Screen.height));
+            }
+            else
+            {
+                randomCoordinates = new Vector2(Screen.width, Random.Range(0.0f, Screen.height));
+            }
         }
         var point = cam.ScreenToWorldPoint(new Vector3(randomCoordinates.x, randomCoordinates.y, cam.nearClipPlane));
         return point;

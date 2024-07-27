@@ -33,6 +33,7 @@ public class BulletController : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyController>().GotHit();
+            GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

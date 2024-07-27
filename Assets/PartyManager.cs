@@ -78,10 +78,14 @@ public class PartyManager : MonoBehaviour
             case SlaveTypes.slave0_S: return SlaveTypes.slave0_SS;
             case SlaveTypes.slave1_S: return SlaveTypes.slave1_SS;
             case SlaveTypes.slave2_S: return SlaveTypes.slave2_SS;
+            case SlaveTypes.slave3_S: return SlaveTypes.slave3_SS;
+            case SlaveTypes.slave4_S: return SlaveTypes.slave4_SS;
 
             case SlaveTypes.slave0_SS: return SlaveTypes.slave0_SSS;
             case SlaveTypes.slave1_SS: return SlaveTypes.slave1_SSS;
             case SlaveTypes.slave2_SS: return SlaveTypes.slave2_SSS;
+            case SlaveTypes.slave3_SS: return SlaveTypes.slave3_SSS;
+            case SlaveTypes.slave4_SS: return SlaveTypes.slave4_SSS;
 
             default: return SlaveTypes.NULL;
         }

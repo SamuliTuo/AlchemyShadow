@@ -44,6 +44,7 @@ public class PlayerWeapons : MonoBehaviour
     
     void Shoot()
     {
+        GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
         var dir = point - transform.position;
         dir.z = 0;

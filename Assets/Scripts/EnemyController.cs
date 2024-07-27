@@ -48,12 +48,13 @@ public class EnemyController : MonoBehaviour
     public void GotHit()
     {
         GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
+        GameManager.Instance.ParticleEffects.PlayParticles("enemyDeath", transform.position, transform.forward);
         Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Friend"))
         {
             collision.gameObject.SendMessage("GotHit");
         }

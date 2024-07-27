@@ -98,8 +98,8 @@ GameObject:
   - component: {fileID: 5479642267838955896}
   - component: {fileID: 5479642267838955903}
   m_Layer: 8
-  m_Name: Slave_01_3star
-  m_TagString: Player
+  m_Name: Slave_01_SS
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,11 +134,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0, y: 0}
-  moveSpeed: 5
-  acceleration: 2
-  stopRange: 3
+  moveSpeed: 6
+  moveSpeedRandomizerMaxAndMinPerc: 0.4
+  moveSpeedRanomizerTimerMinMax: {x: 0.3, y: 1.5}
+  acceleration: 2.5
+  stopRange: 0.3
   helpSign: {fileID: 1638287722}
-  slaveType: 5
+  slaveType: 4
+  maxSizeWhenSaved: 2.5
 --- !u!114 &4187695202316828068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +159,7 @@ MonoBehaviour:
   basicWeaponBulletSpeed: 8
   basicWeaponBulletLifetime: 3
   bullet_basic: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
+  isShooting: 0
 --- !u!58 &5479642267838955896
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.35
 --- !u!50 &5479642267838955903
 Rigidbody2D:
   serializedVersion: 4
@@ -218,8 +222,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760650744726840305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.11, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.083, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5479642267838955897}
@@ -266,7 +270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b95ffd22f8c11b4c8ed584d4135eea8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71993e9605d5c884389589378302c42b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
