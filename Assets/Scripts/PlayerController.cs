@@ -10,21 +10,26 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 10f;
     public Image expBar;
     public TextMeshProUGUI lvlNumber;
+    public float startWalkingSpeed = 5;
 
     PlayerWeapons weapon;
+    SpriteRenderer graphics;
     Vector2 inputVector = Vector2.zero;
     private int lvl = 1;
     private float exp = 0;
     private float expRequiredForLvlUp = 5;
     private Rigidbody2D rb;
+    private Animator anim;
 
 
     void Awake()
     {
         //weapons = GetComponent<PlayerWeapons>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
         weapon = GetComponent<PlayerWeapons>();
         weapon.StartShooting();
+        graphics = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -35,6 +40,25 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = Vector3.MoveTowards(rb.velocity, inputVector * moveSpeed, acceleration);
+
+        // walk anim
+        if (rb.velocity.sqrMagnitude > startWalkingSpeed)
+        {
+            if (rb.velocity.x > 0.1f)
+            {
+                graphics.flipX = true;
+            }
+            else if (rb.velocity.x < -0.1f)
+            {
+                graphics.flipX = false;
+            }
+            anim.Play("walk");
+        }
+        // idle anim
+        else
+        {
+            anim.Play("idle");
+        }
     }
 
 

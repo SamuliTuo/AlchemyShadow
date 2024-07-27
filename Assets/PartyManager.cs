@@ -6,9 +6,18 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    Dictionary<SlaveTypes, List<GameObject>> party = new Dictionary<SlaveTypes, List<GameObject>>();
-		
+    public bool followTheObject = false;
+    public Transform partyFollowObject;
 
+    Dictionary<SlaveTypes, List<GameObject>> party = new Dictionary<SlaveTypes, List<GameObject>>();
+    private Camera cam;
+
+
+    private void Awake()
+    {
+        cam = Camera.main;
+        partyFollowObject.gameObject.SetActive(false);
+    }
     private void Start()
     {
         foreach (SlaveTypes type in Enum.GetValues(typeof(SlaveTypes)))
@@ -16,6 +25,23 @@ public class PartyManager : MonoBehaviour
             party.Add(type, new List<GameObject>());
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+            partyFollowObject.position = new Vector3(point.x, point.y, 0);
+            partyFollowObject.gameObject.SetActive(true);
+            followTheObject = true;
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            partyFollowObject.gameObject.SetActive(false);
+            followTheObject = false;
+        }
+    }
+
 
     public void AddFriend(GameObject friend)
     {
