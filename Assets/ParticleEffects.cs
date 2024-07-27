@@ -11,6 +11,8 @@ public class ParticleEffects : MonoBehaviour
     public ParticleSystem enemyDeath;
     public ParticleSystem shoot;
     public ParticleSystem shotHit;
+    public ParticleSystem combineToSS;
+    public ParticleSystem combineToSSS;
 
     /// <summary>
     /// Use string as input:
@@ -19,22 +21,33 @@ public class ParticleEffects : MonoBehaviour
     /// enemyDeath,
     /// shoot,
     /// shotHit,
+    /// combineToSS, combineToSSS
     /// </summary>
-    public void PlayParticles(string input, Vector3 position, Vector3 rotation)
+    public void PlayParticles(string input, Vector3 position, Vector3 rotation, bool showInFront = false)
     {
         switch (input)
         {
-            case "friendSpawn": PlayParticle(friendSpawn, position, rotation); break;
-            case "friendFreed": PlayParticle(friendFreed, position, rotation); break;
-            case "enemyDeath": PlayParticle(enemyDeath, position, rotation); break;
-            case "shoot": PlayParticle(shoot, position, rotation); break;
-            case "shotHit": PlayParticle(shotHit, position, rotation); break;
+            case "friendSpawn": PlayParticle(friendSpawn, position, rotation, showInFront); break;
+            case "friendFreed": PlayParticle(friendFreed, position, rotation, showInFront); break;
+            case "enemyDeath": PlayParticle(enemyDeath, position, rotation, showInFront); break;
+            case "shoot": PlayParticle(shoot, position, rotation, showInFront); break;
+            case "shotHit": PlayParticle(shotHit, position, rotation, showInFront); break;
+            case "combineToSS": PlayParticle(combineToSS, position, rotation, showInFront); break;
+            case "combineToSSS": PlayParticle(combineToSSS, position, rotation, showInFront); break;
         }
     }
 
-    void PlayParticle(ParticleSystem sys, Vector3 pos, Vector3 forw)
+    void PlayParticle(ParticleSystem sys, Vector3 pos, Vector3 forw, bool showInFront)
     {
-        sys.transform.position = pos + new Vector3(0, 0, 1);
+        if (showInFront)
+        {
+            sys.transform.position = pos + new Vector3(0, 0, -1);
+        }
+        else
+        {
+            sys.transform.position = pos + new Vector3(0, 0, 1);
+        }
+        
         sys.transform.LookAt(sys.transform.position + forw);
         sys.Play();
     }
