@@ -6,12 +6,14 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public float hp = 10;
     public float moveSpeed = 0.1f;
     public float acceleration = 10f;
-    public Image expBar;
+    public Image expBar, hpBar;
     public TextMeshProUGUI lvlNumber;
     public float startWalkingSpeed = 5;
 
+    float maxHp;
     PlayerWeapons weapon;
     SpriteRenderer graphics;
     Vector2 inputVector = Vector2.zero;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         weapon = GetComponent<PlayerWeapons>();
         weapon.StartShooting();
         graphics = GetComponentInChildren<SpriteRenderer>();
+        maxHp = hp;
     }
 
     void Update()
@@ -85,9 +88,29 @@ public class PlayerController : MonoBehaviour
         inputVector = new Vector2(x, y).normalized;
     }
 
+    public float invulnTimer = 0.3f;
+    bool invuln = false;
+    IEnumerator Invuln()
+    {
+        invuln = true;
+        yield return new WaitForSeconds(invulnTimer);
+        invuln = false;
+    }
+
     public void GotHit()
     {
-        Destroy(gameObject);
+        if (invuln)
+        {
+            return;
+        }
+        hp--;
+        hpBar.fillAmount = Mathf.Min(hp / maxHp, 1);
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        StartCoroutine(Invuln());
     }
 
     // Gather exp

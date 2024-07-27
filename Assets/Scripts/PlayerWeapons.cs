@@ -79,6 +79,7 @@ public class PlayerWeapons : MonoBehaviour
             dir = dir.normalized;
             var clone = Instantiate(bullet_basic, transform.position, Quaternion.identity);
             clone.GetComponent<BulletController>().Init(dir, basicWeaponBulletSpeed, basicWeaponBulletLifetime);
+            StartCoroutine(GetComponent<SlaveController>().ShootTween());
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         } 
     }
