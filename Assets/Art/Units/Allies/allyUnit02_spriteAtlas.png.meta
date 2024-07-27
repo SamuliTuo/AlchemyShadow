@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfc978dd0120c0a428648d96082d7ea2
+guid: 88b307f4b239b864ab0fcc1bcf6793f2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: allyUnit01_spriteAtlas_0
+      name: allyUnit02_spriteAtlas_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,20 +113,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 442c883703dea614a88fe3df8eb6508a
-      internalID: 468471566
+      spriteID: cbe9a3c0e2e10a6448995cd3d674c1eb
+      internalID: -389693749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allyUnit01_spriteAtlas_1
+      name: allyUnit02_spriteAtlas_1
       rect:
         serializedVersion: 2
         x: 128
@@ -134,20 +134,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac6761322f167ec4e857ebffa6b7ee3e
-      internalID: 1798166796
+      spriteID: e1e5e35440704e341836b2039dbf9f63
+      internalID: -235640058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allyUnit01_spriteAtlas_2
+      name: allyUnit02_spriteAtlas_2
       rect:
         serializedVersion: 2
         x: 256
@@ -155,20 +155,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 685dff50d358144469e7d21c2a585c73
-      internalID: -41657745
+      spriteID: 0afe179790ffff24e83ac73af4dbd8db
+      internalID: 1742988432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: allyUnit01_spriteAtlas_3
+      name: allyUnit02_spriteAtlas_3
       rect:
         serializedVersion: 2
         x: 384
@@ -176,14 +176,35 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30d528758e1cd7642a19012be6c77175
-      internalID: 1968235075
+      spriteID: a9c35f61e35267b4ea6bd619af542bb9
+      internalID: -1125009200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: allyUnit02_spriteAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f571a9347e20f741a70a1953c7d9b2b
+      internalID: 2106689924
       vertices: []
       indices: 
       edges: []
@@ -199,10 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      allyUnit01_spriteAtlas_3: 1968235075
-      allyUnit01_spriteAtlas_2: -41657745
-      allyUnit01_spriteAtlas_1: 1798166796
-      allyUnit01_spriteAtlas_0: 468471566
+      allyUnit02_spriteAtlas_0: -389693749
+      allyUnit02_spriteAtlas_1: -235640058
+      allyUnit02_spriteAtlas_2: 1742988432
+      allyUnit02_spriteAtlas_4: 2106689924
+      allyUnit02_spriteAtlas_3: -1125009200
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
