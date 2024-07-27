@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public FriendSpawner FriendSpawner { get; private set; }
     public PartyManager PartyManager { get; private set; }
     public EXPSpawner EXPSpawner { get; private set; }
+    public AudioManager AudioManager { get; private set; }
     public ParticleEffects ParticleEffects { get; private set; }
     private Coroutine gameLoop = null;
     private Camera cam;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         FriendSpawner = GetComponentInChildren<FriendSpawner>();
         PartyManager = GetComponentInChildren<PartyManager>();
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
+        AudioManager = GetComponentInChildren<AudioManager>();
         ParticleEffects = GetComponentInChildren<ParticleEffects>();
         cam = Camera.main;
     }

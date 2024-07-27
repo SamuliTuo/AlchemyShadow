@@ -41,16 +41,16 @@ public class AudioLibraryClip
 {
     public string name;
     public List<AudioClip> clips;
-    public float pitch;
-    public float pitchRandomizationAmount;
-    public float volume;
+    public float pitch = 1;
+    public float pitchRandomizationAmount = 0;
+    public float volume = 1;
     
     public AudioLibraryClip (
             string name,
-            List<AudioClip> clips, 
-            float pitch,
-            float pitchRandomizationAmount, 
-            float volume)
+            List<AudioClip> clips,
+            float pitch = 1,
+            float pitchRandomizationAmount = 0, 
+            float volume = 1)
     {
         this.name = name;
         this.clips = clips;

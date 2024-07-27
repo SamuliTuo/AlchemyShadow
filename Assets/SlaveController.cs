@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public enum SlaveTypes
 {
@@ -31,6 +28,7 @@ public class SlaveController : MonoBehaviour
     float t = 0;
     Transform player;
     Transform graphics;
+    SpriteRenderer spriteGraphic;
     Rigidbody2D rb;
     float actualMoveSpd;
     
@@ -39,6 +37,7 @@ public class SlaveController : MonoBehaviour
     {
         player = GameObject.Find("Player")?.transform;
         graphics = transform.GetChild(0);
+        spriteGraphic = transform.GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         randomizedMoveSpeed = moveSpeed + Random.Range(-moveSpeed * moveSpeedRandomizerMaxAndMinPerc, moveSpeed * moveSpeedRandomizerMaxAndMinPerc);
     }
@@ -56,8 +55,19 @@ public class SlaveController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * actualMoveSpd, acceleration);
+
+        if (rb.velocity.x > 0.1f)
+        {
+            spriteGraphic.flipX = true;
+        }
+        else if (rb.velocity.x < -0.1f)
+        {
+            spriteGraphic.flipX = false;
+        }
     }
 
+    Vector2 randomVector = Vector2.zero;
+    public float randomVectorStrength = 1;
     float randomizedMoveSpeed;
     void AI()
     {
@@ -68,30 +78,44 @@ public class SlaveController : MonoBehaviour
         }
         else
         {
+            randomVector = Random.insideUnitCircle.normalized;
             randomizedMoveSpeed = moveSpeed + Random.Range(-moveSpeed * moveSpeedRandomizerMaxAndMinPerc, moveSpeed * moveSpeedRandomizerMaxAndMinPerc);
             t = Random.Range(moveSpeedRanomizerTimerMinMax.x, moveSpeedRanomizerTimerMinMax.y);
         }
 
-        // Follow the player:
-        if (player != null)
+        // Follow the target if player is holding mouse:
+        if (GameManager.Instance.PartyManager.followTheObject)
         {
-            moveVector = player.position - transform.position;
-            var sqrMag = moveVector.sqrMagnitude;
-            if (sqrMag < stopRange)
-            {
-                moveVector = Vector2.zero;
-            }
-            else
-            {
-                actualMoveSpd = Mathf.Lerp(0, randomizedMoveSpeed * 5, sqrMag * 0.01f);
-            }
-            moveVector = moveVector.normalized;
+            MoveTowards(GameManager.Instance.PartyManager.partyFollowObject);
+            return;
+        }
+        // otherwise follow player:
+        else if (player != null)
+        {
+            MoveTowards(player);
             return;
         }
 
-        // Get random dir:
+        // Get random dir if no player / orders:
         moveVector = Random.insideUnitCircle.normalized;
         t = Random.Range(wanderDirChangeIntervalMinMax.x, wanderDirChangeIntervalMinMax.y);
+    }
+
+    void MoveTowards(Transform target)
+    {
+        moveVector = target.position - transform.position;
+        moveVector += randomVector * randomVectorStrength;
+        var sqrMag = moveVector.sqrMagnitude;
+        if (sqrMag < stopRange)
+        {
+            moveVector = Vector2.zero;
+        }
+        else
+        {
+            actualMoveSpd = Mathf.Lerp(0, randomizedMoveSpeed * 5, sqrMag * 0.01f);
+        }
+        moveVector = moveVector.normalized;
+        return;
     }
 
     public void GotHit()
@@ -102,6 +126,7 @@ public class SlaveController : MonoBehaviour
         }
         GameManager.Instance.PartyManager.FriendDied(gameObject);
         GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
+        GameManager.Instance.AudioManager.PlayClip("ally0_die");
         Destroy(gameObject);
     }
 
@@ -123,6 +148,7 @@ public class SlaveController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Friend");
         GetComponent<PlayerWeapons>().StartShooting();
         StartCoroutine(GotFreedTween());
+        GameManager.Instance.AudioManager.PlayClip("ally0_rescue");
         GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward);
         GameManager.Instance.PartyManager.AddFriend(gameObject);
     }
