@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 
 public class PartyManager : MonoBehaviour
@@ -43,22 +41,25 @@ public class PartyManager : MonoBehaviour
     }
 
 
-    public void AddFriend(GameObject friend)
+    public bool AddFriendAndCheckIfCombines(GameObject friend)
     {
         var control = friend.GetComponent<SlaveController>();
         List<GameObject> list;
         party.TryGetValue(control.slaveType, out list);
 
-        //print("adding a '"+friend.GetComponent<SlaveController>().slaveType+ "' unit to a list of: " + list.Count);
-        list.Add(friend);
-
-        if (list.Count >= 3)
+        if (list.Count >= 2)
         {
-            var u1 = list[2];
+            var u1 = friend;
             var u2 = list[1];
             var u3 = list[0];
-            party[control.slaveType].RemoveRange(0, 3);
+            party[control.slaveType].RemoveRange(0, 2);
             CombineUnits(u1, u2, u3);
+            return true;
+        }
+        else
+        {
+            list.Add(friend);
+            return false;
         }
     }
 

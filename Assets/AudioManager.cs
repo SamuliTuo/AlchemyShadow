@@ -13,6 +13,17 @@ public class AudioManager : MonoBehaviour
     public List<AudioSource> sources = new List<AudioSource>();
     public List<AudioLibraryClip> audioLibrary = new List<AudioLibraryClip>();
 
+    private void Start()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            sources.Add(transform.GetChild(i).GetComponent<AudioSource>());
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+
+
     public void PlayClip(string name)
     {
         foreach (AudioLibraryClip audio in audioLibrary)
@@ -20,10 +31,16 @@ public class AudioManager : MonoBehaviour
             if (audio.name == name)
             {
                 var _source = GetAFreeAudioSource();
+                if (_source == null)
+                {
+                    print("oops out of audio sources!");
+                    return;
+                }
                 _source.clip = audio.clips[Random.Range(0, audio.clips.Count)];
                 _source.pitch = audio.pitch + Random.Range(-audio.pitchRandomizationAmount, audio.pitchRandomizationAmount);
                 _source.volume = audio.volume;
                 _source.Play();
+                StartCoroutine(PauseAudioSourceAfterPlaying(_source));
                 break;
             }
         }
@@ -31,8 +48,24 @@ public class AudioManager : MonoBehaviour
 
     AudioSource GetAFreeAudioSource()
     {
-        print("tee audio sourcejen pooling, nyt kaikki t‰‰ll‰ k‰ytt‰‰ yht‰ ja samaa");
-        return sources[0];
+        foreach (AudioSource source in sources)
+        {
+            if (source.isActiveAndEnabled == false)
+            {
+                source.gameObject.SetActive(true);
+                return source;
+            }
+        }
+        return null;
+    }
+
+    IEnumerator PauseAudioSourceAfterPlaying(AudioSource source)
+    {
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+        source.gameObject.SetActive(false);
     }
 }
 

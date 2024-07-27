@@ -59,7 +59,6 @@ public class PlayerWeapons : MonoBehaviour
     
     void Shoot()
     {
-        GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
 
         // player has barrel sooo...
@@ -70,6 +69,7 @@ public class PlayerWeapons : MonoBehaviour
             dir = dir.normalized;
             var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.identity);
             clone.GetComponent<BulletController>().Init(dir, basicWeaponBulletSpeed, basicWeaponBulletLifetime);
+            GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
         else
@@ -79,6 +79,7 @@ public class PlayerWeapons : MonoBehaviour
             dir = dir.normalized;
             var clone = Instantiate(bullet_basic, transform.position, Quaternion.identity);
             clone.GetComponent<BulletController>().Init(dir, basicWeaponBulletSpeed, basicWeaponBulletLifetime);
+            //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         } 
     }
 }

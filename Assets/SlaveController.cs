@@ -31,10 +31,11 @@ public class SlaveController : MonoBehaviour
     SpriteRenderer spriteGraphic;
     Rigidbody2D rb;
     float actualMoveSpd;
-    
+    Animator anim;
 
-    private void Start()
+    private void Awake()
     {
+        anim = GetComponentInChildren<Animator>();
         player = GameObject.Find("Player")?.transform;
         graphics = transform.GetChild(0);
         spriteGraphic = transform.GetComponentInChildren<SpriteRenderer>();
@@ -113,6 +114,10 @@ public class SlaveController : MonoBehaviour
         else
         {
             actualMoveSpd = Mathf.Lerp(0, randomizedMoveSpeed * 5, sqrMag * 0.01f);
+            if (anim != null)
+            {
+                anim.speed = actualMoveSpd;
+            }
         }
         moveVector = moveVector.normalized;
         return;
@@ -138,6 +143,17 @@ public class SlaveController : MonoBehaviour
             {
                 SetFree();
             }
+            else if (collision.collider.CompareTag("Friend"))
+            {
+                var controller = collision.collider.GetComponent<SlaveController>();
+                if (controller != null)
+                {
+                    if (controller.isFree)
+                    {
+                        SetFree();
+                    }
+                }
+            }
         }
     }
 
@@ -148,9 +164,28 @@ public class SlaveController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Friend");
         GetComponent<PlayerWeapons>().StartShooting();
         StartCoroutine(GotFreedTween());
-        GameManager.Instance.AudioManager.PlayClip("ally0_rescue");
-        GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward);
-        GameManager.Instance.PartyManager.AddFriend(gameObject);
+
+        if (GameManager.Instance.PartyManager.AddFriendAndCheckIfCombines(gameObject))
+        {
+            return;
+        }
+        
+        //Play sound and particles for combine or free
+        if (slaveType.ToString().Contains("SSS"))
+        {
+            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SSS");
+            GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+        }
+        else if (slaveType.ToString().Contains("SS"))
+        {
+            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SS");
+            GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_S");
+            GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+        }
     }
 
     public float maxSizeWhenSaved = 2.5f;
