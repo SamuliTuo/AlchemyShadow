@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313218621608959228}
   - component: {fileID: 3552544131762045093}
+  - component: {fileID: 3922768097306704839}
   m_Layer: 0
   m_Name: allyUnit01_spriteAtlas_0
   m_TagString: Untagged
@@ -167,7 +168,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!95 &3922768097306704839
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624299522542003015}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e50ee3ffadf0c6b4a9fbfe3394e6258a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5479642267838955899
 GameObject:
   m_ObjectHideFlags: 0
