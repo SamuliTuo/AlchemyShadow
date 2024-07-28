@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootInterval: 2.5
-  bulletSpeed: 4
+  bulletSpeed: 9
   bulletLifetime: 5
   bullet: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
   isShooting: 0
