@@ -131,7 +131,7 @@ public class SlaveController : MonoBehaviour
         }
         GameManager.Instance.PartyManager.FriendDied(gameObject);
         GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
-        GameManager.Instance.AudioManager.PlayClip("ally0_die");
+        PlayCorrectDeathSound();
         Destroy(gameObject);
     }
 
@@ -169,24 +169,114 @@ public class SlaveController : MonoBehaviour
         {
             return;
         }
-        
-        //Play sound and particles for combine or free
-        if (slaveType.ToString().Contains("SSS"))
+
+        PlayCorrectSoundAndParticles();
+    }
+
+
+    void PlayCorrectSoundAndParticles()
+    {
+        switch (slaveType)
         {
-            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SSS");
-            GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
-        }
-        else if (slaveType.ToString().Contains("SS"))
-        {
-            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SS");
-            GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
-        }
-        else
-        {
-            GameManager.Instance.AudioManager.PlayClip("ally0_rescue_S");
-            GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+            case SlaveTypes.slave0_S:
+                GameManager.Instance.AudioManager.PlayClip("ally1_rescue_S");
+                GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave0_SS:
+                GameManager.Instance.AudioManager.PlayClip("ally1_rescue_SS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave0_SSS:
+                GameManager.Instance.AudioManager.PlayClip("ally1_rescue_SSS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+                break;
+
+
+            case SlaveTypes.slave1_S:
+                GameManager.Instance.AudioManager.PlayClip("ally2_rescue_S");
+                GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave1_SS:
+                GameManager.Instance.AudioManager.PlayClip("ally2_rescue_SS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave1_SSS:
+                GameManager.Instance.AudioManager.PlayClip("ally2_rescue_SSS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+                break;
+
+
+            case SlaveTypes.slave2_S:
+                GameManager.Instance.AudioManager.PlayClip("ally0_rescue_S");
+                GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave2_SS:
+                GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave2_SSS:
+                GameManager.Instance.AudioManager.PlayClip("ally0_rescue_SSS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+                break;
+
+
+            case SlaveTypes.slave3_S:
+                GameManager.Instance.AudioManager.PlayClip("ally3_rescue_S");
+                GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave3_SS:
+                GameManager.Instance.AudioManager.PlayClip("ally3_rescue_SS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave3_SSS:
+                GameManager.Instance.AudioManager.PlayClip("ally3_rescue_SSS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+                break;
+
+
+            case SlaveTypes.slave4_S:
+                GameManager.Instance.AudioManager.PlayClip("ally4_rescue_S");
+                GameManager.Instance.ParticleEffects.PlayParticles("friendFreed", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave4_SS:
+                GameManager.Instance.AudioManager.PlayClip("ally4_rescue_SS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.slave4_SSS:
+                GameManager.Instance.AudioManager.PlayClip("ally4_rescue_SSS");
+                GameManager.Instance.ParticleEffects.PlayParticles("combineToSSS", transform.position, transform.forward, true);
+                break;
+            case SlaveTypes.NULL:
+                break;
+            default:
+                break;
         }
     }
+
+    void PlayCorrectDeathSound()
+    {
+        switch (slaveType)
+        {
+            case SlaveTypes.slave0_S: GameManager.Instance.AudioManager.PlayClip("ally1_die_S"); break;
+            case SlaveTypes.slave0_SS: GameManager.Instance.AudioManager.PlayClip("ally1_die_SS"); break;
+            case SlaveTypes.slave0_SSS: GameManager.Instance.AudioManager.PlayClip("ally1_die_SSS"); break;
+            case SlaveTypes.slave1_S: GameManager.Instance.AudioManager.PlayClip("ally2_die_S"); break;
+            case SlaveTypes.slave1_SS: GameManager.Instance.AudioManager.PlayClip("ally2_die_SS"); break;
+            case SlaveTypes.slave1_SSS: GameManager.Instance.AudioManager.PlayClip("ally2_die_SSS"); break;
+            case SlaveTypes.slave2_S: GameManager.Instance.AudioManager.PlayClip("ally0_die_S"); break;
+            case SlaveTypes.slave2_SS: GameManager.Instance.AudioManager.PlayClip("ally0_die_SS"); break;
+            case SlaveTypes.slave2_SSS: GameManager.Instance.AudioManager.PlayClip("ally0_die_SSS"); break;
+            case SlaveTypes.slave3_S: GameManager.Instance.AudioManager.PlayClip("ally3_die_S"); break;
+            case SlaveTypes.slave3_SS: GameManager.Instance.AudioManager.PlayClip("ally3_die_SS"); break;
+            case SlaveTypes.slave3_SSS: GameManager.Instance.AudioManager.PlayClip("ally3_die_SSS"); break;
+            case SlaveTypes.slave4_S: GameManager.Instance.AudioManager.PlayClip("ally4_die_S"); break;
+            case SlaveTypes.slave4_SS: GameManager.Instance.AudioManager.PlayClip("ally4_die_SS"); break;
+            case SlaveTypes.slave4_SSS: GameManager.Instance.AudioManager.PlayClip("ally4_die_SSS"); break;
+
+            default: break;
+        }
+    }
+
 
     [Header("FreeTween")]
     public float maxSizeWhenSaved = 2.5f;
