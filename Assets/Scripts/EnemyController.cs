@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     public Vector2 wanderDirChangeIntervalMinMax;
+    public float moveSpeed = 1;
+    public float acceleration = 1;
 
     Vector2 moveVector = Vector2.zero;
     float t = 0;
     Transform player;
+    Rigidbody2D rb;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         player = GameObject.Find("Player")?.transform;
@@ -22,7 +30,8 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3(moveVector.x, moveVector.y, 0) * 0.02f;
+        rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * moveSpeed, acceleration);
+        //transform.position += new Vector3(moveVector.x, moveVector.y, 0) * 0.02f;
     }
 
     void AI()
@@ -52,7 +61,7 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Friend"))
         {
