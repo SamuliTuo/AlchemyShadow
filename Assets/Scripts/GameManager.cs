@@ -6,14 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Camera cam;
+    [HideInInspector] public Camera cam;
     public EnemySpawner EnemySpawner { get; private set; }
     public FriendSpawner FriendSpawner { get; private set; }
     public PartyManager PartyManager { get; private set; }
     public EXPSpawner EXPSpawner { get; private set; }
     public AudioManager AudioManager { get; private set; }
     public ParticleEffects ParticleEffects { get; private set; }
-    private Coroutine gameLoop = null;
+    public GameLoop GameLoop { get; private set; }
 
     private void Awake()
     {
@@ -32,31 +32,13 @@ public class GameManager : MonoBehaviour
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
         AudioManager = GetComponentInChildren<AudioManager>();
         ParticleEffects = GetComponentInChildren<ParticleEffects>();
+        GameLoop = GetComponent<GameLoop>();
     }
 
-    private void Start()
+    private void Update()
     {
-        if (gameLoop == null)
-        {
-            gameLoop = StartCoroutine(GameLoop());
-        }
+        GameLoop.UpdateGame();
     }
-
-    private IEnumerator GameLoop()
-    {
-        float t = 0;
-
-        while (t < FriendSpawner.friendSpawnRate)
-        {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        FriendSpawner.SpawnAFriend();
-
-        StartCoroutine(GameLoop());
-    }
-
 
     // Helper methods
     public Vector3 GetRandomPosAtScreenEdge()
