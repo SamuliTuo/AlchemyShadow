@@ -16065,7 +16065,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.03257386, g: 0.048870634, b: 0.11320752, a: 0}
+  m_BackGroundColor: {r: 0.3962264, g: 0.36052802, b: 0.3270737, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -21418,6 +21418,70 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 511ee9e9300c74f489828b3b4400e05b, type: 3}
     - {fileID: 8300000, guid: f13374e42aea1a2469280bc6cfb2080b, type: 3}
     - {fileID: 8300000, guid: 694bda99daa6a434abf8e4b9451eb8bd, type: 3}
+    pitch: 0.8
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally1_die
+    clips:
+    - {fileID: 8300000, guid: 10b558ebbf4511d46a0c97c40546c67f, type: 3}
+    pitch: 1
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally1_rescue_S
+    clips:
+    - {fileID: 8300000, guid: 2424ff6f5a2c13b40b107e5b75091be5, type: 3}
+    - {fileID: 8300000, guid: 539f3ccb8147a10439d28526e8e064d1, type: 3}
+    - {fileID: 8300000, guid: 12f26c8c6d8b32c4da388683d0f43252, type: 3}
+    pitch: 1.5
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally1_rescue_SS
+    clips:
+    - {fileID: 8300000, guid: 2424ff6f5a2c13b40b107e5b75091be5, type: 3}
+    - {fileID: 8300000, guid: 539f3ccb8147a10439d28526e8e064d1, type: 3}
+    - {fileID: 8300000, guid: 12f26c8c6d8b32c4da388683d0f43252, type: 3}
+    pitch: 1.05
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally1_rescue_SSS
+    clips:
+    - {fileID: 8300000, guid: 2424ff6f5a2c13b40b107e5b75091be5, type: 3}
+    - {fileID: 8300000, guid: 539f3ccb8147a10439d28526e8e064d1, type: 3}
+    - {fileID: 8300000, guid: 12f26c8c6d8b32c4da388683d0f43252, type: 3}
+    pitch: 0.8
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally2_die
+    clips:
+    - {fileID: 8300000, guid: a326a2ba9693dd5459366edf073ae463, type: 3}
+    - {fileID: 8300000, guid: 77e920fcc5ab5b84d89c9633f1b94e6d, type: 3}
+    pitch: 1
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally2_rescue_S
+    clips:
+    - {fileID: 8300000, guid: a728270c974649440ae9dddbea1f52bb, type: 3}
+    - {fileID: 8300000, guid: 3fd3081e7e8e59e44aa78bfc5628deed, type: 3}
+    - {fileID: 8300000, guid: e45d96d55496d1540a432199e815908f, type: 3}
+    - {fileID: 8300000, guid: 21566eeb886e48b48a45eb99192c279f, type: 3}
+    pitch: 1.5
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally2_rescue_SS
+    clips:
+    - {fileID: 8300000, guid: a728270c974649440ae9dddbea1f52bb, type: 3}
+    - {fileID: 8300000, guid: 3fd3081e7e8e59e44aa78bfc5628deed, type: 3}
+    - {fileID: 8300000, guid: e45d96d55496d1540a432199e815908f, type: 3}
+    - {fileID: 8300000, guid: 21566eeb886e48b48a45eb99192c279f, type: 3}
+    pitch: 1.05
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally2_rescue_SSS
+    clips:
+    - {fileID: 8300000, guid: a728270c974649440ae9dddbea1f52bb, type: 3}
+    - {fileID: 8300000, guid: 3fd3081e7e8e59e44aa78bfc5628deed, type: 3}
+    - {fileID: 8300000, guid: e45d96d55496d1540a432199e815908f, type: 3}
+    - {fileID: 8300000, guid: 21566eeb886e48b48a45eb99192c279f, type: 3}
     pitch: 0.8
     pitchRandomizationAmount: 0.1
     volume: 1
@@ -28255,8 +28319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b2e6a981a0b54b83d0735644a26a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_01: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-  enemySpawnRate: 100
+  enemies:
+  - {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+  - {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
+  - {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
+  enemySpawnRate: 0.8
 --- !u!1 &1627178753
 GameObject:
   m_ObjectHideFlags: 0

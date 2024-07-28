@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class EnemyController : MonoBehaviour
     float t = 0;
     Transform player;
     Rigidbody2D rb;
+    private SpriteRenderer graphics;
 
     private void Awake()
     {
+        graphics = GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
     private void Start()
@@ -31,7 +34,16 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * moveSpeed, acceleration);
-        //transform.position += new Vector3(moveVector.x, moveVector.y, 0) * 0.02f;
+
+        //flip sprite
+        if (rb.velocity.x > 0.1f)
+        {
+            graphics.flipX = true;
+        }
+        else if (rb.velocity.x < -0.1f)
+        {
+            graphics.flipX = false;
+        }
     }
 
     void AI()
