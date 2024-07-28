@@ -106,7 +106,7 @@ public class SlaveController : MonoBehaviour
     {
         moveVector = target.position - transform.position;
         moveVector += randomVector * randomVectorStrength;
-        var sqrMag = moveVector.sqrMagnitude;
+        var sqrMag = moveVector.magnitude;
         if (sqrMag < stopRange)
         {
             moveVector = Vector2.zero;
@@ -116,7 +116,7 @@ public class SlaveController : MonoBehaviour
             actualMoveSpd = Mathf.Lerp(0, randomizedMoveSpeed * 5, sqrMag * 0.01f);
             if (anim != null)
             {
-                anim.speed = actualMoveSpd;
+                anim.speed = actualMoveSpd * 0.4f;
             }
         }
         moveVector = moveVector.normalized;
@@ -188,7 +188,10 @@ public class SlaveController : MonoBehaviour
         }
     }
 
+    [Header("FreeTween")]
     public float maxSizeWhenSaved = 2.5f;
+    public float freedTweenSpeed1 = 1;
+    public float freedTweenSpeed2 = 1;
     float originalScale;
     IEnumerator GotFreedTween()
     {
@@ -214,7 +217,7 @@ public class SlaveController : MonoBehaviour
             {
                 print("vieläkin graphics puuttuu...?");
             }
-            t += Time.deltaTime * 20;
+            t += Time.deltaTime * freedTweenSpeed1;
             yield return null;
         }
 
@@ -226,7 +229,7 @@ public class SlaveController : MonoBehaviour
             {
                 graphics.localScale = Vector3.one * Mathf.Lerp(originalScale * maxSizeWhenSaved, originalScale, perc);
             }
-            t += Time.deltaTime * 1.8f;
+            t += Time.deltaTime * freedTweenSpeed2;
             yield return null;
         }
         if (graphics != null)
@@ -235,12 +238,13 @@ public class SlaveController : MonoBehaviour
         }
     }
 
+    [Header("Shoot tween")]
     public float shootTweenGrowDuration = 1;
     public float shootTweenShrinkDuration = 1;
-    public float shootTweenMaxSize = 1.5f;
+    public float shootTweenMaxSizeHeight = 1.5f;
+    public float shootTweenMaxSizeWideness = 1.5f;
     public IEnumerator ShootTween()
     {
-        StopAllCoroutines();
         float t = 0;
         while (t < shootTweenGrowDuration)
         {
@@ -248,7 +252,9 @@ public class SlaveController : MonoBehaviour
             perc = Mathf.Lerp(0, 1, CorouTweens.easeInOut.Evaluate(perc));
             if (graphics != null)
             {
-                graphics.localScale = Vector3.one * Mathf.Lerp(originalScale, originalScale * shootTweenMaxSize, perc);
+                float x = Mathf.Lerp(originalScale, originalScale * shootTweenMaxSizeHeight, perc);
+                float y = Mathf.Lerp(originalScale, originalScale * shootTweenMaxSizeWideness, perc);
+                graphics.localScale = new Vector3(x, y, 1);
             }
             t += Time.deltaTime;
             yield return null;
@@ -260,10 +266,13 @@ public class SlaveController : MonoBehaviour
             perc = Mathf.Lerp(0, 1, CorouTweens.easeInOut.Evaluate(perc));
             if (graphics != null)
             {
-                graphics.localScale = Vector3.one * Mathf.Lerp(originalScale * shootTweenMaxSize, originalScale, perc);
+                float x = Mathf.Lerp(originalScale * shootTweenMaxSizeHeight, originalScale, perc);
+                float y = Mathf.Lerp(originalScale * shootTweenMaxSizeWideness, originalScale, perc);
+                graphics.localScale = new Vector3(x, y, 1);
             }
             t += Time.deltaTime;
             yield return null;
         }
+        graphics.localScale = Vector3.one * originalScale;
     }
 }

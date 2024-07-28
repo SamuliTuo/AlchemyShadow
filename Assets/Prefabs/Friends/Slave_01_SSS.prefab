@@ -239,15 +239,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0, y: 0}
-  moveSpeed: 6
+  moveSpeed: 80
   moveSpeedRandomizerMaxAndMinPerc: 0.4
-  moveSpeedRanomizerTimerMinMax: {x: 0.3, y: 1.5}
-  acceleration: 2.5
-  stopRange: 0.001
+  moveSpeedRanomizerTimerMinMax: {x: 0.7, y: 2}
+  acceleration: 1
+  stopRange: 0.1
   helpSign: {fileID: 1638287722}
   slaveType: 5
-  randomVectorStrength: 1
-  maxSizeWhenSaved: 2.5
+  randomVectorStrength: 1.2
+  maxSizeWhenSaved: 2.67
+  freedTweenSpeed1: 18
+  freedTweenSpeed2: 0.6
+  shootTweenGrowDuration: 0.1
+  shootTweenShrinkDuration: 0.25
+  shootTweenMaxSizeHeight: 1.5
+  shootTweenMaxSizeWideness: 0.7
 --- !u!114 &4187695202316828068
 MonoBehaviour:
   m_ObjectHideFlags: 0
