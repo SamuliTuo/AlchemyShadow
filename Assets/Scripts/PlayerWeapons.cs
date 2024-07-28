@@ -1,30 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+public enum Weapons
+{
+    NONE, BASIC_PEWPEW, WAVE_SHOTGUN, CLUSTER_SHOT, RANDOM_DIR, WAVE_AOE, AALTOILIJAT
+}
 
 public class PlayerWeapons : MonoBehaviour
 {
     public Transform barrelEnd;
     public Transform gunArm;
 
-    public float weaponsCooldownSpeed = 1;
+    public List<Weapon> weapons;
+
+    public float weaponsCooldownSpeedMultiplier = 1;
     public float basicWeaponInterval = 2;
     public float basicWeaponBulletSpeed = 10;
     public float basicWeaponBulletLifetime = 2;
     public GameObject bullet_basic;
     public bool isShooting = false;
 
-    private float timer_basicWeapon;
+    private float t;
     private Camera cam;
 
     private void Awake()
     {
-        timer_basicWeapon = basicWeaponInterval;
+        t = basicWeaponInterval;
         cam = Camera.main;
     }
 
     public void Update()
     {
+        // only player has the gunarm
         if (gunArm != null)
         {
             var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
@@ -36,39 +45,71 @@ public class PlayerWeapons : MonoBehaviour
         {
             return;
         }
-        if (timer_basicWeapon > 0)
+        if (t > 0)
         {
-            timer_basicWeapon -= Time.deltaTime * weaponsCooldownSpeed;
+            t -= Time.deltaTime * weaponsCooldownSpeedMultiplier;
         }
         else
         {
-            Shoot();
-            timer_basicWeapon = basicWeaponInterval;
+            if (weapons[0] != null)
+            {
+                if (barrelEnd != null)
+                {
+                    weapons[0].Shoot(barrelEnd);
+                }
+                else
+                {
+                    weapons[0].Shoot();
+                }
+                
+                t = weapons[0].shootInterval;
+            }
         }
     }
 
-    void LateUpdate()
-    {
-        
-    }
-
+    //When friends are saved they start shooting
     public void StartShooting()
     {
         isShooting = true;
     }
-    
-    void Shoot()
+}
+
+
+
+
+
+// Baseclass for  WEAPONS
+[System.Serializable]
+public class Weapon : MonoBehaviour
+{
+    public float shootInterval = 2;
+    public float bulletSpeed = 10;
+    public float bulletLifetime = 2;
+    public GameObject bullet;
+    public bool isShooting = false;
+
+    private float t;
+
+    public Weapon(float weaponCooldownSpeed, float shootInterval, float bulletSpeed, float bulletLifetime, GameObject bullet)
     {
-        var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+        this.shootInterval = shootInterval;
+        this.bulletSpeed = bulletSpeed;
+        this.bulletLifetime = bulletLifetime;
+        this.bullet = bullet;
+    }
+
+    public virtual void Shoot(Transform barrelEnd = null)
+    {
+        var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            var dir = point - barrelEnd.position;
+            var dir = point - transform.position;
             dir.z = 0;
             dir = dir.normalized;
-            var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, basicWeaponBulletSpeed, basicWeaponBulletLifetime);
+            var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
+            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
@@ -77,10 +118,12 @@ public class PlayerWeapons : MonoBehaviour
             var dir = point - transform.position;
             dir.z = 0;
             dir = dir.normalized;
-            var clone = Instantiate(bullet_basic, transform.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, basicWeaponBulletSpeed, basicWeaponBulletLifetime);
-            StartCoroutine(GetComponent<SlaveController>().ShootTween());
+            var clone = Instantiate(bullet, transform.position, Quaternion.identity);
+            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
+            var control = GetComponent<SlaveController>();
+            control.StopAllCoroutines();
+            StartCoroutine(control.ShootTween());
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
-        } 
+        }
     }
-}
+}   

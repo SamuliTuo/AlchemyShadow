@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5479642267838955897}
   - component: {fileID: 4187695202316828073}
   - component: {fileID: 4187695202316828068}
+  - component: {fileID: -4793151025889763896}
   - component: {fileID: 5479642267838955896}
   - component: {fileID: 5479642267838955903}
   m_Layer: 8
@@ -134,15 +135,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0, y: 0}
-  moveSpeed: 6
+  moveSpeed: 80
   moveSpeedRandomizerMaxAndMinPerc: 0.4
-  moveSpeedRanomizerTimerMinMax: {x: 0.3, y: 1.5}
-  acceleration: 2.5
-  stopRange: 0.001
+  moveSpeedRanomizerTimerMinMax: {x: 0.2, y: 1}
+  acceleration: 1
+  stopRange: 0.1
   helpSign: {fileID: 1638287722}
   slaveType: 7
-  randomVectorStrength: 1
-  maxSizeWhenSaved: 2.5
+  randomVectorStrength: 1.2
+  maxSizeWhenSaved: 2.67
+  freedTweenSpeed1: 18
+  freedTweenSpeed2: 0.6
+  shootTweenGrowDuration: 0.05
+  shootTweenShrinkDuration: 0.18
+  shootTweenMaxSizeHeight: 0.9
+  shootTweenMaxSizeWideness: 1.2
 --- !u!114 &4187695202316828068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,12 +164,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelEnd: {fileID: 0}
   gunArm: {fileID: 0}
-  weaponsCooldownSpeed: 1
+  weapons:
+  - {fileID: -4793151025889763896}
+  weaponsCooldownSpeedMultiplier: 1
   basicWeaponInterval: 3
   basicWeaponBulletSpeed: 8
   basicWeaponBulletLifetime: 3
   bullet_basic: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
   isShooting: 0
+--- !u!114 &-4793151025889763896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479642267838955899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23da9b2e14feeaa429f8375b3a9cfdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootInterval: 6
+  bulletSpeed: 10
+  bulletLifetime: 3
+  bullet: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
+  isShooting: 0
+  burstShotCount: 11
+  burstShotInterval: 0.15
+  burstSpread: 10
 --- !u!58 &5479642267838955896
 CircleCollider2D:
   m_ObjectHideFlags: 0

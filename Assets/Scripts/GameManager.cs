@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public Camera cam;
     public EnemySpawner EnemySpawner { get; private set; }
     public FriendSpawner FriendSpawner { get; private set; }
     public PartyManager PartyManager { get; private set; }
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     public AudioManager AudioManager { get; private set; }
     public ParticleEffects ParticleEffects { get; private set; }
     private Coroutine gameLoop = null;
-    private Camera cam;
 
     private void Awake()
     {
@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        cam = Camera.main;
         EnemySpawner = GetComponentInChildren<EnemySpawner>();
         FriendSpawner = GetComponentInChildren<FriendSpawner>();
         PartyManager = GetComponentInChildren<PartyManager>();
         EXPSpawner = GetComponentInChildren<EXPSpawner>();
         AudioManager = GetComponentInChildren<AudioManager>();
         ParticleEffects = GetComponentInChildren<ParticleEffects>();
-        cam = Camera.main;
     }
 
     private void Start()

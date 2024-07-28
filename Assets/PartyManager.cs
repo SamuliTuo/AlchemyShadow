@@ -10,6 +10,9 @@ public class PartyManager : MonoBehaviour
     Dictionary<SlaveTypes, List<GameObject>> party = new Dictionary<SlaveTypes, List<GameObject>>();
     private Camera cam;
 
+    [Space(10)]
+    float flagTurnOffT = 1;
+    public float flagTurnOffCooldown = 1;
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class PartyManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            flagTurnOffT = flagTurnOffCooldown;
             var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             partyFollowObject.position = new Vector3(point.x, point.y, 0);
             partyFollowObject.gameObject.SetActive(true);
@@ -35,11 +39,28 @@ public class PartyManager : MonoBehaviour
         }
         else if (Input.GetMouseButton(1))
         {
-            partyFollowObject.gameObject.SetActive(false);
-            followTheObject = false;
+            StopFlag();
+        }
+        else
+        {
+            flagTurnOffT -= Time.deltaTime;
+            if (flagTurnOffT < 0)
+            {
+                StopFlag();
+            }
         }
     }
 
+    public void PlayerIsInFlagRange()
+    {
+        flagTurnOffT = flagTurnOffCooldown;
+    }
+
+    void StopFlag()
+    {
+        partyFollowObject.gameObject.SetActive(false);
+        followTheObject = false;
+    }
 
     public bool AddFriendAndCheckIfCombines(GameObject friend)
     {
