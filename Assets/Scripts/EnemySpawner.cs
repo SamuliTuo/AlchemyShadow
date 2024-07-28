@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy_01;
+    public List<GameObject> enemies = new List<GameObject>();
+
     public float enemySpawnRate = 0.5f;
 
 
@@ -12,13 +13,15 @@ public class EnemySpawner : MonoBehaviour
     {
         StartCoroutine(Spawner());
     }
-
+    
     IEnumerator Spawner()
     {
         float t = enemySpawnRate;
         var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
         pos.z = 0;
-        Instantiate(enemy_01, pos, Quaternion.identity);
+
+        var enemy = enemies[Random.Range(0, enemies.Count)];
+        Instantiate(enemy, pos, Quaternion.identity);
         while (t > 0)
         {
             t -= Time.deltaTime;
