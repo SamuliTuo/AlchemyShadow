@@ -348,6 +348,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f61fd14dd6871949a9c47dc8fc76daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvulnerable: 0
+  currentDamageAmount: 0
+  tier: 0
+  hitFlashTime: 0.2
+  invulnTime: 0.6
+  healTime: 9
+  invulnColor: {r: 1, g: 1, b: 1, a: 0.16862746}
+  damagedColor_light: {r: 1, g: 0.95140237, b: 0.7783019, a: 1}
+  damagedColor_medium: {r: 1, g: 0.643845, b: 0.5235849, a: 1}
+  damagedColor_heavy: {r: 0.8396226, g: 0, b: 0.008136983, a: 1}
 --- !u!1 &7458783157876867141
 GameObject:
   m_ObjectHideFlags: 0
