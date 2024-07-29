@@ -12,6 +12,7 @@ public class BulletController : MonoBehaviour
     public float amplitude = 10f;
     public float period = 5f;
 
+    float damage;
     Vector3 dir;
     float speed;
     float lifeTime;
@@ -22,9 +23,10 @@ public class BulletController : MonoBehaviour
 
     List<GameObject> enemiesHit = new List<GameObject>();
 
-    public void Init(Vector3 dir, float speed, float lifeTime, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false)
+    public void Init(float damage, Vector3 dir, float speed, float lifeTime, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false)
     {
         enemiesHit.Clear();
+        this.damage = damage;
         this.dir = dir;
         this.speed = speed;
         this.lifeTime = lifeTime;
@@ -76,7 +78,7 @@ public class BulletController : MonoBehaviour
                 return;
             }
             enemiesHit.Add(gameObject);
-            collision.GetComponent<EnemyController>().GotHit();
+            collision.GetComponent<EnemyController>().GotHit(damage);
             GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             if (goesThrough)
             {

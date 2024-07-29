@@ -9,14 +9,14 @@ public class EnemyController : MonoBehaviour
     public Vector2 wanderDirChangeIntervalMinMax;
     public float moveSpeed = 1;
     public float acceleration = 1;
-    public int maxHp = 1;
+    public float maxHp = 1;
 
     Vector2 moveVector = Vector2.zero;
     float t = 0;
     Transform player;
     Rigidbody2D rb;
     private SpriteRenderer graphics;
-    private int hp;
+    private float hp;
     Material normalMat;
     Material hitFlashMat;
 
@@ -73,9 +73,9 @@ public class EnemyController : MonoBehaviour
         t = Random.Range(wanderDirChangeIntervalMinMax.x, wanderDirChangeIntervalMinMax.y);
     }
 
-    public void GotHit()
+    public void GotHit(float damage)
     {
-        hp--;
+        hp -= damage;
         if (hp <= 0)
         {
             GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);

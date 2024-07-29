@@ -18,8 +18,10 @@ public class NipsunRynkky : Weapon
         GameObject bullet) : base(weaponCooldownSpeed, shootInterval, bulletSpeed, bulletLifetime, bullet)
     { }
 
-    public override void Shoot(Transform barrelEnd = null)
+    float damage;
+    public override void Shoot(float damage, Transform barrelEnd = null)
     {
+        this.damage = damage;
         StartCoroutine(Burst(barrelEnd));
     }
 
@@ -46,7 +48,7 @@ public class NipsunRynkky : Weapon
             dir = dir.normalized;
             dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
 
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
@@ -58,7 +60,7 @@ public class NipsunRynkky : Weapon
             dir = dir.normalized;
             dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
             var clone = Instantiate(bullet, transform.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
 
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
