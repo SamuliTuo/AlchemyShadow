@@ -36,7 +36,7 @@ public class GameLoop : MonoBehaviour
         {
             for (int i = 0; i < friendSpawnTimes.Count; i++)
             {
-
+                GameManager.Instance.FriendSpawner.SpawnAFriend();
             }
         }
         // Start spawners
@@ -72,6 +72,7 @@ public class GameLoop : MonoBehaviour
             var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
             pos.z = 0;
             Instantiate(spawner.prefab, pos, Quaternion.identity);
+
             yield return new WaitForSeconds(spawner.spawnInterval);
         }
     }

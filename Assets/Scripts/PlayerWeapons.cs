@@ -15,6 +15,7 @@ public class PlayerWeapons : MonoBehaviour
 
     public List<Weapon> weapons;
 
+    public float damage = 1;
     public float weaponsCooldownSpeedMultiplier = 1;
     public float basicWeaponInterval = 2;
     public float basicWeaponBulletSpeed = 10;
@@ -27,14 +28,14 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Awake()
     {
-        t = basicWeaponInterval;
+        t = 1;
         cam = Camera.main;
     }
 
     public void Update()
     {
         // only player has the gunarm
-        if (gunArm != null)
+        if (gunArm != null && GameManager.Instance.paused == false)
         {
             var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             point.z = 0;
@@ -55,22 +56,32 @@ public class PlayerWeapons : MonoBehaviour
             {
                 if (barrelEnd != null)
                 {
-                    weapons[0].Shoot(barrelEnd);
+                    weapons[0].Shoot(damage, barrelEnd);
                 }
                 else
                 {
-                    weapons[0].Shoot();
+                    weapons[0].Shoot(damage);
                 }
-                
-                t = weapons[0].shootInterval;
+
+                t = Mathf.Max(weapons[0].shootInterval / attackSpd, 0.05f);
             }
         }
     }
 
+    float attackSpd = 1;
     //When friends are saved they start shooting
     public void StartShooting()
     {
         isShooting = true;
+    }
+
+    public void AddDamage(float addition)
+    {
+        damage += addition;
+    }
+    public void AddAttackSpeed(float addition)
+    {
+        attackSpd += addition;
     }
 }
 
@@ -98,7 +109,7 @@ public class Weapon : MonoBehaviour
         this.bullet = bullet;
     }
 
-    public virtual void Shoot(Transform barrelEnd = null)
+    public virtual void Shoot(float damage, Transform barrelEnd = null)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
@@ -109,7 +120,7 @@ public class Weapon : MonoBehaviour
             dir.z = 0;
             dir = dir.normalized;
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
@@ -119,7 +130,7 @@ public class Weapon : MonoBehaviour
             dir.z = 0;
             dir = dir.normalized;
             var clone = Instantiate(bullet, transform.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(dir, bulletSpeed, bulletLifetime);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
             StartCoroutine(control.ShootTween());

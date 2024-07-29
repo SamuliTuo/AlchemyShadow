@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Material hitFlashMaterial;
     public float enemyHitFlashTime;
-
+    public bool paused = false;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         FriendSpawner.TrackUnfreedFriends();
     }
 
+
     // Helper methods
     public Vector3 GetRandomPosAtScreenEdge()
     {
@@ -76,5 +77,28 @@ public class GameManager : MonoBehaviour
         }
         var point = cam.ScreenToWorldPoint(new Vector3(randomCoordinates.x, randomCoordinates.y, cam.nearClipPlane));
         return point;
+    }
+
+    public int[] GenerateRandomUniqueIntegers(Vector2Int countRange, Vector2Int valueRange)
+    {
+        if (valueRange == Vector2Int.zero)
+            return null;
+
+        var values = new List<int>();
+        for (int i = Mathf.Min(valueRange.x, valueRange.y); i < Mathf.Max(valueRange.x, valueRange.y); i++)
+            values.Add(i);
+
+        var randomNumbers = new int[Random.Range(Mathf.Min(countRange.x, countRange.y), Mathf.Max(countRange.x, countRange.y))];
+        for (int i = 0; i < randomNumbers.Length; i++)
+        {
+            if (values.Count == 0)
+                continue;
+
+            var thisNumber = Random.Range(0, values.Count);
+            randomNumbers[i] = values[thisNumber];
+            values.RemoveAt(thisNumber);
+        }
+
+        return randomNumbers;
     }
 }
