@@ -6,17 +6,27 @@ using UnityEngine;
 public class GameLoop : MonoBehaviour
 {
     public List<SpawnerEvent> spawnEvents;
+    public List<Vector2Int> friendSpawnEvents;
 
     public float gameTime = 0;
     public float friendIntervalTimer = 0;
+
+    List<int> friendSpawnTimes = new List<int>();
 
     private void Start()
     {
         friendIntervalTimer = GameManager.Instance.FriendSpawner.friendSpawnRate - 0.5f;
         foreach (SpawnerEvent e in spawnEvents)
         {
-            e.startTimeInSeconds = e.start_minutesAndSeconds.x * 6 + e.start_minutesAndSeconds.y;
+            e.startTimeInSeconds = e.start_minutesAndSeconds.x * 60 + e.start_minutesAndSeconds.y;
             e.duration = e.end_minutesAndSeconds.x * 60 + e.end_minutesAndSeconds.y - e.startTimeInSeconds;
+        }
+        friendSpawnTimes = new List<int>();
+        foreach (Vector2Int time in friendSpawnEvents)
+        {
+            int _t = time.x * 60 + time.y;
+            friendSpawnTimes.Add(_t);
+            print("added a timer : " + _t);
         }
     }
     public void UpdateGame()
@@ -26,21 +36,20 @@ public class GameLoop : MonoBehaviour
         {
             if (gameTime >= spawnEvents[i].startTimeInSeconds)
             {
+                print("STARTING SPAWNER!!!" + spawnEvents[i].spawnThis.name);
                 StartCoroutine(SpawnerRunning(spawnEvents[i]));
                 spawnEvents.RemoveAt(i);
             }
         }
 
         // Spawn friends
-        if (friendIntervalTimer < GameManager.Instance.FriendSpawner.friendSpawnRate)
+        for (int i = friendSpawnTimes.Count - 1; i >= 0; i--)
         {
-            friendIntervalTimer += Time.deltaTime;
-        }
-        else
-        {
-            print("spawned a friend at " + Time.time);
-            GameManager.Instance.FriendSpawner.SpawnAFriend();
-            friendIntervalTimer = 0;
+            if (gameTime >= friendSpawnTimes[i])
+            {
+                GameManager.Instance.FriendSpawner.SpawnAFriend();
+                friendSpawnTimes.RemoveAt(i);
+            }
         }
         
         // update time
@@ -70,10 +79,10 @@ public class GameLoop : MonoBehaviour
 public class SpawnerEvent
 {
     [Header("Start time:")]
-    public Vector2 start_minutesAndSeconds;
+    public Vector2Int start_minutesAndSeconds;
 
     [Header("Ending time:")]
-    public Vector2 end_minutesAndSeconds;
+    public Vector2Int end_minutesAndSeconds;
 
     [Space(20)]
     public GameObject spawnThis;
@@ -82,7 +91,7 @@ public class SpawnerEvent
     [HideInInspector] public float startTimeInSeconds;
     [HideInInspector] public float duration;
 
-    public SpawnerEvent(Vector2 start_minutesAndSeconds, Vector2 end_minutesAndSeconds, GameObject spawnThis, float spawnInterval)
+    public SpawnerEvent(Vector2Int start_minutesAndSeconds, Vector2Int end_minutesAndSeconds, GameObject spawnThis, float spawnInterval)
     {
         this.start_minutesAndSeconds = start_minutesAndSeconds;
         this.end_minutesAndSeconds = end_minutesAndSeconds;

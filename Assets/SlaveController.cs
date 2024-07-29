@@ -11,6 +11,7 @@ public enum SlaveTypes
 
     NULL,
 }
+public enum SlaveTier { S, SS, SSS, }
 
 public class SlaveController : MonoBehaviour
 {
@@ -159,6 +160,7 @@ public class SlaveController : MonoBehaviour
 
     public void SetFree()
     {
+        GameManager.Instance.FriendSpawner.FriendWasFreed(gameObject);
         isFree = true;
         helpSign.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Friend");
