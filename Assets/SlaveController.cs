@@ -33,6 +33,7 @@ public class SlaveController : MonoBehaviour
     Rigidbody2D rb;
     float actualMoveSpd;
     Animator anim;
+    SlaveHPController hp;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class SlaveController : MonoBehaviour
         spriteGraphic = transform.GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         randomizedMoveSpeed = moveSpeed + Random.Range(-moveSpeed * moveSpeedRandomizerMaxAndMinPerc, moveSpeed * moveSpeedRandomizerMaxAndMinPerc);
+        hp = GetComponent<SlaveHPController>();
     }
 
     void Update()
@@ -126,14 +128,11 @@ public class SlaveController : MonoBehaviour
 
     public void GotHit()
     {
-        if (!isFree)
+        if (!isFree || hp.isInvulnerable)
         {
             return;
         }
-        GameManager.Instance.PartyManager.FriendDied(gameObject);
-        GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
-        PlayCorrectDeathSound();
-        Destroy(gameObject);
+        hp.TookDamage();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -255,7 +254,7 @@ public class SlaveController : MonoBehaviour
         }
     }
 
-    void PlayCorrectDeathSound()
+    public void PlayCorrectDeathSound()
     {
         switch (slaveType)
         {
@@ -274,6 +273,29 @@ public class SlaveController : MonoBehaviour
             case SlaveTypes.slave4_S: GameManager.Instance.AudioManager.PlayClip("ally4_die_S"); break;
             case SlaveTypes.slave4_SS: GameManager.Instance.AudioManager.PlayClip("ally4_die_SS"); break;
             case SlaveTypes.slave4_SSS: GameManager.Instance.AudioManager.PlayClip("ally4_die_SSS"); break;
+
+            default: break;
+        }
+    }
+    public void PlayCorrectHitSound()
+    {
+        switch (slaveType)
+        {
+            case SlaveTypes.slave0_S: GameManager.Instance.AudioManager.PlayClip("ally1_hit_S"); break;
+            case SlaveTypes.slave0_SS: GameManager.Instance.AudioManager.PlayClip("ally1_hit_SS"); break;
+            case SlaveTypes.slave0_SSS: GameManager.Instance.AudioManager.PlayClip("ally1_hit_SSS"); break;
+            case SlaveTypes.slave1_S: GameManager.Instance.AudioManager.PlayClip("ally2_hit_S"); break;
+            case SlaveTypes.slave1_SS: GameManager.Instance.AudioManager.PlayClip("ally2_hit_SS"); break;
+            case SlaveTypes.slave1_SSS: GameManager.Instance.AudioManager.PlayClip("ally2_hit_SSS"); break;
+            case SlaveTypes.slave2_S: GameManager.Instance.AudioManager.PlayClip("ally0_hit_S"); break;
+            case SlaveTypes.slave2_SS: GameManager.Instance.AudioManager.PlayClip("ally0_hit_SS"); break;
+            case SlaveTypes.slave2_SSS: GameManager.Instance.AudioManager.PlayClip("ally0_hit_SSS"); break;
+            case SlaveTypes.slave3_S: GameManager.Instance.AudioManager.PlayClip("ally3_hit_S"); break;
+            case SlaveTypes.slave3_SS: GameManager.Instance.AudioManager.PlayClip("ally3_hit_SS"); break;
+            case SlaveTypes.slave3_SSS: GameManager.Instance.AudioManager.PlayClip("ally3_hit_SSS"); break;
+            case SlaveTypes.slave4_S: GameManager.Instance.AudioManager.PlayClip("ally4_hit_S"); break;
+            case SlaveTypes.slave4_SS: GameManager.Instance.AudioManager.PlayClip("ally4_hit_SS"); break;
+            case SlaveTypes.slave4_SSS: GameManager.Instance.AudioManager.PlayClip("ally4_hit_SSS"); break;
 
             default: break;
         }

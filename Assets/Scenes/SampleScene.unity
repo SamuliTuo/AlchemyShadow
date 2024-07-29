@@ -22075,6 +22075,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sources: []
   audioLibrary:
+  - name: === nipsu ===
+    clips:
+    - {fileID: 8300000, guid: 3c81d531065a25d498001f5c88c522df, type: 3}
+    - {fileID: 8300000, guid: b0429dd89727d5e4dbc68e81b8a37341, type: 3}
+    pitch: 1.2
+    pitchRandomizationAmount: 0.1
+    volume: 0.8
+  - name: ally0_hit_S
+    clips:
+    - {fileID: 8300000, guid: 3cf3dba87b6633a419fce1bab32de067, type: 3}
+    - {fileID: 8300000, guid: d61d433bea0a7744ab6dc66021caf628, type: 3}
+    - {fileID: 8300000, guid: b80f294db1b32b844a414a587d816329, type: 3}
+    pitch: 1.2
+    pitchRandomizationAmount: 0.1
+    volume: 0.8
+  - name: ally0_hit_SS
+    clips:
+    - {fileID: 8300000, guid: 3cf3dba87b6633a419fce1bab32de067, type: 3}
+    - {fileID: 8300000, guid: d61d433bea0a7744ab6dc66021caf628, type: 3}
+    - {fileID: 8300000, guid: b80f294db1b32b844a414a587d816329, type: 3}
+    pitch: 0.9
+    pitchRandomizationAmount: 0.1
+    volume: 0.9
+  - name: ally0_hit_SSS
+    clips:
+    - {fileID: 8300000, guid: 3cf3dba87b6633a419fce1bab32de067, type: 3}
+    - {fileID: 8300000, guid: d61d433bea0a7744ab6dc66021caf628, type: 3}
+    - {fileID: 8300000, guid: b80f294db1b32b844a414a587d816329, type: 3}
+    pitch: 0.6
+    pitchRandomizationAmount: 0.1
+    volume: 1
   - name: ally0_die_S
     clips:
     - {fileID: 8300000, guid: 3c81d531065a25d498001f5c88c522df, type: 3}
@@ -22089,7 +22120,7 @@ MonoBehaviour:
     pitch: 0.9
     pitchRandomizationAmount: 0.1
     volume: 1
-  - name: ally0_die_SS
+  - name: ally0_die_SSS
     clips:
     - {fileID: 8300000, guid: 3c81d531065a25d498001f5c88c522df, type: 3}
     - {fileID: 8300000, guid: b0429dd89727d5e4dbc68e81b8a37341, type: 3}
@@ -22120,11 +22151,35 @@ MonoBehaviour:
     pitch: 0.6
     pitchRandomizationAmount: 0.1
     volume: 1
-  - name: ===
+  - name: === tonttu ===
     clips: []
     pitch: 0
     pitchRandomizationAmount: 0
     volume: 0
+  - name: ally1_hit_S
+    clips:
+    - {fileID: 8300000, guid: cc2bed2552899ed4283d04efebe8fb23, type: 3}
+    - {fileID: 8300000, guid: e2e2dd76cfdf0294f84126470540866b, type: 3}
+    - {fileID: 8300000, guid: 1808c11dbc38d724eab879a23b509b33, type: 3}
+    pitch: 1.1
+    pitchRandomizationAmount: 0.1
+    volume: 0.8
+  - name: ally1_hit_SS
+    clips:
+    - {fileID: 8300000, guid: cc2bed2552899ed4283d04efebe8fb23, type: 3}
+    - {fileID: 8300000, guid: e2e2dd76cfdf0294f84126470540866b, type: 3}
+    - {fileID: 8300000, guid: 1808c11dbc38d724eab879a23b509b33, type: 3}
+    pitch: 0.9
+    pitchRandomizationAmount: 0.1
+    volume: 0.9
+  - name: ally1_hit_SSS
+    clips:
+    - {fileID: 8300000, guid: cc2bed2552899ed4283d04efebe8fb23, type: 3}
+    - {fileID: 8300000, guid: e2e2dd76cfdf0294f84126470540866b, type: 3}
+    - {fileID: 8300000, guid: 1808c11dbc38d724eab879a23b509b33, type: 3}
+    pitch: 0.7
+    pitchRandomizationAmount: 0.1
+    volume: 1
   - name: ally1_die_S
     clips:
     - {fileID: 8300000, guid: 10b558ebbf4511d46a0c97c40546c67f, type: 3}
@@ -22167,11 +22222,35 @@ MonoBehaviour:
     pitch: 0.6
     pitchRandomizationAmount: 0.1
     volume: 1
-  - name: ===
+  - name: === ronsu ===
     clips: []
     pitch: 0
     pitchRandomizationAmount: 0
     volume: 0
+  - name: ally2_hit_S
+    clips:
+    - {fileID: 8300000, guid: d3bd7c0d113c1984180ee59b3b9630aa, type: 3}
+    - {fileID: 8300000, guid: 378c87c400859ae4294a161acceabfa1, type: 3}
+    - {fileID: 8300000, guid: 627db564a6d278c4686682999ea26897, type: 3}
+    pitch: 1.5
+    pitchRandomizationAmount: 0.1
+    volume: 0.8
+  - name: ally2_hit_SS
+    clips:
+    - {fileID: 8300000, guid: d3bd7c0d113c1984180ee59b3b9630aa, type: 3}
+    - {fileID: 8300000, guid: 378c87c400859ae4294a161acceabfa1, type: 3}
+    - {fileID: 8300000, guid: 627db564a6d278c4686682999ea26897, type: 3}
+    pitch: 1.1
+    pitchRandomizationAmount: 0.1
+    volume: 0.9
+  - name: ally2_hit_SSS
+    clips:
+    - {fileID: 8300000, guid: d3bd7c0d113c1984180ee59b3b9630aa, type: 3}
+    - {fileID: 8300000, guid: 378c87c400859ae4294a161acceabfa1, type: 3}
+    - {fileID: 8300000, guid: 627db564a6d278c4686682999ea26897, type: 3}
+    pitch: 0.8
+    pitchRandomizationAmount: 0.1
+    volume: 1
   - name: ally2_die_S
     clips:
     - {fileID: 8300000, guid: a326a2ba9693dd5459366edf073ae463, type: 3}
@@ -22220,11 +22299,32 @@ MonoBehaviour:
     pitch: 0.8
     pitchRandomizationAmount: 0.1
     volume: 1
-  - name: ===
+  - name: === talkkari ===
     clips: []
     pitch: 0
     pitchRandomizationAmount: 0
     volume: 0
+  - name: ally3_hit_S
+    clips:
+    - {fileID: 8300000, guid: 8d4fbbd1a3441ed45b9e80d279fde412, type: 3}
+    - {fileID: 8300000, guid: d49269504d4fad544a90cfcecccdf615, type: 3}
+    pitch: 1.5
+    pitchRandomizationAmount: 0.1
+    volume: 0.7
+  - name: ally3_hit_SS
+    clips:
+    - {fileID: 8300000, guid: 8d4fbbd1a3441ed45b9e80d279fde412, type: 3}
+    - {fileID: 8300000, guid: d49269504d4fad544a90cfcecccdf615, type: 3}
+    pitch: 1.05
+    pitchRandomizationAmount: 0.1
+    volume: 1
+  - name: ally3_hit_SSS
+    clips:
+    - {fileID: 8300000, guid: 8d4fbbd1a3441ed45b9e80d279fde412, type: 3}
+    - {fileID: 8300000, guid: d49269504d4fad544a90cfcecccdf615, type: 3}
+    pitch: 0.8
+    pitchRandomizationAmount: 0.1
+    volume: 1
   - name: ally3_die_S
     clips:
     - {fileID: 8300000, guid: 4e49415305eb94349bb16e2164a04cbd, type: 3}
@@ -22270,11 +22370,35 @@ MonoBehaviour:
     pitch: 0.8
     pitchRandomizationAmount: 0.1
     volume: 1
-  - name: ===
+  - name: === pulu ===
     clips: []
     pitch: 0
     pitchRandomizationAmount: 0
     volume: 0
+  - name: ally4_hit_S
+    clips:
+    - {fileID: 8300000, guid: d2403416965a0f24fb35a1e808a6e808, type: 3}
+    - {fileID: 8300000, guid: c6c14bdb9593eea429d591e60f6cf6f3, type: 3}
+    - {fileID: 8300000, guid: 927e2732f664b824cb3096e7e15bf88c, type: 3}
+    pitch: 1
+    pitchRandomizationAmount: 0.1
+    volume: 0.45
+  - name: ally4_hit_SS
+    clips:
+    - {fileID: 8300000, guid: d2403416965a0f24fb35a1e808a6e808, type: 3}
+    - {fileID: 8300000, guid: c6c14bdb9593eea429d591e60f6cf6f3, type: 3}
+    - {fileID: 8300000, guid: 927e2732f664b824cb3096e7e15bf88c, type: 3}
+    pitch: 0.8
+    pitchRandomizationAmount: 0.1
+    volume: 0.7
+  - name: ally4_hit_SSS
+    clips:
+    - {fileID: 8300000, guid: d2403416965a0f24fb35a1e808a6e808, type: 3}
+    - {fileID: 8300000, guid: c6c14bdb9593eea429d591e60f6cf6f3, type: 3}
+    - {fileID: 8300000, guid: 927e2732f664b824cb3096e7e15bf88c, type: 3}
+    pitch: 0.6
+    pitchRandomizationAmount: 0.1
+    volume: 1
   - name: ally4_die_S
     clips:
     - {fileID: 8300000, guid: 4dbed5aeb694e5d4f9590aa2c3f78528, type: 3}
