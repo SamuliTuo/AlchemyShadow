@@ -20,12 +20,11 @@ public class BulletController : MonoBehaviour
     bool goesThrough;
     bool negativeWave;
     Vector3 startPos;
+    bool isEnemyProjectile = false;
 
-    List<GameObject> enemiesHit = new List<GameObject>();
 
-    public void Init(float damage, Vector3 dir, float speed, float lifeTime, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false)
+    public void Init(float damage, Vector3 dir, float speed, float lifeTime, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false, bool thisIsEnemyProjectile = false)
     {
-        enemiesHit.Clear();
         this.damage = damage;
         this.dir = dir;
         this.speed = speed;
@@ -33,6 +32,7 @@ public class BulletController : MonoBehaviour
         this.type = type;
         this.goesThrough = goesThrough;
         this.negativeWave = negativeWave;
+        this.isEnemyProjectile = thisIsEnemyProjectile;
         StartCoroutine(BulletCoroutine());
     }
 
@@ -71,13 +71,30 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // enemy projectiles
+        if (isEnemyProjectile)
+        {
+            if (collision.CompareTag("Player") || collision.CompareTag("Friend"))
+            {
+                collision.gameObject.SendMessage("GotHit");
+                if (goesThrough)
+                {
+                    return;
+                }
+                Destroy(gameObject);
+            }
+            return;
+        }
+
+        // player team projectiles
         if (collision.CompareTag("Enemy"))
         {
-            if (enemiesHit.Contains(gameObject))
-            {
-                return;
-            }
-            enemiesHit.Add(gameObject);
             collision.GetComponent<EnemyController>().GotHit(damage);
             GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             if (goesThrough)

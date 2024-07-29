@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Material hitFlashMaterial;
     public float enemyHitFlashTime;
     public bool paused = false;
+    public Transform player;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        player = GameObject.Find("Player").transform;
         cam = Camera.main;
         EnemySpawner = GetComponentInChildren<EnemySpawner>();
         FriendSpawner = GetComponentInChildren<FriendSpawner>();
@@ -46,6 +48,20 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         FriendSpawner.TrackUnfreedFriends();
+    }
+
+    public void PausedTheGame()
+    {
+        paused = true;
+    }
+    public void UnpausedTheGame()
+    {
+        StartCoroutine(Unpause());
+    }
+    IEnumerator Unpause()
+    {
+        yield return new WaitForSeconds(0.5f);
+        paused = false;
     }
 
 

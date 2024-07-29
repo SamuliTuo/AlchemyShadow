@@ -146,12 +146,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Loot"))
         {
-            exp++;
+            exp += expRate;
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
 
             // LEVEL UP ! :D
-            if (exp >= 1)//expRequiredForLvlUp)
+            if (exp >= expRequiredForLvlUp)
             {
                 exp -= expRequiredForLvlUp;
                 expRequiredForLvlUp *= 1.6f;
@@ -160,6 +160,8 @@ public class PlayerController : MonoBehaviour
 
                 var options = GetRandomOptions();
                 PresentOptions(options);
+
+                GameManager.Instance.PausedTheGame();
                 Time.timeScale = 0;
             }
 
@@ -201,6 +203,7 @@ public class PlayerController : MonoBehaviour
         }
         ApplyEffects(upgrade);
 
+        GameManager.Instance.UnpausedTheGame();
         Time.timeScale = 1;
     }
 
@@ -220,7 +223,7 @@ public class PlayerController : MonoBehaviour
         }
         if (p.lootRange > 0)
         {
-            lootTrigger.localScale = new(lootTrigger.localScale.x * p.lootRange, lootTrigger.localScale.y * p.lootRange, 1);
+            lootTrigger.radius += p.lootRange;
         }
         if (p.regen > 0)
         {
@@ -241,7 +244,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private float expRate = 1;
-    public Transform lootTrigger;
+    public CircleCollider2D lootTrigger;
     public Transform flagArea;
 
 }

@@ -155,9 +155,9 @@ Transform:
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &264024476 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3632265199242939482, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+--- !u!58 &264024478 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3632265199242939480, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
   m_PrefabInstance: {fileID: 3632265199418817990}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &303887746
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 924798602}
   m_Layer: 0
   m_Name: t
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2597,7 +2597,7 @@ GameObject:
   - component: {fileID: 2144795689}
   m_Layer: 0
   m_Name: t (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2723,6 +2723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3632265199242939480, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: m_Radius
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644870, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2786,7 +2790,11 @@ PrefabInstance:
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: lootTrigger
       value: 
-      objectReference: {fileID: 264024476}
+      objectReference: {fileID: 264024478}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: hpRegenPercTic
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.size
       value: 7
@@ -2837,11 +2845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].flagArea
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[3].lootRange
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[3].moveSpeed
@@ -2865,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].description
-      value: 30% increase in flag area.
+      value: The flag can stay further from player without disappearing.
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644987, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: m_Name
@@ -2928,13 +2936,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6753639025600555127, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
+      propertyPath: spawnEvents.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
     - target: {fileID: 6753639025787413351, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6753639025787413351, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
