@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public ParticleEffects ParticleEffects { get; private set; }
     public GameLoop GameLoop { get; private set; }
 
+    [HideInInspector] public Material hitFlashMaterial;
+    public float enemyHitFlashTime;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
         AudioManager = GetComponentInChildren<AudioManager>();
         ParticleEffects = GetComponentInChildren<ParticleEffects>();
         GameLoop = GetComponent<GameLoop>();
+        hitFlashMaterial = Resources.Load("hitFlashMaterial") as Material;
     }
 
     private void Update()

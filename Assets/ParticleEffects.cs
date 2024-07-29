@@ -13,6 +13,8 @@ public class ParticleEffects : MonoBehaviour
     public ParticleSystem shotHit;
     public ParticleSystem combineToSS;
     public ParticleSystem combineToSSS;
+    public ParticleSystem friendHeal;
+    public ParticleSystem friendDamaged;
 
     /// <summary>
     /// Use string as input:
@@ -21,7 +23,9 @@ public class ParticleEffects : MonoBehaviour
     /// enemyDeath,
     /// shoot,
     /// shotHit,
-    /// combineToSS, combineToSSS
+    /// combineToSS, combineToSSS,
+    /// friendHeal,
+    /// friendDamaged
     /// </summary>
     public void PlayParticles(string input, Vector3 position, Vector3 rotation, bool showInFront = false)
     {
@@ -34,6 +38,8 @@ public class ParticleEffects : MonoBehaviour
             case "shotHit": PlayParticle(shotHit, position, rotation, showInFront); break;
             case "combineToSS": PlayParticle(combineToSS, position, rotation, showInFront); break;
             case "combineToSSS": PlayParticle(combineToSSS, position, rotation, showInFront); break;
+            case "friendHeal": PlayParticle(friendHeal, position, rotation, showInFront); break;
+            case "friendDamaged": PlayParticle(friendDamaged, position, rotation, showInFront); break;
         }
     }
 

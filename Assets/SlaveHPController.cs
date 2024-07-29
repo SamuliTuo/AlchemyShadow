@@ -30,15 +30,20 @@ public class SlaveHPController : MonoBehaviour
     private void Awake()
     {
         graphics = GetComponentInChildren<SpriteRenderer>();
-        hitFlashMaterial = Resources.Load("hitFlashMaterial") as Material;
         defaultMaterial = graphics.material;
         control = GetComponent<SlaveController>();
+    }
+    private void Start()
+    {
+        hitFlashMaterial = GameManager.Instance.hitFlashMaterial;
     }
 
     public void TookDamage()
     {
+        GameManager.Instance.ParticleEffects.PlayParticles("friendDamaged", transform.position, Vector3.up);
         if (currentDamageAmount == DamageTiers.HEAVY)
         {
+            GameManager.Instance.ParticleEffects.PlayParticles("friendSpawn", transform.position, Vector3.up);
             GameManager.Instance.PartyManager.FriendDied(gameObject);
             GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
             control.PlayCorrectDeathSound();
@@ -111,6 +116,7 @@ public class SlaveHPController : MonoBehaviour
                     case DamageTiers.LIGHT:
                         graphics.color = damagedColor_light;
                         yield return new WaitForSeconds(healTime);
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -118,6 +124,7 @@ public class SlaveHPController : MonoBehaviour
                     case DamageTiers.MEDIUM:
                         graphics.color = damagedColor_medium;
                         yield return new WaitForSeconds(healTime);
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -125,6 +132,7 @@ public class SlaveHPController : MonoBehaviour
                     case DamageTiers.HEAVY:
                         graphics.color = damagedColor_heavy;
                         yield return new WaitForSeconds(healTime);
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -141,6 +149,7 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_light;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -149,6 +158,7 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_medium;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -157,10 +167,12 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_heavy;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         graphics.color = damagedColor_medium;
                         currentDamageAmount = DamageTiers.MEDIUM;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -177,6 +189,7 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_light;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -185,10 +198,12 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_medium;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         graphics.color = damagedColor_light;
                         currentDamageAmount = DamageTiers.LIGHT;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
@@ -197,14 +212,17 @@ public class SlaveHPController : MonoBehaviour
                         graphics.color = damagedColor_heavy;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         graphics.color = damagedColor_medium;
                         currentDamageAmount = DamageTiers.MEDIUM;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         graphics.color = damagedColor_light;
                         currentDamageAmount = DamageTiers.LIGHT;
                         yield return new WaitForSeconds(healTime);
 
+                        GameManager.Instance.ParticleEffects.PlayParticles("friendHeal", transform.position, Vector3.up);
                         currentDamageAmount = DamageTiers.NONE;
                         graphics.color = Color.white;
                         break;
