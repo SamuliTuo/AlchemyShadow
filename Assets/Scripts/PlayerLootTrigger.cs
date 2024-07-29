@@ -6,10 +6,10 @@ public class PlayerLootTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("loot trigger hit something");
+        //print("loot trigger hit something");
         if (collision.CompareTag("Loot"))
         {
-            print("loot trigger hit loot");
+            //print("loot trigger hit loot");
             var script = collision.GetComponent<ExperienceInstance>();
             if (script.looted == false)
             {

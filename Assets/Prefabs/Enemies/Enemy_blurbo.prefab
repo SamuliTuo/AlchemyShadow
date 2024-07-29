@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0.3, y: 1.5}
-  moveSpeed: 1
+  moveSpeed: 0.8
   acceleration: 1
+  maxHp: 12
 --- !u!58 &8509049042707181731
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,7 +167,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ae018709f08060d42883df5a5ca8dfee, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
