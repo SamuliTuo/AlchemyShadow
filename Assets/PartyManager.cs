@@ -29,6 +29,11 @@ public class PartyManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.paused)
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             flagTurnOffT = flagTurnOffCooldown;
