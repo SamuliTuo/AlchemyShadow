@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     {
         GameLoop.UpdateGame();
     }
+    private void FixedUpdate()
+    {
+        FriendSpawner.TrackUnfreedFriends();
+    }
 
     // Helper methods
     public Vector3 GetRandomPosAtScreenEdge()

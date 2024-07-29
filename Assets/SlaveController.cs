@@ -159,6 +159,7 @@ public class SlaveController : MonoBehaviour
 
     public void SetFree()
     {
+        GameManager.Instance.FriendSpawner.FriendWasFreed(gameObject);
         isFree = true;
         helpSign.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Friend");
