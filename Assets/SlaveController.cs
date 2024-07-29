@@ -11,6 +11,7 @@ public enum SlaveTypes
 
     NULL,
 }
+public enum SlaveTier { S, SS, SSS, }
 
 public class SlaveController : MonoBehaviour
 {

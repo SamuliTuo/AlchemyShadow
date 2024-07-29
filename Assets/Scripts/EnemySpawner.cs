@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<GameObject> enemies = new List<GameObject>();
+    //public List<GameObject> enemies = new List<GameObject>();
 
-    public float enemySpawnRate = 0.5f;
+    //public float enemySpawnRate = 0.5f;
 
 
     //private void Start()

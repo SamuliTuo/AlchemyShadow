@@ -24633,22 +24633,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnEvents:
-  - start_minutesAndSeconds: {x: 0, y: 3}
-    end_minutesAndSeconds: {x: 0, y: 10}
+  - start_minutesAndSeconds: {x: 0, y: 7}
+    end_minutesAndSeconds: {x: 0, y: 9}
     spawnThis: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    spawnInterval: 1
+    spawnInterval: 0.3
     startTimeInSeconds: 0
     duration: 0
-  - start_minutesAndSeconds: {x: 0, y: 13}
-    end_minutesAndSeconds: {x: 0, y: 18}
+  - start_minutesAndSeconds: {x: 0, y: 30}
+    end_minutesAndSeconds: {x: 0, y: 31}
     spawnThis: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    spawnInterval: 0.2
+    spawnInterval: 0.05
     startTimeInSeconds: 0
     duration: 0
-  - start_minutesAndSeconds: {x: 0, y: 15}
-    end_minutesAndSeconds: {x: 0, y: 30}
+  - start_minutesAndSeconds: {x: 0, y: 30}
+    end_minutesAndSeconds: {x: 10, y: 0}
     spawnThis: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    spawnInterval: 1
+    spawnInterval: 3
     startTimeInSeconds: 0
     duration: 0
   - start_minutesAndSeconds: {x: 0, y: 35}
@@ -24670,23 +24670,15 @@ MonoBehaviour:
     startTimeInSeconds: 0
     duration: 0
   friendSpawnEvents:
-  - {x: 0, y: 1}
-  - {x: 0, y: 10}
-  - {x: 0, y: 10}
-  - {x: 0, y: 10}
+  - {x: 0, y: 3}
+  - {x: 0, y: 4}
+  - {x: 0, y: 5}
   - {x: 0, y: 15}
-  - {x: 0, y: 20}
-  - {x: 0, y: 25}
+  - {x: 0, y: 16}
+  - {x: 0, y: 17}
   - {x: 0, y: 30}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 1}
-  - {x: 0, y: 1}
+  - {x: 0, y: 31}
+  - {x: 0, y: 32}
   gameTime: 0
   friendIntervalTimer: 0
 --- !u!1 &1516617499
@@ -30011,11 +30003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b2e6a981a0b54b83d0735644a26a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-  - {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-  - {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-  enemySpawnRate: 10000
 --- !u!1 &1627178753
 GameObject:
   m_ObjectHideFlags: 0

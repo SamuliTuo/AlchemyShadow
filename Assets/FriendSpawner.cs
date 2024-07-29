@@ -16,11 +16,14 @@ public class FriendSpawner : MonoBehaviour
 
     private Transform player;
     private Camera cam;
+    private Vector3 edgeLocatorsIdlePositionOffset = Vector3.left * 100f;
+    private Transform leftBar;
     
     private void Start()
     {
         player = GameObject.Find("Player").transform;
         cam = Camera.main;
+        leftBar = cam.GetComponent<CameraController>().leftBar;
     }
 
 
@@ -73,7 +76,6 @@ public class FriendSpawner : MonoBehaviour
             }
         }
         unfreedFriends.Remove(friend);
-
     }
 
 
@@ -96,14 +98,8 @@ public class FriendSpawner : MonoBehaviour
 
 
 
-
-
-
-
-
-
+    // Tracking
     public List<GameObject> indicators = new List<GameObject>();
-
     public void TrackUnfreedFriends()
     {
         Vector3 mid = cam.ScreenToWorldPoint(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
@@ -117,14 +113,10 @@ public class FriendSpawner : MonoBehaviour
             if (hit.collider != null)
             {
                 f.Value.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
-                f.Value.SetActive(true);
-                
-                indicators[Random.Range(0, indicators.Count)].transform.position = new Vector3(hit.point.x, hit.point.y, 0);
-                print(hit.collider.name);
             }
             else
             {
-                f.Value.SetActive(false);
+                f.Value.transform.position = leftBar.position + edgeLocatorsIdlePositionOffset;
             }
         }
     }
@@ -133,8 +125,10 @@ public class FriendSpawner : MonoBehaviour
     {
         foreach (var f in indicators)
         {
-            if (!f.activeSelf)
+            if (f.activeSelf == false)
             {
+                f.SetActive(true);
+                f.transform.position = leftBar.position + edgeLocatorsIdlePositionOffset;
                 return f;
             }
         }

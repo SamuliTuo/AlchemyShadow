@@ -18,7 +18,7 @@ public class GameLoop : MonoBehaviour
         friendIntervalTimer = GameManager.Instance.FriendSpawner.friendSpawnRate - 0.5f;
         foreach (SpawnerEvent e in spawnEvents)
         {
-            e.startTimeInSeconds = e.start_minutesAndSeconds.x * 6 + e.start_minutesAndSeconds.y;
+            e.startTimeInSeconds = e.start_minutesAndSeconds.x * 60 + e.start_minutesAndSeconds.y;
             e.duration = e.end_minutesAndSeconds.x * 60 + e.end_minutesAndSeconds.y - e.startTimeInSeconds;
         }
         friendSpawnTimes = new List<int>();
@@ -36,6 +36,7 @@ public class GameLoop : MonoBehaviour
         {
             if (gameTime >= spawnEvents[i].startTimeInSeconds)
             {
+                print("STARTING SPAWNER!!!" + spawnEvents[i].spawnThis.name);
                 StartCoroutine(SpawnerRunning(spawnEvents[i]));
                 spawnEvents.RemoveAt(i);
             }

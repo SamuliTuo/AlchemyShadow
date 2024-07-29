@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: -8212968548458250897}
   - component: {fileID: 5479642267838955896}
   - component: {fileID: 5479642267838955903}
+  - component: {fileID: 7191696028825414169}
   m_Layer: 8
   m_Name: Slave_02_S
   m_TagString: Friend
@@ -228,7 +229,7 @@ MonoBehaviour:
   stopRange: 0.1
   helpSign: {fileID: 1638287722}
   slaveType: 6
-  randomVectorStrength: 1.2
+  randomVectorStrength: 0.8
   maxSizeWhenSaved: 2.67
   freedTweenSpeed1: 18
   freedTweenSpeed2: 0.6
@@ -315,6 +316,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7191696028825414169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479642267838955899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f61fd14dd6871949a9c47dc8fc76daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8760830210813284749
 GameObject:
   m_ObjectHideFlags: 0
