@@ -61,7 +61,6 @@ public class GameLoop : MonoBehaviour
         {
             if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
             {
-                print("STARTING SPAWNER!!!" + enemySpawnEvents[i].prefab.name);
                 StartCoroutine(SpawnerRunning(enemySpawnEvents[i]));
                 enemySpawnEvents.RemoveAt(i);
             }

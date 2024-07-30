@@ -15,8 +15,7 @@ public class RingTween : MonoBehaviour
 
     public void AddRingRange(float radiusIncrease)
     {
-        print("adding range " + radiusIncrease);
-        startScale *= radiusIncrease;// new Vector3(startScale.x + radiusIncrease, startScale.y + radiusIncrease, 1);
+        startScale = new Vector3(startScale.x + radiusIncrease, startScale.y + radiusIncrease, 1);
         transform.localScale = startScale;
     }
 
@@ -24,7 +23,6 @@ public class RingTween : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         startScale = transform.localScale;
-        print("startscale " + startScale);
     }
 
     protected void Update()

@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public bool playerIsAlive = true;
     public void PlayerDied()
     {
+        print("player died");
         playerIsAlive = false;
         //open end game popup
         //GameLoop.PlayerDied();
