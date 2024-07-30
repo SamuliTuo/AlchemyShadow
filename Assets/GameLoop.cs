@@ -18,9 +18,16 @@ public class GameLoop : MonoBehaviour
 
     List<int> friendSpawnTimes = new List<int>();
 
+    public GameObject timerPlanet;
+    public GameObject timerSun;
+    public GameObject timerEclipse;
+    Vector3 timerPlanetStartPos;
+
+
 
     private void Start()
     {
+        timerPlanetStartPos = timerPlanet.transform.position;
         friendIntervalTimer = GameManager.Instance.FriendSpawner.friendSpawnRate - 0.5f;
         friendSpawnTimes = new List<int>();
         foreach (SpawnerEvent e in enemySpawnEvents)
@@ -90,14 +97,15 @@ public class GameLoop : MonoBehaviour
 
 
     // Sun timer
-    public GameObject timerPlanet;
-    public GameObject timerSun;
-    Vector3 timerPlanetStartPos;
-    Vector3 timerSunPos;
     void UpdateGameTimer()
     {
         float perc = gameTime / 900;
-        Vector3.Lerp(timerPlanetStartPos, timerSunPos, perc);
+        timerPlanet.transform.position = Vector3.Lerp(timerPlanetStartPos, timerSun.transform.position, perc);
+    }
+
+    void BossDoneAnimateSolsticeAway()
+    {
+        // siirrä jollain nopeella tweenillä auringonpimennys pois kun bossi on voitettu ennen loppuscreeniä.
     }
 
 
