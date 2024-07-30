@@ -106,7 +106,7 @@ public class GameLoop : MonoBehaviour
     private bossPhases phase = bossPhases.NONE;
     float bossT = 0;
     public float bossSpawnTime = 2;
-    public GameObject activeBoss;
+    public BossController activeBoss;
 
     void UpdateBossFight()
     {
@@ -122,13 +122,15 @@ public class GameLoop : MonoBehaviour
             bossT += Time.deltaTime;
             if (bossT >= bossSpawnTime)
             {
-                activeBoss = Instantiate(bossPrefab, bossSpawnZone.position, Quaternion.identity);
+                activeBoss = Instantiate(bossPrefab, bossSpawnZone.position, Quaternion.identity).GetComponent<BossController>();
+                activeBoss.InitBoss();
                 phase = bossPhases.PHASE1;
                 bossT = 0;
             }
         }
         else if (phase == bossPhases.PHASE1)
         {
+            activeBoss.UpdatePhaseOne();
             // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
         }
         else if (phase == bossPhases.PHASE2)
@@ -143,7 +145,6 @@ public class GameLoop : MonoBehaviour
         {
             // aktivoi ending jeee!
         }
-
         
 
         
