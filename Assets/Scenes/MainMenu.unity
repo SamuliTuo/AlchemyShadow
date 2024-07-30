@@ -1698,14 +1698,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   silverScreen: {fileID: 437137295}
   blackScreenMaterial: {fileID: 2100000, guid: 61a351956dc489449859f63a93b1896f, type: 2}
-  firstBlackScreenDuration: 1.2
+  firstBlackScreenDuration: 2.2
   images:
   - {fileID: 2100000, guid: a78ab4100b86de94aa1173862ba8dffb, type: 2}
   - {fileID: 2100000, guid: 7410a18c4c89e8448b85548c1ea367de, type: 2}
   - {fileID: 2100000, guid: daa2060653c4ef4479422b86771bf8a9, type: 2}
   - {fileID: 2100000, guid: d35f2447cab258d4497a6483e18b9451, type: 2}
   pictureDurations:
-  - 5.9
+  - 6.9
   - 7
   - 9
   afterPictureDarkTime:
