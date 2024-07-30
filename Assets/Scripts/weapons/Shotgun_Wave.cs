@@ -17,7 +17,7 @@ public class Shotgun_Wave : Weapon
         GameObject bullet) : base(weaponCooldownSpeed, shootInterval, bulletSpeed, bulletLifetime, bullet)
     { }
 
-    public override void Shoot(float damage, Transform barrelEnd = null)
+    public override void Shoot(float damage, Transform barrelEnd = null, int penetrations = 0)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
@@ -30,8 +30,8 @@ public class Shotgun_Wave : Weapon
                 dir.z = 0;
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
-                var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+                var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
             }
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
@@ -44,8 +44,8 @@ public class Shotgun_Wave : Weapon
                 dir.z = 0;
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
-                var clone = Instantiate(bullet, transform.position, Quaternion.identity);
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+                var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
             }
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();

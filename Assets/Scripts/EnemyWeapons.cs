@@ -80,14 +80,14 @@ public class EnemyWeapons : MonoBehaviour
         if (barrelEnd != null)
         {
             var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, BulletTypes.BASIC, false, false, true);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
         else
         {
             var clone = Instantiate(bullet_basic, transform.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, BulletTypes.BASIC, false, false, true);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
             //var control = GetComponent<EnemyController>();
             //control.StopAllCoroutines();
             //StartCoroutine(control.ShootTween());

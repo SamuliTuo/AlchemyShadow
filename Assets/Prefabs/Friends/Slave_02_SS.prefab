@@ -167,6 +167,7 @@ MonoBehaviour:
   gunArm: {fileID: 0}
   weapons:
   - {fileID: -4793151025889763896}
+  damage: 1
   weaponsCooldownSpeedMultiplier: 1
   basicWeaponInterval: 3
   basicWeaponBulletSpeed: 8
@@ -188,7 +189,7 @@ MonoBehaviour:
   shootInterval: 6
   bulletSpeed: 10
   bulletLifetime: 3
-  bullet: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
+  bullet: {fileID: 4253051396830361463, guid: d51e301fc2fd1984483719c77694f33d, type: 3}
   isShooting: 0
   burstShotCount: 11
   burstShotInterval: 0.15

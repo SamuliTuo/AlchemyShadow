@@ -21,14 +21,15 @@ public class BulletController : MonoBehaviour
     bool negativeWave;
     Vector3 startPos;
     bool isEnemyProjectile = false;
+    int penetrations = 0;
 
-
-    public void Init(float damage, Vector3 dir, float speed, float lifeTime, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false, bool thisIsEnemyProjectile = false)
+    public void Init(float damage, Vector3 dir, float speed, float lifeTime, int penetrations, BulletTypes type = BulletTypes.BASIC, bool goesThrough = false, bool negativeWave = false, bool thisIsEnemyProjectile = false)
     {
         this.damage = damage;
         this.dir = dir;
         this.speed = speed;
         this.lifeTime = lifeTime;
+        this.penetrations = penetrations;
         this.type = type;
         this.goesThrough = goesThrough;
         this.negativeWave = negativeWave;
@@ -73,6 +74,7 @@ public class BulletController : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
+            GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             Destroy(gameObject);
             return;
         }
@@ -87,6 +89,11 @@ public class BulletController : MonoBehaviour
                 {
                     return;
                 }
+                else if (penetrations >= 0)
+                {
+                    penetrations--;
+                    return;
+                }
                 Destroy(gameObject);
             }
             return;
@@ -99,6 +106,11 @@ public class BulletController : MonoBehaviour
             GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             if (goesThrough)
             {
+                return;
+            }
+            else if (penetrations >= 0)
+            {
+                penetrations--;
                 return;
             }
             Destroy(gameObject);

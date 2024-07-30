@@ -274,6 +274,7 @@ MonoBehaviour:
   gunArm: {fileID: 0}
   weapons:
   - {fileID: -6891514262962591474}
+  damage: 1
   weaponsCooldownSpeedMultiplier: 1
   basicWeaponInterval: 3
   basicWeaponBulletSpeed: 8
@@ -295,7 +296,7 @@ MonoBehaviour:
   shootInterval: 3
   bulletSpeed: 27
   bulletLifetime: 2
-  bullet: {fileID: 4253051396830361463, guid: 809384deab5ea214591e2f5e8c59f44d, type: 3}
+  bullet: {fileID: 4253051396830361463, guid: ea52f55242222e148a0130629c9a5d4f, type: 3}
   isShooting: 0
   bulletCount: 1
   shotSpreadAngle: 360

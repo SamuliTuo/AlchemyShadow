@@ -19,9 +19,11 @@ public class SalmarinMarjapommit : Weapon
         GameObject bullet) : base(weaponCooldownSpeed, shootInterval, bulletSpeed, bulletLifetime, bullet)
     { }
     float damage;
-    public override void Shoot(float damage, Transform barrelEnd = null)
+    int penetrations;
+    public override void Shoot(float damage, Transform barrelEnd = null, int penetrations = 0)
     {
         this.damage = damage;
+        this.penetrations = penetrations;
         StartCoroutine(Burst(barrelEnd));
     }
 
@@ -48,8 +50,8 @@ public class SalmarinMarjapommit : Weapon
                 dir.z = 0;
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
-                var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+                var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
             }
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
@@ -62,8 +64,8 @@ public class SalmarinMarjapommit : Weapon
                 dir.z = 0;
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
-                var clone = Instantiate(bullet, transform.position, Quaternion.identity);
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+                var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
             }
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();

@@ -1711,8 +1711,8 @@ MonoBehaviour:
   afterPictureDarkTime:
   - 1.07
   - 1
-  - 3
-  cutSceneTimerBeforeSkip: 1
+  - 1
+  cutSceneTimerBeforeSkip: 0.3
   flashDuration: 0.05
   secondPic1stFlashPerc: 0.2
   secondPic2ndFlashPerc: 0.37
