@@ -38,7 +38,7 @@ public class SlaveHPController : MonoBehaviour
         hitFlashMaterial = GameManager.Instance.hitFlashMaterial;
     }
 
-    public void TookDamage()
+    public void TookDamage(float damage = 1)
     {
         GameManager.Instance.ParticleEffects.PlayParticles("friendDamaged", transform.position, Vector3.up);
         if (currentDamageAmount == DamageTiers.HEAVY)

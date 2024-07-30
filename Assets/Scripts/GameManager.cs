@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public AudioManager AudioManager { get; private set; }
     public ParticleEffects ParticleEffects { get; private set; }
     public GameLoop GameLoop { get; private set; }
+    public PauseMenu PauseManager { get; private set; }
+    public RingTween RingTween { get; private set; }
 
     [HideInInspector] public Material hitFlashMaterial;
     public float enemyHitFlashTime;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
         AudioManager = GetComponentInChildren<AudioManager>();
         ParticleEffects = GetComponentInChildren<ParticleEffects>();
         GameLoop = GetComponent<GameLoop>();
+        PauseManager = GetComponentInChildren<PauseMenu>();
+        RingTween = GetComponentInChildren<RingTween>();
         hitFlashMaterial = Resources.Load("hitFlashMaterial") as Material;
     }
 
@@ -63,6 +67,14 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         paused = false;
+    }
+
+    public bool playerIsAlive = true;
+    public void PlayerDied()
+    {
+        playerIsAlive = false;
+        //open end game popup
+        //GameLoop.PlayerDied();
     }
 
 

@@ -63,12 +63,16 @@ public class EnemySpecialAttack : MonoBehaviour
         doingSpecial = false;
 
         // did we hit something?
-        Collider2D overlaps = Physics2D.OverlapCircle(transform.position, 10f);
-        if (overlaps.CompareTag("Player") || overlaps.CompareTag("Friend"))
+        Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, 4.5f);
+        
+        foreach (Collider2D col in overlaps)
         {
-            print("we hit " + overlaps.tag.ToString());
-            overlaps.SendMessage("GotHit");
+            if (col.CompareTag("Player") || col.CompareTag("Friend"))
+            {
+                col.SendMessage("GotHit", specialDamage);
+            }
         }
+        
 
         yield return new WaitForSeconds(specialCooldown);
 

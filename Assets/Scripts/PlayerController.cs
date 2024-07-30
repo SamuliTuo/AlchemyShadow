@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameManager.Instance.paused && Input.GetKey(KeyCode.Alpha0))
         {
-            print("hey whos hacking!?!");
             AddExperience();
         }
 
@@ -116,16 +115,17 @@ public class PlayerController : MonoBehaviour
         invuln = false;
     }
 
-    public void GotHit()
+    public void GotHit(float damage = 1)
     {
         if (invuln)
         {
             return;
         }
-        hp--;
+        hp -= damage;
         hpBar.fillAmount = Mathf.Min(hp / maxHp, 1);
         if (hp <= 0)
         {
+            GameManager.Instance.PlayerDied();
             Destroy(gameObject);
             return;
         }
@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour
         }
         if (p.flagArea > 0)
         {
-            flagArea.localScale = new(flagArea.localScale.x + p.flagArea, flagArea.localScale.y + p.flagArea, 1);
+            GameManager.Instance.PartyManager.AddFlagRange(p.flagArea);
         }
         if (p.additionalBulletPenetrations > 0)
         {
@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
 
     private float expRate = 1;
     public CircleCollider2D lootTrigger;
-    public Transform flagArea;
+    public RingTween flagArea;
 
 }
 

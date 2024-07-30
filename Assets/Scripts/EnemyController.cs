@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
             return;
         }
 
-        if (special != null)
+        if (special != null && player != null)
         {
             if (special.doingSpecial)
             {
@@ -125,7 +125,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Friend"))
         {
-            collision.gameObject.SendMessage("GotHit");
+            collision.gameObject.SendMessage("GotHit", 1);
         }
     }
 }

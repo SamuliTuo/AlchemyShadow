@@ -24,7 +24,7 @@ public class GameLoop : MonoBehaviour
     Vector3 timerPlanetStartPos;
 
 
-
+    
     private void Start()
     {
         timerPlanetStartPos = timerPlanet.transform.position;
@@ -33,7 +33,6 @@ public class GameLoop : MonoBehaviour
         foreach (SpawnerEvent e in enemySpawnEvents)
         {
             e.startTimeInSeconds = e.start_minutesAndSeconds.x * 60 + e.start_minutesAndSeconds.y;
-            print(e.startTimeInSeconds);
         }
         foreach (Vector2Int time in friendSpawnEvents)
         {

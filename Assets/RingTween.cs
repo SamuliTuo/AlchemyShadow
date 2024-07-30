@@ -13,6 +13,13 @@ public class RingTween : MonoBehaviour
 
     public SpriteRenderer rend;
 
+    public void AddRingRange(float radiusIncrease)
+    {
+        print("adding range " + radiusIncrease);
+        startScale *= radiusIncrease;// new Vector3(startScale.x + radiusIncrease, startScale.y + radiusIncrease, 1);
+        transform.localScale = startScale;
+    }
+
     protected void Awake()
     {
         rend = GetComponent<SpriteRenderer>();

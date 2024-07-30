@@ -132,7 +132,7 @@ public class SlaveController : MonoBehaviour
         {
             return;
         }
-        //hp.TookDamage(damage);
+        hp.TookDamage(damage);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

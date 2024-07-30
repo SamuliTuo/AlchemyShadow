@@ -258,8 +258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canDoSpecial: 1
   doingSpecial: 0
-  specialRangeSquared: 10
-  specialChargeDuration: 1.5
+  specialRangeSquared: 13
+  specialChargeDuration: 1.86
   specialCooldown: 3
   specialDamage: 3
   outerRing: {fileID: 8035378979119054853}
@@ -318,7 +318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8870499197777978231
 Transform:
   m_ObjectHideFlags: 0

@@ -56,6 +56,14 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    public void AddFlagRange(float amount)
+    {
+        flagTurnOffT = flagTurnOffCooldown;
+        partyFollowObject.gameObject.SetActive(true);
+        followTheObject = true;
+        partyFollowObject.GetComponentInChildren<RingTween>().AddRingRange(amount);
+    }
+
     public void PlayerIsInFlagRange()
     {
         flagTurnOffT = flagTurnOffCooldown;
