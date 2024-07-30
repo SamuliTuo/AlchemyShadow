@@ -98,17 +98,6 @@ public class BossController : MonoBehaviour
 
 
 
-    // ACTIONS
-    IEnumerator ShootPlayer(int shotcount, float shotInterval)
-    {
-        for (int i = 0; i < shotcount; i++)
-        {
-            // shoot
-            yield return new WaitForSeconds(shotInterval);
-        }
-    }
-
-
     // MOVE ACTIONS
     IEnumerator FollowPlayer(float speed, float duration)
     {
@@ -116,6 +105,7 @@ public class BossController : MonoBehaviour
         currentMoveSpeed = speed;
         while (t < duration)
         {
+            print("follooowing");
             if (player != null)
             {
                 moveVector = (player.position - transform.position).normalized;
@@ -128,6 +118,7 @@ public class BossController : MonoBehaviour
     {
         for (int i = 0; i < dashes; i++)
         {
+            print("wandering");
             moveVector = Random.insideUnitCircle.normalized;
             currentMoveSpeed = speed;
             yield return new WaitForSeconds(changeDirectionInterval);
@@ -135,6 +126,7 @@ public class BossController : MonoBehaviour
     }
     IEnumerator Stop(float duration)
     {
+        print("stoppin");
         moveVector = Vector3.zero;
         yield return new WaitForSeconds(duration);
     }

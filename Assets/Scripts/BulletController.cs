@@ -84,7 +84,7 @@ public class BulletController : MonoBehaviour
         {
             if (collision.CompareTag("Player") || collision.CompareTag("Friend"))
             {
-                collision.gameObject.SendMessage("GotHit");
+                collision.gameObject.SendMessage("GotHit", 1);
                 if (goesThrough)
                 {
                     return;
@@ -102,7 +102,16 @@ public class BulletController : MonoBehaviour
         // player team projectiles
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyController>().GotHit(damage);
+            var control = collision.GetComponent<EnemyController>();
+            if (control != null)
+            {
+                control.GotHit(damage);
+            }
+            else
+            {
+                collision.GetComponent<BossController>().GotHit(damage);
+            }
+
             GameManager.Instance.ParticleEffects.PlayParticles("shotHit", transform.position, transform.forward);
             if (goesThrough)
             {

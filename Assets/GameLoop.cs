@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
+    public bool BossTestRun = false;
     public Vector2 startTime = Vector2.zero;
     public GameObject bossPrefab;
     public Transform bossSpawnZone;
@@ -42,19 +43,24 @@ public class GameLoop : MonoBehaviour
         }
 
         SetTestStartTime();
+        setupDone = true;
     }
-
+    bool setupDone = false;
 
     public void UpdateGame()
     {
+        if (setupDone == false)
+        {
+            return;
+        }
         if (bossFight)
         {
             UpdateBossFight();
             return;
         }
 
-        UpdateGameTimer();
 
+        UpdateGameTimer();
         if (startingTestFriends > 0)
         {
             for (int i = 0; i < startingTestFriends; i++)
@@ -65,12 +71,16 @@ public class GameLoop : MonoBehaviour
         }
 
         // Start enemy spawners
-        for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)
+        if (BossTestRun == false)
         {
-            if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
+            for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)
             {
-                StartCoroutine(SpawnerRunning(enemySpawnEvents[i]));
-                enemySpawnEvents.RemoveAt(i);
+                if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
+                {
+                    print("started spawner");
+                    StartCoroutine(SpawnerRunning(enemySpawnEvents[i]));
+                    enemySpawnEvents.RemoveAt(i);
+                }
             }
         }
 
@@ -110,9 +120,9 @@ public class GameLoop : MonoBehaviour
 
     void UpdateBossFight()
     {
+        //spawn the boss -phase
         if (phase == bossPhases.NONE)
         {
-            //spawn the boss -phase
             bossSpawnZone.gameObject.SetActive(true);
             phase = bossPhases.SPAWNING;
             bossT = 0;
@@ -120,14 +130,18 @@ public class GameLoop : MonoBehaviour
         else if (phase == bossPhases.SPAWNING)
         {
             bossT += Time.deltaTime;
+            print("bosst" + bossT);
             if (bossT >= bossSpawnTime)
             {
+                print("boss activate");
                 activeBoss = Instantiate(bossPrefab, bossSpawnZone.position, Quaternion.identity).GetComponent<BossController>();
                 activeBoss.InitBoss();
                 phase = bossPhases.PHASE1;
                 bossT = 0;
             }
         }
+
+        // fight phase!
         else if (phase == bossPhases.PHASE1)
         {
             activeBoss.UpdatePhaseOne();
