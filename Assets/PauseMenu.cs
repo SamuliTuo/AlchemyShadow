@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
+    public GameObject plrDiedPanel;
 
     private void Update()
     {
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         pausePanel.SetActive(false);
+        plrDiedPanel.SetActive(false);
     }
 
 
@@ -39,6 +41,11 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(false);
         GameManager.Instance.UnpauseTheGame();
+    }
+
+    public void OpenDiedPanel()
+    {
+        plrDiedPanel.SetActive(true);
     }
 
     // Pause buttons:
@@ -53,5 +60,11 @@ public class PauseMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(1);
     }
 }

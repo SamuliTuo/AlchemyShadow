@@ -29,7 +29,7 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        print("starting menu again");
+        Time.timeScale = 1;
         watchingCutscene = false;
         t = 0;
         silverScreen = GameObject.Find("Canvas/silverScreen");
@@ -59,6 +59,7 @@ public class MenuController : MonoBehaviour
 
     public void StartGame()
     {
+        print("pressed start game");
         StartCoroutine(Cutscene());
     }
     public void Settings()
@@ -91,9 +92,12 @@ public class MenuController : MonoBehaviour
         watchingCutscene = true;
         screen.gameObject.SetActive(true);
         screen.material = blackScreenMaterial;
+        
         yield return new WaitForSeconds(firstBlackScreenDuration);
-
+        
         // 1st pic
+        print("screen: " + screen.name);
+        print("images 0: " + images[0]);
         screen.material = images[0];
         float t2 = 0;
         while (t2 < pictureDurations[0])
