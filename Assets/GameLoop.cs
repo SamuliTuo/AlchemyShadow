@@ -51,10 +51,11 @@ public class GameLoop : MonoBehaviour
 
         if (startingTestFriends > 0)
         {
-            for (int i = 0; i < friendSpawnTimes.Count; i++)
+            for (int i = 0; i < startingTestFriends; i++)
             {
                 GameManager.Instance.FriendSpawner.SpawnAFriend();
             }
+            startingTestFriends = 0;
         }
         // Start spawners
         for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)

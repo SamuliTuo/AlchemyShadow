@@ -20,7 +20,7 @@ public class SalmarinMarjapommit : Weapon
     { }
     float damage;
     int penetrations;
-    public override void Shoot(float damage, Transform barrelEnd = null, int penetrations = 0)
+    public override void Shoot(float damage, Transform barrelEnd = null, int extraBullets = 0, int penetrations = 0)
     {
         this.damage = damage;
         this.penetrations = penetrations;
@@ -70,6 +70,7 @@ public class SalmarinMarjapommit : Weapon
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
             StartCoroutine(control.ShootTween());
+            control.PlayCorrectShootSound();
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         }
     }

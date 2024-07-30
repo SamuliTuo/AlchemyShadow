@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     public float acceleration = 1;
     public float maxHp = 1;
 
+    [Header("Add here special script if the enemy wants to use one")]
+    public EnemySpecialAttack special = null;
+
     Vector2 moveVector = Vector2.zero;
     float t = 0;
     Transform player;
@@ -40,6 +43,15 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (special != null)
+        {
+            if (special.doingSpecial)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
+        }
+
         rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * moveSpeed, acceleration);
 
         //flip sprite
@@ -59,6 +71,19 @@ public class EnemyController : MonoBehaviour
         {
             t -= Time.deltaTime;
             return;
+        }
+
+        if (special != null)
+        {
+            if (special.doingSpecial)
+            {
+                moveVector = Vector2.zero;
+                return;
+            }
+            if (special.ShouldWeDoSpecialNow(player))
+            {
+                special.InitSpecialAttack();
+            }
         }
 
         // Follow the player:

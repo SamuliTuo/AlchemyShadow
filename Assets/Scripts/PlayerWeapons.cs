@@ -24,9 +24,14 @@ public class PlayerWeapons : MonoBehaviour
     public bool isShooting = false;
 
     private int additionalBulletPenetrations = 0;
+    private int additionalBullets = 0;
     public void AddBulletPenetrations(int amount)
     {
         additionalBulletPenetrations += amount;
+    }
+    public void AddAdditionalBullets(int amount)
+    {
+        additionalBullets += amount;
     }
     private float t;
     private Camera cam;
@@ -61,11 +66,11 @@ public class PlayerWeapons : MonoBehaviour
             {
                 if (barrelEnd != null)
                 {
-                    weapons[0].Shoot(damage, barrelEnd, additionalBulletPenetrations);
+                    weapons[0].Shoot(damage, barrelEnd, additionalBullets, additionalBulletPenetrations);
                 }
                 else
                 {
-                    weapons[0].Shoot(damage, null, additionalBulletPenetrations);
+                    weapons[0].Shoot(damage, null, additionalBullets, additionalBulletPenetrations);
                 }
 
                 t = Mathf.Max(weapons[0].shootInterval / attackSpd, 0.05f);
@@ -93,7 +98,6 @@ public class PlayerWeapons : MonoBehaviour
 
 
 
-
 // Baseclass for  WEAPONS
 [System.Serializable]
 public class Weapon : MonoBehaviour
@@ -114,7 +118,7 @@ public class Weapon : MonoBehaviour
         this.bullet = bullet;
     }
 
-    public virtual void Shoot(float damage, Transform barrelEnd = null, int additionalBulletPenetrations = 0)
+    public virtual void Shoot(float damage, Transform barrelEnd = null, int additionalBullets = 0, int additionalBulletPenetrations = 0)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
@@ -127,6 +131,8 @@ public class Weapon : MonoBehaviour
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, additionalBulletPenetrations);
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
+
+
         }
         // whoever just shoots from stomach uses this:
         else
@@ -139,6 +145,7 @@ public class Weapon : MonoBehaviour
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
             StartCoroutine(control.ShootTween());
+            control.PlayCorrectShootSound();
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         }
     }

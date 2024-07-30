@@ -17,14 +17,14 @@ public class Shotgun_Wave : Weapon
         GameObject bullet) : base(weaponCooldownSpeed, shootInterval, bulletSpeed, bulletLifetime, bullet)
     { }
 
-    public override void Shoot(float damage, Transform barrelEnd = null, int penetrations = 0)
+    public override void Shoot(float damage, Transform barrelEnd = null, int extraBullets = 0, int penetrations = 0)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            for (int i = 0; i < bulletCount; i++)
+            for (int i = 0; i < bulletCount + extraBullets; i++)
             {
                 var dir = point - transform.position;
                 dir.z = 0;
@@ -33,12 +33,13 @@ public class Shotgun_Wave : Weapon
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
                 clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
             }
+            GameManager.Instance.AudioManager.PlayClip("player_shoot");
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
         else
         {
-            for (int i = 0;i < bulletCount;i++)
+            for (int i = 0;i < bulletCount + extraBullets; i++)
             {
                 var dir = point - transform.position;
                 dir.z = 0;
@@ -50,6 +51,7 @@ public class Shotgun_Wave : Weapon
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
             StartCoroutine(control.ShootTween());
+            control.PlayCorrectShootSound();
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         }
     }

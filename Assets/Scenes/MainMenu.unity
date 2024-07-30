@@ -1711,13 +1711,13 @@ MonoBehaviour:
   afterPictureDarkTime:
   - 1.07
   - 1
-  - 1
+  - 2.5
   cutSceneTimerBeforeSkip: 0.3
-  flashDuration: 0.05
-  secondPic1stFlashPerc: 0.2
-  secondPic2ndFlashPerc: 0.37
-  secondPic3rdFlashPerc: 0.55
-  secondPic4thFlashPerc: 0.57
+  flashDuration: 0.04
+  secondPic1stFlashPerc: 0.18
+  secondPic2ndFlashPerc: 0.45
+  secondPic3rdFlashPerc: 0.56
+  secondPic4thFlashPerc: 0.575
   did1stFlash: 0
   did2ndFlash: 0
   did3rdFlash: 0

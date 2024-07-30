@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInvulnerable: 0
   currentDamageAmount: 0
-  tier: 0
+  tier: 1
   hitFlashTime: 0.2
   invulnTime: 0.6
   healTime: 9

@@ -11,7 +11,7 @@ public class SlaveHPController : MonoBehaviour
 {
     [HideInInspector] public bool isInvulnerable = false;
     [HideInInspector] public DamageTiers currentDamageAmount = DamageTiers.NONE;
-    [HideInInspector] public SlaveTier tier = SlaveTier.S;
+    public SlaveTier tier = SlaveTier.S;
 
     public float hitFlashTime;
     public float invulnTime;

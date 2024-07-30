@@ -300,6 +300,29 @@ public class SlaveController : MonoBehaviour
             default: break;
         }
     }
+    public void PlayCorrectShootSound()
+    {
+        switch (slaveType)
+        {
+            case SlaveTypes.slave0_S: GameManager.Instance.AudioManager.PlayClip("ally1_shoot"); break;
+            case SlaveTypes.slave0_SS: GameManager.Instance.AudioManager.PlayClip("ally1_shoot"); break;
+            case SlaveTypes.slave0_SSS: GameManager.Instance.AudioManager.PlayClip("ally1_shoot"); break;
+            case SlaveTypes.slave1_S: GameManager.Instance.AudioManager.PlayClip("ally2_shoot"); break;
+            case SlaveTypes.slave1_SS: GameManager.Instance.AudioManager.PlayClip("ally2_shoot"); break;
+            case SlaveTypes.slave1_SSS: GameManager.Instance.AudioManager.PlayClip("ally2_shoot"); break;
+            case SlaveTypes.slave2_S: GameManager.Instance.AudioManager.PlayClip("ally0_shoot"); break;
+            case SlaveTypes.slave2_SS: GameManager.Instance.AudioManager.PlayClip("ally0_shoot"); break;
+            case SlaveTypes.slave2_SSS: GameManager.Instance.AudioManager.PlayClip("ally0_shoot"); break;
+            case SlaveTypes.slave3_S: GameManager.Instance.AudioManager.PlayClip("ally3_shoot"); break;
+            case SlaveTypes.slave3_SS: GameManager.Instance.AudioManager.PlayClip("ally3_shoot"); break;
+            case SlaveTypes.slave3_SSS: GameManager.Instance.AudioManager.PlayClip("ally3_shoot"); break;
+            case SlaveTypes.slave4_S: GameManager.Instance.AudioManager.PlayClip("ally4_shoot"); break;
+            case SlaveTypes.slave4_SS: GameManager.Instance.AudioManager.PlayClip("ally4_shoot"); break;
+            case SlaveTypes.slave4_SSS: GameManager.Instance.AudioManager.PlayClip("ally4_shoot"); break;
+
+            default: break;
+        }
+    }
 
 
     [Header("FreeTween")]

@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8509049042707181730}
   - component: {fileID: 8509049042707181729}
+  - component: {fileID: 2606049236005772076}
   - component: {fileID: 8509049042707181731}
   - component: {fileID: 8509049042707181732}
   m_Layer: 7
@@ -133,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 8509049042707181728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.79, y: -0.38206425, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1640205172106903740}
@@ -156,6 +157,25 @@ MonoBehaviour:
   moveSpeed: 1
   acceleration: 0.95
   maxHp: 30
+  special: {fileID: 2606049236005772076}
+--- !u!114 &2606049236005772076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509049042707181728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e7d474e8984d141b908e26b7a818d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDoSpecial: 1
+  doingSpecial: 0
+  specialRangeSquared: 5
+  specialChargeDuration: 3
+  specialCooldown: 3
+  specialDamage: 3
 --- !u!58 &8509049042707181731
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +191,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.045606554}
   serializedVersion: 2
-  m_Radius: 0.45439345
+  m_Radius: 0.5
 --- !u!50 &8509049042707181732
 Rigidbody2D:
   serializedVersion: 4
