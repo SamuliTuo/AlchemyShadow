@@ -3159,7 +3159,7 @@ PrefabInstance:
     - target: {fileID: 6753639025600555127, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
       propertyPath: spawnEvents.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
+      objectReference: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     - target: {fileID: 6753639025619678156, guid: a40a3b2f80be1db42ae7863089a82964, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

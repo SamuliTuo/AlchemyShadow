@@ -2,20 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public RectTransform silverScreen;
+    public GameObject silverScreen;
+    private Image screen;
     [Space(32)]
     [Header("PUT SAME NUMBER OF THINGS IN EACH PLS! \n\n" +
         "1st element of each list corresponds with 1st of each other \n" +
         "and so on.")]
     [Space(20)]
-    public List<Sprite> images = new List<Sprite>();
+    public Material blackScreenMaterial;
+    public float firstBlackScreenDuration = 1;
+    public List<Material> images = new List<Material>();
     public List<float> pictureDurations = new List<float>();
-    public List<float> pictureMoveSpeeds = new List<float>();
-    public List<Vector2> pictureMoveDirections = new List<Vector2>();
+    public List<float> afterPictureDarkTime = new List<float>();
+    //public List<float> pictureMoveSpeeds = new List<float>();
+    //public List<Vector2> pictureMoveDirections = new List<Vector2>();
+
+    bool watchingCutscene = false;
+    public float cutSceneTimerBeforeSkip = 1;
+    float t = 0;
+    private void Start()
+    {
+        screen = silverScreen.GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        if (watchingCutscene)
+        {
+            if (t < cutSceneTimerBeforeSkip)
+            {
+                print("slow down " + Time.time);
+                t += Time.deltaTime;
+                return;
+            }
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                print("go skip");
+                StopAllCoroutines();
+                ChangeToGameScene();
+            }
+        }
+    }
+
 
     public void StartGame()
     {
@@ -23,18 +55,31 @@ public class MenuController : MonoBehaviour
     }
     public void Settings()
     {
-
+        print("implemtnt settngs");
     }
     public void ExitGame()
     {
-
+        print("impelemnt exit gamepls!");
     }
 
     IEnumerator Cutscene()
     {
-        
-        yield return null;
-        silverScreen.GetComponent<Image>().sprite = images[0];
+        watchingCutscene = true;
+        screen.gameObject.SetActive(true);
+        screen.material = blackScreenMaterial;
+        yield return new WaitForSeconds(firstBlackScreenDuration);
+
+        for (int i = 0; i < images.Count; i++)
+        {
+            screen.material = images[i];
+            yield return new WaitForSeconds(pictureDurations[i]);
+            screen.material = blackScreenMaterial;
+            yield return new WaitForSeconds(afterPictureDarkTime[i]);
+        }
+
+        ChangeToGameScene();
+
+        //silverScreen.GetComponent<Image>().sprite = images[0];
         //leftBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.1f, Screen.height * 0.5f, cam.nearClipPlane));
         //rightBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.9f, Screen.height * 0.5f, cam.nearClipPlane));
         //topBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.5f, Screen.height * 0.9f, cam.nearClipPlane));
@@ -47,6 +92,11 @@ public class MenuController : MonoBehaviour
 
 
 
+    }
+
+    void ChangeToGameScene()
+    {
+        watchingCutscene = false;
         SceneManager.LoadScene(1);
     }
 }
