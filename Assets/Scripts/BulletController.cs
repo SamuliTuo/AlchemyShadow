@@ -108,7 +108,7 @@ public class BulletController : MonoBehaviour
             {
                 return;
             }
-            else if (penetrations >= 0)
+            else if (penetrations > 0)
             {
                 penetrations--;
                 return;
