@@ -23,6 +23,11 @@ public class PlayerWeapons : MonoBehaviour
     public GameObject bullet_basic;
     public bool isShooting = false;
 
+    private int additionalBulletPenetrations = 0;
+    public void AddBulletPenetrations(int amount)
+    {
+        additionalBulletPenetrations += amount;
+    }
     private float t;
     private Camera cam;
 
@@ -56,11 +61,11 @@ public class PlayerWeapons : MonoBehaviour
             {
                 if (barrelEnd != null)
                 {
-                    weapons[0].Shoot(damage, barrelEnd);
+                    weapons[0].Shoot(damage, barrelEnd, additionalBulletPenetrations);
                 }
                 else
                 {
-                    weapons[0].Shoot(damage);
+                    weapons[0].Shoot(damage, null, additionalBulletPenetrations);
                 }
 
                 t = Mathf.Max(weapons[0].shootInterval / attackSpd, 0.05f);
@@ -109,7 +114,7 @@ public class Weapon : MonoBehaviour
         this.bullet = bullet;
     }
 
-    public virtual void Shoot(float damage, Transform barrelEnd = null)
+    public virtual void Shoot(float damage, Transform barrelEnd = null, int additionalBulletPenetrations = 0)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
@@ -119,8 +124,8 @@ public class Weapon : MonoBehaviour
             var dir = point - transform.position;
             dir.z = 0;
             dir = dir.normalized;
-            var clone = Instantiate(bullet, barrelEnd.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+            var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, additionalBulletPenetrations);
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
@@ -129,8 +134,8 @@ public class Weapon : MonoBehaviour
             var dir = point - transform.position;
             dir.z = 0;
             dir = dir.normalized;
-            var clone = Instantiate(bullet, transform.position, Quaternion.identity);
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime);
+            var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, additionalBulletPenetrations);
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();
             StartCoroutine(control.ShootTween());

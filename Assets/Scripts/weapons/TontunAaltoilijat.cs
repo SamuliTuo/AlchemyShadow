@@ -16,7 +16,7 @@ public class TontunAaltoilijat : Weapon
         GameObject bullet) : base(weaponCooldownSpeed, shootInterval, bulletSpeed, bulletLifetime, bullet)
     { }
 
-    public override void Shoot(float damage, Transform barrelEnd = null)
+    public override void Shoot(float damage, Transform barrelEnd = null, int penetrations = 0)
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
 
@@ -27,11 +27,11 @@ public class TontunAaltoilijat : Weapon
             dir.z = 0;
             dir = dir.normalized;
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, BulletTypes.SINE_WAVE, true, false);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, false);
             if (shootDoubleWave)
             {
                 var clone2 = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-                clone2.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, BulletTypes.SINE_WAVE, true, true);
+                clone2.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, true);
             }
 
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
@@ -43,11 +43,11 @@ public class TontunAaltoilijat : Weapon
             dir.z = 0;
             dir = dir.normalized;
             var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
-            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, BulletTypes.SINE_WAVE, true, false);
+            clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, false);
             if (shootDoubleWave)
             {
                 var clone2 = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
-                clone2.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, BulletTypes.SINE_WAVE, true, true);
+                clone2.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, true);
             }
 
             var control = GetComponent<SlaveController>();

@@ -32,6 +32,8 @@ public class GameLoop : MonoBehaviour
     }
     public void UpdateGame()
     {
+        UpdateGameTimer();
+
         if (startingTestFriends > 0)
         {
             for (int i = 0; i < friendSpawnTimes.Count; i++)
@@ -63,6 +65,21 @@ public class GameLoop : MonoBehaviour
         // update time
         gameTime += Time.deltaTime;
     }
+
+
+    // Sun timer
+    public GameObject timerPlanet;
+    public GameObject timerSun;
+    Vector3 timerPlanetStartPos;
+    Vector3 timerSunPos;
+    void UpdateGameTimer()
+    {
+        float perc = gameTime / 900;
+        Vector3.Lerp(timerPlanetStartPos, timerSunPos, perc);
+    }
+
+
+
 
     IEnumerator SpawnerRunning(SpawnerEvent spawner)
     {

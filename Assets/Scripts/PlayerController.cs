@@ -241,6 +241,10 @@ public class PlayerController : MonoBehaviour
         {
             flagArea.localScale = new(flagArea.localScale.x + p.flagArea, flagArea.localScale.y + p.flagArea, 1);
         }
+        if (p.additionalBulletPenetrations > 0)
+        {
+            weapon.AddBulletPenetrations(p.additionalBulletPenetrations);
+        }
     }
 
     private float expRate = 1;
@@ -265,6 +269,7 @@ public class PowerUp
     public float hp = 0;
     public float expRate = 0;
     public float flagArea = 0;
+    public int additionalBulletPenetrations = 0;
 
     public PowerUp(
         string name, 
@@ -276,7 +281,8 @@ public class PowerUp
         float regen, 
         float hp, 
         float expRage, 
-        float flagArea)
+        float flagArea,
+        int additionalBulletPenetrations)
     {
         this.name = name;
         this.description = description;
@@ -288,5 +294,6 @@ public class PowerUp
         this.hp = hp;
         this.expRate = expRage;
         this.flagArea = flagArea;
+        this.additionalBulletPenetrations = additionalBulletPenetrations;
     }
 }
