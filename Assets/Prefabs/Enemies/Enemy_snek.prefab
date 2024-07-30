@@ -153,9 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0.3, y: 1.5}
-  moveSpeed: 1.2
+  moveSpeed: 1.1
   acceleration: 1
-  maxHp: 4
+  maxHp: 9
+  special: {fileID: 0}
 --- !u!58 &8509049042707181731
 CircleCollider2D:
   m_ObjectHideFlags: 0

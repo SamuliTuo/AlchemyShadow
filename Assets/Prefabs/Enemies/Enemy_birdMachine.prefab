@@ -156,7 +156,8 @@ MonoBehaviour:
   wanderDirChangeIntervalMinMax: {x: 0.3, y: 1.5}
   moveSpeed: 0.7
   acceleration: 0.95
-  maxHp: 16
+  maxHp: 75
+  special: {fileID: 0}
 --- !u!58 &8509049042707181731
 CircleCollider2D:
   m_ObjectHideFlags: 0

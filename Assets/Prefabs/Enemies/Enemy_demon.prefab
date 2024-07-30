@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderDirChangeIntervalMinMax: {x: 0.3, y: 1.5}
-  moveSpeed: 1.7
+  moveSpeed: 2
   acceleration: 0.95
-  maxHp: 30
+  maxHp: 300
   special: {fileID: 2606049236005772076}
 --- !u!114 &2606049236005772076
 MonoBehaviour:
