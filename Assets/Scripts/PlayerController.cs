@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float hpRegenTimer = 0;
+    private Material normalMaterial;
+    private Material hitFlashMat;
 
 
     void Awake()
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         weapon = GetComponent<PlayerWeapons>();
         weapon.StartShooting();
         graphics = GetComponentInChildren<SpriteRenderer>();
+        normalMaterial = graphics.material;
         maxHp = hp;
     }
 
@@ -121,6 +124,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        //StartCoroutine(HitFlash());
         hp -= damage;
         hpBar.fillAmount = Mathf.Min(hp / maxHp, 1);
         if (hp <= 0)
