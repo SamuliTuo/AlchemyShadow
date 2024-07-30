@@ -26952,9 +26952,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1948174724}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: invulnTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: lootTrigger
       value: 
       objectReference: {fileID: 264024478}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: hitFlashTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: hpRegenPercTic
       value: 0.03

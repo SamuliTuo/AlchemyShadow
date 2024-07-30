@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float hpRegenTimer = 0;
     private Material normalMaterial;
-    private Material hitFlashMat;
 
 
     void Awake()
@@ -41,6 +40,7 @@ public class PlayerController : MonoBehaviour
         normalMaterial = graphics.material;
         maxHp = hp;
     }
+
 
     void Update()
     {
@@ -118,13 +118,20 @@ public class PlayerController : MonoBehaviour
         invuln = false;
     }
 
+    Coroutine hitFlashRoutine = null;
     public void GotHit(float damage = 1)
     {
         if (invuln)
         {
             return;
         }
-        //StartCoroutine(HitFlash());
+        if (hitFlashRoutine != null)
+        {
+            StopCoroutine(hitFlashRoutine);
+        }
+        hitFlashRoutine = StartCoroutine(HitFlash());
+        GameManager.Instance.AudioManager.PlayClip("player_hurt");
+
         hp -= damage;
         hpBar.fillAmount = Mathf.Min(hp / maxHp, 1);
         if (hp <= 0)
@@ -135,6 +142,15 @@ public class PlayerController : MonoBehaviour
         }
         StartCoroutine(Invuln());
     }
+
+    public float hitFlashTime = 0.1f;
+    IEnumerator HitFlash()
+    {
+        graphics.material = GameManager.Instance.hitFlashMaterial;
+        yield return new WaitForSeconds(hitFlashTime);
+        graphics.material = normalMaterial;
+    }
+
 
     public void AddMaxHp(float addHp)
     {
@@ -254,7 +270,7 @@ public class PlayerController : MonoBehaviour
         }
         if (p.flagArea > 0)
         {
-            GameManager.Instance.PartyManager.AddFlagRange(p.flagArea);
+            GameManager.Instance.PartyManager.AddFlagRange(p.flagArea, transform.position);
         }
         if (p.additionalBulletPenetrations > 0)
         {
@@ -268,7 +284,6 @@ public class PlayerController : MonoBehaviour
 
     private float expRate = 1;
     public CircleCollider2D lootTrigger;
-    public RingTween flagArea;
 
 }
 

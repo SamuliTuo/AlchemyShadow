@@ -56,8 +56,9 @@ public class PartyManager : MonoBehaviour
         }
     }
 
-    public void AddFlagRange(float amount)
+    public void AddFlagRange(float amount, Vector3 pos)
     {
+        partyFollowObject.position = pos;
         flagTurnOffT = flagTurnOffCooldown;
         partyFollowObject.gameObject.SetActive(true);
         followTheObject = true;

@@ -6,7 +6,8 @@ using UnityEngine;
 public class GameLoop : MonoBehaviour
 {
     public Vector2 startTime = Vector2.zero;
-
+    public GameObject bossPrefab;
+    public Transform bossSpawnZone;
 
     public List<SpawnerEvent> enemySpawnEvents;
     [Space(20)]
@@ -22,7 +23,7 @@ public class GameLoop : MonoBehaviour
     public GameObject timerSun;
     public GameObject timerEclipse;
     Vector3 timerPlanetStartPos;
-
+    bool bossFight = false;
 
     
     private void Start()
@@ -46,6 +47,12 @@ public class GameLoop : MonoBehaviour
 
     public void UpdateGame()
     {
+        if (bossFight)
+        {
+            UpdateBossFight();
+            return;
+        }
+
         UpdateGameTimer();
 
         if (startingTestFriends > 0)
@@ -56,7 +63,8 @@ public class GameLoop : MonoBehaviour
             }
             startingTestFriends = 0;
         }
-        // Start spawners
+
+        // Start enemy spawners
         for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)
         {
             if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
@@ -75,11 +83,81 @@ public class GameLoop : MonoBehaviour
                 friendSpawnTimes.RemoveAt(i);
             }
         }
+
+
+        if (gameTime >= 900)
+        {
+            StartBossFight();
+            return;
+        }
+        
         
         // update time
         gameTime += Time.deltaTime;
     }
 
+
+    void StartBossFight()
+    {
+        bossFight = true;
+    }
+
+    enum bossPhases { NONE, SPAWNING, PHASE1, PHASE2, PHASE3};
+    private bossPhases phase = bossPhases.NONE;
+    float bossT = 0;
+    public float bossSpawnTime = 2;
+    public GameObject activeBoss;
+
+    void UpdateBossFight()
+    {
+        if (phase == bossPhases.NONE)
+        {
+            //spawn the boss -phase
+            bossSpawnZone.gameObject.SetActive(true);
+            phase = bossPhases.SPAWNING;
+            bossT = 0;
+        }
+        else if (phase == bossPhases.SPAWNING)
+        {
+            bossT += Time.deltaTime;
+            if (bossT >= bossSpawnTime)
+            {
+                activeBoss = Instantiate(bossPrefab, bossSpawnZone.position, Quaternion.identity);
+                phase = bossPhases.PHASE1;
+                bossT = 0;
+            }
+        }
+        else if (phase == bossPhases.PHASE1)
+        {
+            // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
+        }
+        else if (phase == bossPhases.PHASE2)
+        {
+            // 40% aktivoi vika phase
+        }
+        else if (phase == bossPhases.PHASE3)
+        {
+            // vika feissi oh nooooo
+        }
+        else
+        {
+            // aktivoi ending jeee!
+        }
+
+        
+
+        
+
+        // put active a red mark in the middle of map
+        // (activate boss-tracker for player)
+
+        // wait some seconds
+
+        // spawn the boss in middle of marker
+
+        // go to 1st phase of fight 
+        // ...
+    }
 
 
     void SetTestStartTime()
