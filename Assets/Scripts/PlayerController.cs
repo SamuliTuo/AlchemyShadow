@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.paused && Input.GetKey(KeyCode.Alpha0))
+        {
+            print("hey whos hacking!?!");
+            AddExperience();
+        }
+
+
         GatherInput();
 
         // hp regen
@@ -146,28 +153,33 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Loot"))
         {
-            exp += expRate;
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
-
-            // LEVEL UP ! :D
-            if (exp >= expRequiredForLvlUp)
-            {
-                exp -= expRequiredForLvlUp;
-                expRequiredForLvlUp *= 1.6f;
-                lvl++;
-                lvlNumber.text = lvl.ToString();
-
-                var options = GetRandomOptions();
-                PresentOptions(options);
-
-                GameManager.Instance.PausedTheGame();
-                Time.timeScale = 0;
-            }
-
-            //update bar
-            expBar.fillAmount = exp / expRequiredForLvlUp;
+            AddExperience();
         }
+    }
+
+    public void AddExperience()
+    {
+        exp += expRate;
+
+        // LEVEL UP ! :D
+        if (exp >= expRequiredForLvlUp)
+        {
+            exp -= expRequiredForLvlUp;
+            expRequiredForLvlUp *= 1.6f;
+            lvl++;
+            lvlNumber.text = lvl.ToString();
+
+            var options = GetRandomOptions();
+            PresentOptions(options);
+
+            GameManager.Instance.PausedTheGame();
+            Time.timeScale = 0;
+        }
+
+        //update bar
+        expBar.fillAmount = exp / expRequiredForLvlUp;
     }
 
 

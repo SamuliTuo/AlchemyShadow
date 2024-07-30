@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
-    public List<SpawnerEvent> spawnEvents;
+    public Vector2 startTime = Vector2.zero;
+
+
+    public List<SpawnerEvent> enemySpawnEvents;
+    [Space(20)]
+    public int startingTestFriends = 0;
     public List<Vector2Int> friendSpawnEvents;
 
     public float gameTime = 0;
@@ -13,13 +18,12 @@ public class GameLoop : MonoBehaviour
 
     List<int> friendSpawnTimes = new List<int>();
 
-    int startingTestFriends = 0;
 
     private void Start()
     {
         friendIntervalTimer = GameManager.Instance.FriendSpawner.friendSpawnRate - 0.5f;
         friendSpawnTimes = new List<int>();
-        foreach (SpawnerEvent e in spawnEvents)
+        foreach (SpawnerEvent e in enemySpawnEvents)
         {
             e.startTimeInSeconds = e.start_minutesAndSeconds.x * 60 + e.start_minutesAndSeconds.y;
             print(e.startTimeInSeconds);
@@ -29,7 +33,11 @@ public class GameLoop : MonoBehaviour
             int _t = time.x * 60 + time.y;
             friendSpawnTimes.Add(_t);
         }
+
+        SetTestStartTime();
     }
+
+
     public void UpdateGame()
     {
         UpdateGameTimer();
@@ -42,13 +50,13 @@ public class GameLoop : MonoBehaviour
             }
         }
         // Start spawners
-        for (int i = spawnEvents.Count - 1; i >= 0; i--)
+        for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)
         {
-            if (gameTime >= spawnEvents[i].startTimeInSeconds)
+            if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
             {
-                print("STARTING SPAWNER!!!" + spawnEvents[i].prefab.name);
-                StartCoroutine(SpawnerRunning(spawnEvents[i]));
-                spawnEvents.RemoveAt(i);
+                print("STARTING SPAWNER!!!" + enemySpawnEvents[i].prefab.name);
+                StartCoroutine(SpawnerRunning(enemySpawnEvents[i]));
+                enemySpawnEvents.RemoveAt(i);
             }
         }
 
@@ -64,6 +72,20 @@ public class GameLoop : MonoBehaviour
         
         // update time
         gameTime += Time.deltaTime;
+    }
+
+
+
+    void SetTestStartTime()
+    {
+        gameTime = startTime.x * 60 + startTime.y;
+        for (int i = 0; i < enemySpawnEvents.Count; i++)
+        {
+            if (enemySpawnEvents[i].startTimeInSeconds < gameTime)
+            {
+                enemySpawnEvents.RemoveAt(i);
+            }
+        }
     }
 
 
