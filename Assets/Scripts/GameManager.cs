@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float enemyHitFlashTime;
     public bool paused = false;
     public Transform player;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
