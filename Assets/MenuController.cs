@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,9 +25,13 @@ public class MenuController : MonoBehaviour
     bool watchingCutscene = false;
     public float cutSceneTimerBeforeSkip = 1;
     float t = 0;
+    AudioSource audiosource;
+
+
     private void Start()
     {
         screen = silverScreen.GetComponent<Image>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -62,8 +67,10 @@ public class MenuController : MonoBehaviour
         print("impelemnt exit gamepls!");
     }
 
+
     IEnumerator Cutscene()
     {
+        audiosource.Play();
         watchingCutscene = true;
         screen.gameObject.SetActive(true);
         screen.material = blackScreenMaterial;
@@ -72,7 +79,15 @@ public class MenuController : MonoBehaviour
         for (int i = 0; i < images.Count; i++)
         {
             screen.material = images[i];
-            yield return new WaitForSeconds(pictureDurations[i]);
+            float t2 = 0;
+            while (t2 < pictureDurations[i])
+            {
+                screen.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.25f, t2 / pictureDurations[i]);
+                t2 += Time.deltaTime;
+                yield return null;
+            }
+            
+            //yield return new WaitForSeconds(pictureDurations[i]);
             screen.material = blackScreenMaterial;
             yield return new WaitForSeconds(afterPictureDarkTime[i]);
         }
