@@ -83,20 +83,17 @@ public class GameLoop : MonoBehaviour
                     enemySpawnEvents.RemoveAt(i);
                 }
             }
-        }
 
-
-        // Spawn friends
-        for (int i = friendSpawnTimes.Count - 1; i >= 0; i--)
-        {
-            if (gameTime >= friendSpawnTimes[i])
+            // Spawn friends
+            for (int i = friendSpawnTimes.Count - 1; i >= 0; i--)
             {
-                GameManager.Instance.FriendSpawner.SpawnAFriend();
-                friendSpawnTimes.RemoveAt(i);
+                if (gameTime >= friendSpawnTimes[i])
+                {
+                    GameManager.Instance.FriendSpawner.SpawnAFriend();
+                    friendSpawnTimes.RemoveAt(i);
+                }
             }
         }
-
-
 
         if (gameTime >= 900)
         {
