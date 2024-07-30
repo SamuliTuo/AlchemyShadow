@@ -13,6 +13,9 @@ public class EnemySpecialAttack : MonoBehaviour
     public float specialCooldown = 3;
     public int specialDamage = 3;
 
+    public SpriteRenderer outerRing;
+    public SpriteRenderer innerRing;
+
 
     public bool ShouldWeDoSpecialNow(Transform player)
     {
@@ -29,9 +32,15 @@ public class EnemySpecialAttack : MonoBehaviour
         return false;
     }
 
+    Vector3 originalScale;
     public void InitSpecialAttack()
     {
         doingSpecial = true;
+
+        originalScale = innerRing.transform.localScale;
+        innerRing.transform.localScale = Vector3.one * 0.001f;
+        innerRing.gameObject.SetActive(true);
+        outerRing.gameObject.SetActive(true);
         StartCoroutine(SpecialAttack());
     }
 
@@ -39,23 +48,33 @@ public class EnemySpecialAttack : MonoBehaviour
     {
         // turn on rings
 
-        float t = 0;
+        float t = 0.1f;
         while (t < specialChargeDuration)
         {
             float perc = t / specialChargeDuration;
 
-            // update ring
+            innerRing.transform.localScale = Vector3.Lerp(Vector3.one * 0.001f, originalScale, perc);
 
             t += Time.deltaTime;
             yield return null;
         }
-
-        // turn off rings
-
+        outerRing.gameObject.SetActive(false);
+        innerRing.gameObject.SetActive(false);
         doingSpecial = false;
+
+        // did we hit something?
+        Collider2D overlaps = Physics2D.OverlapCircle(transform.position, 10f);
+        if (overlaps.CompareTag("Player") || overlaps.CompareTag("Friend"))
+        {
+            print("we hit " + overlaps.tag.ToString());
+            overlaps.SendMessage("GotHit");
+        }
 
         yield return new WaitForSeconds(specialCooldown);
 
+        
+
+        
         canDoSpecial = true;
     }
 

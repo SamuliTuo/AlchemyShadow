@@ -126,13 +126,13 @@ public class SlaveController : MonoBehaviour
         return;
     }
 
-    public void GotHit()
+    public void GotHit(float damage = 1)
     {
         if (!isFree || hp.isInvulnerable)
         {
             return;
         }
-        hp.TookDamage();
+        //hp.TookDamage(damage);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
