@@ -1698,20 +1698,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   silverScreen: {fileID: 437137295}
   blackScreenMaterial: {fileID: 2100000, guid: 61a351956dc489449859f63a93b1896f, type: 2}
-  firstBlackScreenDuration: 0.5
+  firstBlackScreenDuration: 1.2
   images:
   - {fileID: 2100000, guid: a78ab4100b86de94aa1173862ba8dffb, type: 2}
+  - {fileID: 2100000, guid: 7410a18c4c89e8448b85548c1ea367de, type: 2}
   - {fileID: 2100000, guid: daa2060653c4ef4479422b86771bf8a9, type: 2}
   - {fileID: 2100000, guid: d35f2447cab258d4497a6483e18b9451, type: 2}
   pictureDurations:
-  - 6
+  - 5.9
   - 7
-  - 5
+  - 9
   afterPictureDarkTime:
-  - 1.5
-  - 1.5
+  - 1.07
+  - 1
   - 3
   cutSceneTimerBeforeSkip: 1
+  flashDuration: 0.05
+  secondPic1stFlashPerc: 0.2
+  secondPic2ndFlashPerc: 0.37
+  secondPic3rdFlashPerc: 0.55
+  secondPic4thFlashPerc: 0.57
+  did1stFlash: 0
+  did2ndFlash: 0
+  did3rdFlash: 0
+  did4thFlash: 0
 --- !u!82 &1754906604
 AudioSource:
   m_ObjectHideFlags: 0

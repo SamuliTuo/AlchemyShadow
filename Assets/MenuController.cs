@@ -68,6 +68,20 @@ public class MenuController : MonoBehaviour
     }
 
 
+    public float flashDuration = 0.1f;
+
+    public float secondPic1stFlashPerc = 0.5f;
+    public float secondPic2ndFlashPerc = 0.7f;
+    public float secondPic3rdFlashPerc = 0.75f;
+    public float secondPic4thFlashPerc = 0.8f;
+    
+    public bool did1stFlash = false;
+    public bool did2ndFlash = false;
+    public bool did3rdFlash = false;
+    public bool did4thFlash = false;
+
+    private float flashT = 0;
+
     IEnumerator Cutscene()
     {
         audiosource.Play();
@@ -76,21 +90,83 @@ public class MenuController : MonoBehaviour
         screen.material = blackScreenMaterial;
         yield return new WaitForSeconds(firstBlackScreenDuration);
 
-        for (int i = 0; i < images.Count; i++)
+        // 1st pic
+        screen.material = images[0];
+        float t2 = 0;
+        while (t2 < pictureDurations[0])
         {
-            screen.material = images[i];
-            float t2 = 0;
-            while (t2 < pictureDurations[i])
+            screen.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.25f, t2 / pictureDurations[0]);
+            t2 += Time.deltaTime;
+            yield return null;
+        }
+        // black screen
+        screen.material = blackScreenMaterial;
+        yield return new WaitForSeconds(afterPictureDarkTime[0]);
+
+
+        // 2nd pic
+        screen.material = images[1];
+        t2 = 0;
+        while (t2 < pictureDurations[1])
+        {
+            if (flashT < flashDuration)
             {
-                screen.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.25f, t2 / pictureDurations[i]);
-                t2 += Time.deltaTime;
-                yield return null;
+                flashT += Time.deltaTime;
+            }
+            else if (!did4thFlash)
+            {
+                screen.material = images[1];
+            }
+
+
+            float perc = t2 / pictureDurations[1];
+            if (!did1stFlash && perc >= secondPic1stFlashPerc)
+            {
+                did1stFlash = true;
+                screen.material = images[2];
+                flashT = 0;
+            }
+            else if (!did2ndFlash && perc >= secondPic2ndFlashPerc)
+            {
+                did2ndFlash = true;
+                screen.material = images[2];
+                flashT = 0;
+            }
+            else if (!did3rdFlash && perc >= secondPic3rdFlashPerc)
+            {
+                did3rdFlash = true;
+                screen.material = images[2];
+                flashT = 0;
+            }
+            else if (!did4thFlash && perc >= secondPic4thFlashPerc)
+            {
+                did4thFlash = true;
+                screen.material = images[2];
+                flashT = 0;
             }
             
-            //yield return new WaitForSeconds(pictureDurations[i]);
-            screen.material = blackScreenMaterial;
-            yield return new WaitForSeconds(afterPictureDarkTime[i]);
+
+            screen.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.25f, t2 / pictureDurations[1]);
+            t2 += Time.deltaTime;
+            yield return null;
         }
+        // black screen
+        screen.material = blackScreenMaterial;
+        yield return new WaitForSeconds(afterPictureDarkTime[1]);
+
+        // 1st pic
+        screen.material = images[3];
+        t2 = 0;
+        while (t2 < pictureDurations[2])
+        {
+            screen.transform.localScale = Vector3.one * Mathf.Lerp(1, 1.25f, t2 / pictureDurations[2]);
+            t2 += Time.deltaTime;
+            yield return null;
+        }
+        // black screen
+        screen.material = blackScreenMaterial;
+        yield return new WaitForSeconds(afterPictureDarkTime[2]);
+
 
         ChangeToGameScene();
 
