@@ -20,8 +20,8 @@ public class BossController : MonoBehaviour
     Material hitFlashMat;
     BossWeapons weapons;
 
-    Coroutine currentAction = null;
-    Coroutine currentMoveAction = null;
+    public Coroutine currentAction = null;
+    public Coroutine currentMoveAction = null;
 
     public void InitBoss()
     {
@@ -32,7 +32,7 @@ public class BossController : MonoBehaviour
         hp = maxHp;
         hitFlashMat = GameManager.Instance.hitFlashMaterial;
         weapons = GetComponent<BossWeapons>();
-        weapons.Init();
+        weapons.Init(this);
     }
 
 
@@ -64,13 +64,18 @@ public class BossController : MonoBehaviour
 
     public void UpdatePhaseOne()
     {
-        if (currentAction != null)
+        if (currentAction == null)
         {
+            Time.timeScale = 1;
+            print("currentaction is null, chhoosing.");
             ChooseAction();
         }
-        if (currentMoveAction != null)
+        if (currentMoveAction == null)
         {
+            Time.timeScale = 1;
+            print("current move act null");
             ChooseMoveAction();
+            
         }
     }
 
@@ -79,9 +84,9 @@ public class BossController : MonoBehaviour
     {
         switch (Random.Range(0, 3))
         {
-            case 0: currentAction = StartCoroutine(weapons.ShootRings(5, 10, 0.3f, 5, 20)); break;
-            case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 1, 10, 2)); break;
-            case 2: currentAction = StartCoroutine(weapons.ShootAtPlayer(1, 3, 20, 5)); break;
+            case 0: currentAction = StartCoroutine(weapons.ShootRings(100, 3, 0.06f, 2.5f, 20)); break;
+            case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 1, 2.5f, 2)); break;
+            case 2: currentAction = StartCoroutine(weapons.ShootAtPlayer(1, 3, 5, 5)); break;
             default: break;
         }
     }
@@ -90,13 +95,23 @@ public class BossController : MonoBehaviour
     {
         switch (Random.Range(0,3))
         {
-            case 0: currentMoveAction = StartCoroutine(FollowPlayer(10, 10)); break;
-            case 1: currentMoveAction = StartCoroutine(Wander(10, 30, 1.5f)); break;
-            case 2: currentMoveAction = StartCoroutine(Stop(3)); break;
+            case 0: currentMoveAction = StartCoroutine(FollowPlayer(2.5f, Random.Range(3,6))); break;
+            case 1: currentMoveAction = StartCoroutine(Wander(Random.Range(3,7), 7, 0.2f)); break;
+            case 2: currentMoveAction = StartCoroutine(Stop(Random.Range(0.5f, 2))); break;
         }
     }
 
 
+    public IEnumerator WaitAfterShoot(float duration)
+    {
+        float t = 0;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        currentAction = null;
+    }
 
     // MOVE ACTIONS
     IEnumerator FollowPlayer(float speed, float duration)
@@ -113,22 +128,39 @@ public class BossController : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
+        print("folow end");
+        currentMoveAction = null;
     }
     IEnumerator Wander(int dashes, float speed, float changeDirectionInterval)
     {
+
         for (int i = 0; i < dashes; i++)
         {
-            print("wandering");
+            float t = 0;
             moveVector = Random.insideUnitCircle.normalized;
             currentMoveSpeed = speed;
-            yield return new WaitForSeconds(changeDirectionInterval);
+            while (t < changeDirectionInterval)
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+            yield return null;
         }
+        print("wander ened");
+        currentMoveAction = null;
     }
     IEnumerator Stop(float duration)
     {
         print("stoppin");
         moveVector = Vector3.zero;
-        yield return new WaitForSeconds(duration);
+        float t = 0;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        print("stop ended");
+        currentMoveAction = null;
     }
 
 //            if (t > 0)
@@ -203,11 +235,15 @@ public void GotHit(float damage)
         }
         else
         {
-            StopAllCoroutines();
-            StartCoroutine(HitFlash());
+            if (hitFlashCoroutine != null)
+            {
+                StopCoroutine(hitFlashCoroutine);
+            }
+            hitFlashCoroutine = StartCoroutine(HitFlash());
         }
     }
 
+    Coroutine hitFlashCoroutine = null;
     IEnumerator HitFlash()
     {
         graphics.material = hitFlashMat;
