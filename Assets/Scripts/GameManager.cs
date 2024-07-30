@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         player = GameObject.Find("Player").transform;
         cam = Camera.main;
@@ -55,12 +54,14 @@ public class GameManager : MonoBehaviour
         FriendSpawner.TrackUnfreedFriends();
     }
 
-    public void PausedTheGame()
+    public void PauseTheGame()
     {
         paused = true;
+        Time.timeScale = 0;
     }
-    public void UnpausedTheGame()
+    public void UnpauseTheGame()
     {
+        Time.timeScale = 1;
         StartCoroutine(Unpause());
     }
     IEnumerator Unpause()

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject silverScreen;
     private Image screen;
     [Space(32)]
     [Header("PUT SAME NUMBER OF THINGS IN EACH PLS! \n\n" +
@@ -14,7 +13,7 @@ public class MenuController : MonoBehaviour
         "and so on.")]
     [Space(20)]
     public Material blackScreenMaterial;
-    public float firstBlackScreenDuration = 1;
+    public float firstBlackScreenDuration = 2.2f;
     public List<Material> images = new List<Material>();
     public List<float> pictureDurations = new List<float>();
     public List<float> afterPictureDarkTime = new List<float>();
@@ -22,13 +21,19 @@ public class MenuController : MonoBehaviour
     //public List<Vector2> pictureMoveDirections = new List<Vector2>();
 
     bool watchingCutscene = false;
-    public float cutSceneTimerBeforeSkip = 1;
+    public float cutSceneTimerBeforeSkip = 0.3f;
     float t = 0;
     AudioSource audiosource;
+    GameObject silverScreen;
 
 
     private void Start()
     {
+        print("starting menu again");
+        watchingCutscene = false;
+        t = 0;
+        silverScreen = GameObject.Find("Canvas/silverScreen");
+        silverScreen.SetActive(false);
         screen = silverScreen.GetComponent<Image>();
         audiosource = GetComponent<AudioSource>();
     }
@@ -39,7 +44,6 @@ public class MenuController : MonoBehaviour
         {
             if (t < cutSceneTimerBeforeSkip)
             {
-                print("slow down " + Time.time);
                 t += Time.deltaTime;
                 return;
             }
@@ -67,12 +71,12 @@ public class MenuController : MonoBehaviour
     }
 
 
-    public float flashDuration = 0.1f;
+    public float flashDuration = 0.04f;
 
-    public float secondPic1stFlashPerc = 0.5f;
-    public float secondPic2ndFlashPerc = 0.7f;
-    public float secondPic3rdFlashPerc = 0.75f;
-    public float secondPic4thFlashPerc = 0.8f;
+    public float secondPic1stFlashPerc = 0.18f;
+    public float secondPic2ndFlashPerc = 0.45f;
+    public float secondPic3rdFlashPerc = 0.56f;
+    public float secondPic4thFlashPerc = 0.575f;
     
     public bool did1stFlash = false;
     public bool did2ndFlash = false;
@@ -187,6 +191,8 @@ public class MenuController : MonoBehaviour
     void ChangeToGameScene()
     {
         watchingCutscene = false;
+        t = 0;
+        screen.material = blackScreenMaterial;
         SceneManager.LoadScene(1);
     }
 }

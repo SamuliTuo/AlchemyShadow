@@ -14,10 +14,14 @@ public class PauseMenu : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (GameManager.Instance.paused == false && Input.GetKeyDown(KeyCode.Escape))
         {
-            GameManager.Instance.PausedTheGame();
+            GameManager.Instance.PauseTheGame();
             Pause();
+        }
+        else if (GameManager.Instance.paused && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Unpause();
         }
     }
     
@@ -34,7 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void Unpause()
     {
         pausePanel.SetActive(false);
-        GameManager.Instance.UnpausedTheGame();
+        GameManager.Instance.UnpauseTheGame();
     }
 
     // Pause buttons:

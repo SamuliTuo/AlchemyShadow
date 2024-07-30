@@ -380,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &437137296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1696,7 +1696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f8dda0f73a8df40b53769ff0d71522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  silverScreen: {fileID: 437137295}
   blackScreenMaterial: {fileID: 2100000, guid: 61a351956dc489449859f63a93b1896f, type: 2}
   firstBlackScreenDuration: 2.2
   images:

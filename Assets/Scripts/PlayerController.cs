@@ -159,6 +159,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public float lvlUpExpRequirementMultiplierPerLvl = 1.4f;
     public void AddExperience()
     {
         exp += expRate;
@@ -167,15 +168,14 @@ public class PlayerController : MonoBehaviour
         if (exp >= expRequiredForLvlUp)
         {
             exp -= expRequiredForLvlUp;
-            expRequiredForLvlUp *= 1.6f;
+            expRequiredForLvlUp *= lvlUpExpRequirementMultiplierPerLvl;
             lvl++;
             lvlNumber.text = lvl.ToString();
 
             var options = GetRandomOptions();
             PresentOptions(options);
 
-            GameManager.Instance.PausedTheGame();
-            Time.timeScale = 0;
+            GameManager.Instance.PauseTheGame();
         }
 
         //update bar
@@ -215,8 +215,7 @@ public class PlayerController : MonoBehaviour
         }
         ApplyEffects(upgrade);
 
-        GameManager.Instance.UnpausedTheGame();
-        Time.timeScale = 1;
+        GameManager.Instance.UnpauseTheGame();
     }
 
     void ApplyEffects(PowerUp p)
