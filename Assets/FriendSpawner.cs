@@ -11,7 +11,9 @@ public class FriendSpawner : MonoBehaviour
     public float friendSpawnRate = 3;
     public float spawnGrowTime = 1;
 
-    private Dictionary<GameObject, GameObject> unfreedFriends = new Dictionary<GameObject, GameObject>();
+    private List<GameObject> unfreedFriends = new List<GameObject>();
+    private List<GameObject> friendIndicators = new List<GameObject>();
+    //private Dictionary<GameObject, GameObject> unfreedFriends = new Dictionary<GameObject, GameObject>();
 
     private Transform player;
     private Camera cam;
@@ -37,7 +39,9 @@ public class FriendSpawner : MonoBehaviour
         var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
         pos.z = 0;
         var clone = Instantiate(f, pos, Quaternion.identity);
-        unfreedFriends.Add(clone, GetFreeIndicator());
+        unfreedFriends.Add(clone);
+        friendIndicators.Add(GetFreeIndicator());
+        //unfreedFriends.Add(clone, GetFreeIndicator());
         GameManager.Instance.ParticleEffects.PlayParticles("friendSpawn", pos, Vector3.up);
         StartCoroutine(SpawnTween(clone));
         return clone;
@@ -66,15 +70,16 @@ public class FriendSpawner : MonoBehaviour
 
     public void FriendWasFreed(GameObject friend)
     {
-        foreach (var f in unfreedFriends)
+        for (int i = 0; i < unfreedFriends.Count; i++)
         {
-            if (f.Key == friend)
+            if (unfreedFriends[i] == friend)
             {
-                f.Value.SetActive(false);
+                friend.SetActive(false);
+                unfreedFriends.RemoveAt(i);
+                friendIndicators.RemoveAt(i);
                 break;
             }
         }
-        unfreedFriends.Remove(friend);
     }
 
 
@@ -99,25 +104,32 @@ public class FriendSpawner : MonoBehaviour
 
     // Tracking
     public List<GameObject> indicators = new List<GameObject>();
+    private int indexBeingUpdated = 0;
     public void TrackUnfreedFriends()
     {
         Vector3 mid = cam.ScreenToWorldPoint(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
         mid.z = 0;
-        foreach (var f in unfreedFriends)
-        {
-            Vector3 rayDir = f.Key.transform.position - mid;
-            RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, rayDir.magnitude, edgerRaycaster);
 
-            // If it hits something...
-            if (hit.collider != null)
-            {
-                f.Value.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
-            }
-            else
-            {
-                f.Value.transform.position = leftBar.position + edgeLocatorsIdlePositionOffset;
-            }
+        if (indexBeingUpdated >= unfreedFriends.Count)
+        {
+            indexBeingUpdated = 0;
         }
+        var friend = unfreedFriends[indexBeingUpdated];
+        var indicator = friendIndicators[indexBeingUpdated];
+
+        Vector3 rayDir = friend.transform.position - mid;
+        RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, rayDir.magnitude, edgerRaycaster);
+
+        if (hit.collider != null)
+        {
+            indicator.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
+        }
+        else
+        {
+            indicator.transform.position = leftBar.position + edgeLocatorsIdlePositionOffset;
+        }
+
+        indexBeingUpdated++;
     }
 
     GameObject GetFreeIndicator()

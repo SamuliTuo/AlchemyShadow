@@ -18,11 +18,13 @@ public class BossWeapons : MonoBehaviour
     public GameObject bullet_basic;
     public bool isShooting = false;
 
+    BossController controller;
     private Camera cam;
     private Transform player;
 
-    public void Init()
+    public void Init(BossController contrl)
     {
+        controller = contrl;
         cam = GameManager.Instance.cam;
         player = GameManager.Instance.player;
     }
@@ -46,27 +48,27 @@ public class BossWeapons : MonoBehaviour
     public IEnumerator ShootRings(float rotationSpeed, float duration, float shootInterval, float bulletSpeed, float bulletLifetime)
     {
         Vector3 dir = Random.insideUnitCircle.normalized;
-
-
         float t = 0;
         float interval = 0;
         while (t < duration)
         {
             dir = Quaternion.AngleAxis(rotationSpeed * Time.deltaTime, Vector3.forward) * dir;
 
-            if (interval < shootInterval)
+            if (interval >= shootInterval)
             {
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0);
-                GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.BASIC, false, false, true);
+                //GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
                 interval = 0;
             }
 
             t += Time.deltaTime;
+            interval += Time.deltaTime;
             yield return null;
         }
         //then rotate
-        
+        controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
+        controller.currentAction = null;
 
     }
     public IEnumerator ShootAtRandomDirections(float duration, float shootInterval, float damage, float bulletSpeed, float bulletLifetime)
@@ -75,13 +77,13 @@ public class BossWeapons : MonoBehaviour
         float interval = 0;
         while (t < duration)
         {
-            if (interval < shootInterval)
+            if (interval >= shootInterval)
             {
                 Vector3 dir = Random.insideUnitCircle;
                 dir = dir.normalized;
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0);
-                GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.SINE_WAVE, false, false, true);
+                //GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
                 interval = 0;
             }
 
@@ -89,10 +91,12 @@ public class BossWeapons : MonoBehaviour
             interval += Time.deltaTime;
             yield return null;
         }
+        controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
     }
 
     public IEnumerator ShootAtPlayer(float aimTime, float damage, float bulletSpeed, float bulletLifetime)
     {
+        print("shooting at plr");
         //var point = GameManager.Instance.cam.ScreenToWorldPoint(player.posi)); //(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
         yield return new WaitForSeconds(aimTime);
 
@@ -100,9 +104,11 @@ public class BossWeapons : MonoBehaviour
         dir.z = 0;
         dir = dir.normalized;
         var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-        clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0);
+        clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.BASIC, false, false, true);
         GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         //shoot sound?
+        controller.currentAction = StartCoroutine(controller.WaitAfterShoot(1));
+        print("focus shot coroutine ended");
     }
 
     //public IEnumerator ShootShotgun(float damage, Transform barrelEnd = null, int extraBullets = 0, int penetrations = 0)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
-    public bool BossTestRun = false;
+    public bool bossTestRun = false;
     public Vector2 startTime = Vector2.zero;
     public GameObject bossPrefab;
     public Transform bossSpawnZone;
@@ -25,6 +25,7 @@ public class GameLoop : MonoBehaviour
     public GameObject timerEclipse;
     Vector3 timerPlanetStartPos;
     bool bossFight = false;
+    bool setupDone = false;
 
     
     private void Start()
@@ -45,7 +46,6 @@ public class GameLoop : MonoBehaviour
         SetTestStartTime();
         setupDone = true;
     }
-    bool setupDone = false;
 
     public void UpdateGame()
     {
@@ -61,18 +61,19 @@ public class GameLoop : MonoBehaviour
 
 
         UpdateGameTimer();
-        if (startingTestFriends > 0)
-        {
-            for (int i = 0; i < startingTestFriends; i++)
-            {
-                GameManager.Instance.FriendSpawner.SpawnAFriend();
-            }
-            startingTestFriends = 0;
-        }
+        //if (startingTestFriends > 0)
+        //{
+        //    for (int i = 0; i < startingTestFriends; i++)
+        //    {
+        //        GameManager.Instance.FriendSpawner.SpawnAFriend();
+        //    }
+        //    startingTestFriends = 0;
+        //}
 
-        // Start enemy spawners
-        if (BossTestRun == false)
+        
+        if (bossTestRun == false)
         {
+            // Start enemy spawners
             for (int i = enemySpawnEvents.Count - 1; i >= 0; i--)
             {
                 if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
@@ -84,6 +85,7 @@ public class GameLoop : MonoBehaviour
             }
         }
 
+
         // Spawn friends
         for (int i = friendSpawnTimes.Count - 1; i >= 0; i--)
         {
@@ -93,6 +95,7 @@ public class GameLoop : MonoBehaviour
                 friendSpawnTimes.RemoveAt(i);
             }
         }
+
 
 
         if (gameTime >= 900)
@@ -144,6 +147,7 @@ public class GameLoop : MonoBehaviour
         // fight phase!
         else if (phase == bossPhases.PHASE1)
         {
+            print("phase 1");
             activeBoss.UpdatePhaseOne();
             // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
         }
