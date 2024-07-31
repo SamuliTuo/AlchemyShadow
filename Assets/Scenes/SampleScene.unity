@@ -61516,6 +61516,9 @@ MonoBehaviour:
   enemyHitFlashTime: 0.3
   paused: 0
   player: {fileID: 0}
+  edgeLayermask:
+    serializedVersion: 2
+    m_Bits: 0
   playerIsAlive: 1
 --- !u!4 &1510551493
 Transform:
@@ -61550,8 +61553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed128457cf6d4644abcaeae10feb2ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossTestRun: 0
-  startTime: {x: 0, y: 0}
+  bossTestRun: 1
+  startTime: {x: 9, y: 59}
   bossPrefab: {fileID: 8509049042707181728, guid: d9e35c7f861163c49850de4bcc8303c3, type: 3}
   bossSpawnZone: {fileID: 67864492}
   enemySpawnEvents:

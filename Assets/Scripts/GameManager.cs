@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public LayerMask edgeLayermask;
 
+    public GameObject birdMachine;
+    public GameObject blurbo;
+    public GameObject demon;
+    public GameObject pyramid;
+    public GameObject skull;
+    public GameObject snek;
+    public GameObject spider;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

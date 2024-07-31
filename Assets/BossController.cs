@@ -32,7 +32,7 @@ public class BossController : MonoBehaviour
         hp = maxHp;
         hitFlashMat = GameManager.Instance.hitFlashMaterial;
         weapons = GetComponent<BossWeapons>();
-        
+
         weapons.Init(this);
         GameManager.Instance.cam.GetComponentInChildren<EdgeIndicators>().SetBoss(this.transform);
     }
@@ -41,14 +41,14 @@ public class BossController : MonoBehaviour
     void FixedUpdate()
     {
         //spessu
-    //    if (special != null)
-    //    {
-    //        if (special.doingSpecial)
-    //        {
-    //            rb.velocity = Vector2.zero;
-    //            return;
-    //        }
-    //    }
+        //    if (special != null)
+        //    {
+        //        if (special.doingSpecial)
+        //        {
+        //            rb.velocity = Vector2.zero;
+        //            return;
+        //        }
+        //    }
 
         rb.velocity = Vector3.MoveTowards(rb.velocity, moveVector * currentMoveSpeed, acceleration);
 
@@ -77,28 +77,32 @@ public class BossController : MonoBehaviour
             Time.timeScale = 1;
             print("current move act null");
             ChooseMoveAction();
-            
+
         }
     }
 
-    
+
     void ChooseAction()
     {
-        switch (Random.Range(0, 3))
+        switch (Random.Range(0, 4))
         {
-            case 0: currentAction = StartCoroutine(weapons.ShootRings(300, 3, 0.07f, 2.5f, 20)); break;
-            case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 1, 2.5f, 2)); break;
-            case 2: currentAction = StartCoroutine(weapons.ShootAtPlayer(1, 3, 5, 5)); break;
+            case 0: currentAction = StartCoroutine(weapons.ShootRings(300, 2.5f, 0.09f, 3.5f, 20)); break;
+            case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 2.5f, 4, 2.2f)); break;
+            case 2: currentAction = StartCoroutine(weapons.ShootAtPlayer(1, 5, 6, 5)); break;
+            case 3:
+                var spawns = GetRandomEnemiesToSpawn();
+                currentAction = StartCoroutine(SpawnEnemies(spawns.enemy, spawns.interval, spawns.summonCount));
+                break;
             default: break;
         }
     }
 
     void ChooseMoveAction()
     {
-        switch (Random.Range(0,3))
+        switch (Random.Range(0, 3))
         {
-            case 0: currentMoveAction = StartCoroutine(FollowPlayer(2.5f, Random.Range(3,6))); break;
-            case 1: currentMoveAction = StartCoroutine(Wander(Random.Range(3,7), 7, 0.2f)); break;
+            case 0: currentMoveAction = StartCoroutine(FollowPlayer(2.5f, Random.Range(3, 6))); break;
+            case 1: currentMoveAction = StartCoroutine(Wander(Random.Range(3, 7), 7, 0.2f)); break;
             case 2: currentMoveAction = StartCoroutine(Stop(Random.Range(0.5f, 2))); break;
         }
     }
@@ -115,6 +119,53 @@ public class BossController : MonoBehaviour
         currentAction = null;
     }
 
+    RandomEnemyPacket GetRandomEnemiesToSpawn()
+    {
+        switch (Random.Range(0, 7))
+        {
+            case 0: return new RandomEnemyPacket(GameManager.Instance.birdMachine, 2, 2);
+            case 1: return new RandomEnemyPacket(GameManager.Instance.blurbo, 0.2f, 9);
+            case 2: return new RandomEnemyPacket(GameManager.Instance.demon, 2, 2);
+            case 3: return new RandomEnemyPacket(GameManager.Instance.pyramid, 0.1f, 12);
+            case 4: return new RandomEnemyPacket(GameManager.Instance.skull, 1, 10);
+            case 5: return new RandomEnemyPacket(GameManager.Instance.snek, 0.1f, 5); 
+            case 6: return new RandomEnemyPacket(GameManager.Instance.spider, 1, 3);
+            default: return new RandomEnemyPacket(GameManager.Instance.snek, 0.1f, 5);
+        }   
+    }
+    class RandomEnemyPacket
+    {
+        public GameObject enemy;
+        public float interval;
+        public int summonCount;
+        public RandomEnemyPacket(GameObject enemy, float interval, int summonCount)
+        {
+            this.enemy = enemy;
+            this.interval = interval;
+            this.summonCount = summonCount;
+        }
+    }
+
+    public IEnumerator SpawnEnemies(GameObject enemy, float interval, int summonAmount)
+    {
+        float t = 0;
+        int summons = summonAmount;
+        GameManager.Instance.FriendSpawner.SpawnAFriend();
+        while (summons > 0)
+        {
+            while (t < interval)
+            {
+                var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
+                pos.z = 0;
+                Instantiate(enemy, pos, Quaternion.identity);
+                t += Time.deltaTime;
+                yield return null;
+            }
+            summons--;
+            yield return null;
+        }
+    }
+
     // MOVE ACTIONS
     IEnumerator FollowPlayer(float speed, float duration)
     {
@@ -122,7 +173,6 @@ public class BossController : MonoBehaviour
         currentMoveSpeed = speed;
         while (t < duration)
         {
-            print("follooowing");
             if (player != null)
             {
                 moveVector = (player.position - transform.position).normalized;
