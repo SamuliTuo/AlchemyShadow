@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public Transform player;
     public LayerMask edgeLayermask;
 
+    // Boss fight stuff
     public GameObject birdMachine;
     public GameObject blurbo;
     public GameObject demon;
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
     public GameObject skull;
     public GameObject snek;
     public GameObject spider;
+    public GameObject bossHpBarObj;
+    public Image bossHpBar;
 
     private void Awake()
     {

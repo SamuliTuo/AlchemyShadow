@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
     public float hp;
     public float maxHp;
     public float acceleration = 2;
+    public Coroutine currentAction = null;
+    public Coroutine currentMoveAction = null;
 
     [Header("phase 1")]
     public float p1_moveSpeed = 10;
@@ -19,9 +22,9 @@ public class BossController : MonoBehaviour
     Material normalMat;
     Material hitFlashMat;
     BossWeapons weapons;
+    private GameObject hpBarObj;
+    private Image hpBar;
 
-    public Coroutine currentAction = null;
-    public Coroutine currentMoveAction = null;
 
     public void InitBoss()
     {
@@ -29,7 +32,12 @@ public class BossController : MonoBehaviour
         normalMat = graphics.material;
         rb = GetComponent<Rigidbody2D>();
         player = GameManager.Instance.player;
+        hpBarObj = GameManager.Instance.bossHpBarObj;
+        hpBarObj.SetActive(true);
+        hpBar = GameManager.Instance.bossHpBar;
         hp = maxHp;
+        UpdateHPBar();
+
         hitFlashMat = GameManager.Instance.hitFlashMaterial;
         weapons = GetComponent<BossWeapons>();
 
@@ -38,6 +46,18 @@ public class BossController : MonoBehaviour
     }
 
 
+    void UpdateHPBar()
+    {
+        if (hpBar == null)
+        {
+            print("hp bar is null");
+            return;
+        }
+        print("update hp");
+        print("hp : " + hp + ", maxHp" + maxHp);
+        print("fill amount: " + (hp / maxHp));
+        hpBar.fillAmount = hp / maxHp;
+    }
     void FixedUpdate()
     {
         //spessu
@@ -85,7 +105,7 @@ public class BossController : MonoBehaviour
     void ChooseAction()
     {
         print("choosing action");
-        switch (3)//Random.Range(0, 4))
+        switch (Random.Range(0, 4))
         {
             case 0: currentAction = StartCoroutine(weapons.ShootRings(300, 2.5f, 0.09f, 3.5f, 20)); break;
             case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 2.5f, 4, 2.2f)); break;
@@ -129,10 +149,10 @@ public class BossController : MonoBehaviour
             case 2: return new RandomEnemyPacket(GameManager.Instance.demon, 2, 2);
             case 3: return new RandomEnemyPacket(GameManager.Instance.pyramid, 0.1f, 12);
             case 4: return new RandomEnemyPacket(GameManager.Instance.skull, 1, 10);
-            case 5: return new RandomEnemyPacket(GameManager.Instance.snek, 0.1f, 5); 
+            case 5: return new RandomEnemyPacket(GameManager.Instance.snek, 0.1f, 5);
             case 6: return new RandomEnemyPacket(GameManager.Instance.spider, 1, 3);
             default: return new RandomEnemyPacket(GameManager.Instance.snek, 0.1f, 5);
-        }   
+        }
     }
     class RandomEnemyPacket
     {
@@ -156,11 +176,9 @@ public class BossController : MonoBehaviour
         {
             while (t < interval)
             {
-                print("waiting");
                 t += Time.deltaTime;
                 yield return null;
             }
-            print("spawn one, " + (summons - 1) + " remaining");
             var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
             pos.z = 0;
             Instantiate(enemy, pos, Quaternion.identity);
@@ -168,6 +186,7 @@ public class BossController : MonoBehaviour
             summons--;
             yield return null;
         }
+        print("spawned some " + enemy.name);
         currentAction = StartCoroutine(WaitAfterShoot(1));
     }
 
@@ -220,72 +239,16 @@ public class BossController : MonoBehaviour
         currentMoveAction = null;
     }
 
-//            if (t > 0)
-//        {
-//            t -= Time.deltaTime;
-//            return;
-//        }
 
-//if (special != null && player != null)
-//{
-//    if (special.doingSpecial)
-//    {
-//        moveVector = Vector2.zero;
-//        return;
-//    }
-//    if (special.ShouldWeDoSpecialNow(player))
-//    {
-//        special.InitSpecialAttack();
-//    }
-//}
-
-//// Follow the player:
-//if (player != null)
-//{
-//    moveVector = (player.position - transform.position).normalized;
-//    return;
-//}
-
-//// Get random dir:
-//moveVector = Random.insideUnitCircle.normalized;
-//t = Random.Range(wanderDirChangeIntervalMinMax.x, wanderDirChangeIntervalMinMax.y);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public void GotHit(float damage)
+    public void GotHit(float damage)
     {
+        print("boss got hit");
         hp -= damage;
+        UpdateHPBar();
         if (hp <= 0)
         {
+            hpBarObj.SetActive(false);
+            GameManager.Instance.GameLoop.BossDied();
             GameManager.Instance.EXPSpawner.SpawnEXP(transform.position, EXPTiers.small);
             GameManager.Instance.ParticleEffects.PlayParticles("enemyDeath", transform.position, transform.forward);
             Destroy(gameObject);
