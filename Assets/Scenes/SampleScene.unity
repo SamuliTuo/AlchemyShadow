@@ -17522,8 +17522,8 @@ Transform:
   - {fileID: 481664517}
   - {fileID: 1506940806}
   - {fileID: 47220925}
-  - {fileID: 934355449}
   - {fileID: 1281195477}
+  - {fileID: 934355449}
   - {fileID: 1820434760}
   - {fileID: 860286562}
   - {fileID: 1134811931}
@@ -19790,11 +19790,11 @@ Transform:
   - {fileID: 2096800732}
   - {fileID: 847492919}
   - {fileID: 2042603425}
+  - {fileID: 764513066}
   - {fileID: 1570600689}
   - {fileID: 287040921}
   - {fileID: 1114710218}
   - {fileID: 295051737}
-  - {fileID: 764513066}
   - {fileID: 1376650161}
   m_Father: {fileID: 1079673654}
   m_RootOrder: 1
@@ -40836,6 +40836,13 @@ MonoBehaviour:
   - name: player_shoot
     clips:
     - {fileID: 8300000, guid: c176fd4be83040f40b76e6637671e905, type: 3}
+    pitch: 1
+    pitchRandomizationAmount: 0.3
+    volume: 0.8
+  - name: player_hit
+    clips:
+    - {fileID: 8300000, guid: 8fde0c5c63732a9429eb94251b29e530, type: 3}
+    - {fileID: 8300000, guid: 3763264e3b8bbe6489e3d158176c3a6a, type: 3}
     pitch: 1
     pitchRandomizationAmount: 0.3
     volume: 0.8
@@ -81522,7 +81529,7 @@ Transform:
   m_GameObject: {fileID: 1835918549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.11781245, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 628606921}
@@ -93272,7 +93279,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 176
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
