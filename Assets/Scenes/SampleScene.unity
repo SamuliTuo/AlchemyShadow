@@ -61516,9 +61516,6 @@ MonoBehaviour:
   enemyHitFlashTime: 0.3
   paused: 0
   player: {fileID: 0}
-  edgeLayermask:
-    serializedVersion: 2
-    m_Bits: 0
   playerIsAlive: 1
 --- !u!4 &1510551493
 Transform:
@@ -61553,8 +61550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed128457cf6d4644abcaeae10feb2ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossTestRun: 1
-  startTime: {x: 9, y: 59}
+  bossTestRun: 0
+  startTime: {x: 0, y: 0}
   bossPrefab: {fileID: 8509049042707181728, guid: d9e35c7f861163c49850de4bcc8303c3, type: 3}
   bossSpawnZone: {fileID: 67864492}
   enemySpawnEvents:
@@ -61574,24 +61571,18 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 0, y: 25}
     duration: 20
-    spawnInterval: 70
+    spawnInterval: 5
     startTimeInSeconds: 0
   - name: intro 2
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     start_minutesAndSeconds: {x: 0, y: 30}
     duration: 15
-    spawnInterval: 0.85
+    spawnInterval: 1
     startTimeInSeconds: 0
   - name: intro 3
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 0, y: 40}
     duration: 10
-    spawnInterval: 0.2
-    startTimeInSeconds: 0
-  - name: intro 4
-    prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    start_minutesAndSeconds: {x: 0, y: 45}
-    duration: 3
     spawnInterval: 0.75
     startTimeInSeconds: 0
   - name: ===ELITE 1
@@ -61618,6 +61609,12 @@ MonoBehaviour:
     duration: 25
     spawnInterval: 0.2
     startTimeInSeconds: 0
+  - name: ===Phase 2
+    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+    start_minutesAndSeconds: {x: 2, y: 45}
+    duration: 5
+    spawnInterval: 2
+    startTimeInSeconds: 0
   - name: Phase 2
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     start_minutesAndSeconds: {x: 3, y: 0}
@@ -61632,135 +61629,135 @@ MonoBehaviour:
     startTimeInSeconds: 0
   - name: Phase 2
     prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 2, y: 45}
-    duration: 30
-    spawnInterval: 3
+    start_minutesAndSeconds: {x: 3, y: 20}
+    duration: 15
+    spawnInterval: 2.5
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    start_minutesAndSeconds: {x: 3, y: 28}
+    start_minutesAndSeconds: {x: 4, y: 0}
     duration: 30
     spawnInterval: 0.5
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
-    start_minutesAndSeconds: {x: 3, y: 30}
+    start_minutesAndSeconds: {x: 4, y: 0}
     duration: 3
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 3, y: 40}
-    duration: 35
-    spawnInterval: 0.5
+    start_minutesAndSeconds: {x: 4, y: 40}
+    duration: 20
+    spawnInterval: 0.45
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
-    start_minutesAndSeconds: {x: 3, y: 50}
+    start_minutesAndSeconds: {x: 4, y: 40}
     duration: 10
     spawnInterval: 2
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 0}
-    duration: 20
-    spawnInterval: 2
+    start_minutesAndSeconds: {x: 4, y: 40}
+    duration: 10
+    spawnInterval: 0.95
     startTimeInSeconds: 0
-  - name: Phase 3
+  - name: ===Phase 3
     prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 30}
+    start_minutesAndSeconds: {x: 5, y: 30}
     duration: 15
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: Phase 3
+    prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
+    start_minutesAndSeconds: {x: 5, y: 30}
+    duration: 20
+    spawnInterval: 1
+    startTimeInSeconds: 0
+  - name: Phase 3
     prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 30}
-    duration: 30
+    start_minutesAndSeconds: {x: 6, y: 0}
+    duration: 10
     spawnInterval: 3
     startTimeInSeconds: 0
   - name: Phase 3
-    prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 30}
-    duration: 40
-    spawnInterval: 2
-    startTimeInSeconds: 0
-  - name: Phase 3
-    prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 36}
-    duration: 20
-    spawnInterval: 0.5
-    startTimeInSeconds: 0
-  - name: Phase 3
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 45}
+    start_minutesAndSeconds: {x: 6, y: 0}
     duration: 1
     spawnInterval: 0.05
     startTimeInSeconds: 0
+  - name: Phase 3
+    prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
+    start_minutesAndSeconds: {x: 6, y: 5}
+    duration: 3
+    spawnInterval: 1
+    startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 5, y: 15}
+    start_minutesAndSeconds: {x: 6, y: 45}
     duration: 10
     spawnInterval: 0.2
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 15}
+    start_minutesAndSeconds: {x: 6, y: 47}
     duration: 60
-    spawnInterval: 0.3
+    spawnInterval: 3
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
-    start_minutesAndSeconds: {x: 5, y: 20}
+    start_minutesAndSeconds: {x: 6, y: 48}
     duration: 2
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 5, y: 20}
-    duration: 40
-    spawnInterval: 0.75
+    start_minutesAndSeconds: {x: 7, y: 0}
+    duration: 25
+    spawnInterval: 0.95
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 20}
+    start_minutesAndSeconds: {x: 8, y: 0}
     duration: 40
-    spawnInterval: 0.5
+    spawnInterval: 1.2
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 30}
+    start_minutesAndSeconds: {x: 8, y: 1}
     duration: 30
-    spawnInterval: 2
-    startTimeInSeconds: 0
-  - name: Last phase
-    prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
-    start_minutesAndSeconds: {x: 7, y: 0}
-    duration: 10
-    spawnInterval: 0.75
-    startTimeInSeconds: 0
-  - name: Last phase
-    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 50}
-    duration: 20
-    spawnInterval: 0.2
+    spawnInterval: 3
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 55}
+    start_minutesAndSeconds: {x: 8, y: 30}
+    duration: 5
+    spawnInterval: 1
+    startTimeInSeconds: 0
+  - name: Last phase
+    prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
+    start_minutesAndSeconds: {x: 8, y: 45}
     duration: 5
     spawnInterval: 0.5
     startTimeInSeconds: 0
   - name: Last phase
+    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+    start_minutesAndSeconds: {x: 8, y: 45}
+    duration: 6
+    spawnInterval: 0.3
+    startTimeInSeconds: 0
+  - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
-    start_minutesAndSeconds: {x: 8, y: 50}
-    duration: 3
+    start_minutesAndSeconds: {x: 9, y: 0}
+    duration: 1
     spawnInterval: 1
     startTimeInSeconds: 0
-  - name: test
-    prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
-    start_minutesAndSeconds: {x: 0, y: 0}
-    duration: 3
-    spawnInterval: 1
+  - name: Last phase
+    prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
+    start_minutesAndSeconds: {x: 8, y: 59}
+    duration: 1
+    spawnInterval: 0.2
     startTimeInSeconds: 0
   startingTestFriends: 0
   friendSpawnEvents:
