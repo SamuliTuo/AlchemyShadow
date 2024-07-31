@@ -53,7 +53,7 @@ public class EdgeIndicators : MonoBehaviour
         if (hit.collider != null)
         {
             float size = (raymag - 9) / 11;
-            bossIndicator.transform.localScale = Vector3.Lerp(Vector3.one * 2, Vector3.one * 0.5f, Mathf.Clamp(size, 0, 1));
+            bossIndicator.transform.localScale = Vector3.Lerp(Vector3.one * 2.1f, Vector3.one * 1.2f, Mathf.Clamp(size, 0, 1));
             bossIndicator.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
         }
         else

@@ -75,6 +75,10 @@ public class EnemyWeapons : MonoBehaviour
 
     public void Shoot(float damage, Transform barrelEnd = null)
     {
+        if (player == null)
+        {
+            return;
+        }
         var dir = (player.transform.position - transform.position).normalized;
         // player has barrel sooo...
         if (barrelEnd != null)
