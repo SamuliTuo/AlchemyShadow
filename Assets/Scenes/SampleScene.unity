@@ -61519,6 +61519,13 @@ MonoBehaviour:
   edgeLayermask:
     serializedVersion: 2
     m_Bits: 0
+  birdMachine: {fileID: 0}
+  blurbo: {fileID: 0}
+  demon: {fileID: 0}
+  pyramid: {fileID: 0}
+  skull: {fileID: 0}
+  snek: {fileID: 0}
+  spider: {fileID: 0}
   playerIsAlive: 1
 --- !u!4 &1510551493
 Transform:
@@ -61553,8 +61560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed128457cf6d4644abcaeae10feb2ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossTestRun: 1
-  startTime: {x: 9, y: 59}
+  bossTestRun: 0
+  startTime: {x: 0, y: 0}
   bossPrefab: {fileID: 8509049042707181728, guid: d9e35c7f861163c49850de4bcc8303c3, type: 3}
   bossSpawnZone: {fileID: 67864492}
   enemySpawnEvents:
@@ -61588,25 +61595,25 @@ MonoBehaviour:
     duration: 30
     spawnInterval: 1
     startTimeInSeconds: 0
-  - name: ===ELITE 1
+  - name: ===ELITE 1 spider
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
     start_minutesAndSeconds: {x: 1, y: 30}
     duration: 15
     spawnInterval: 5
     startTimeInSeconds: 0
-  - name: ELITE 1
+  - name: ELITE 1 skull
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    start_minutesAndSeconds: {x: 1, y: 30}
+    start_minutesAndSeconds: {x: 1, y: 25}
     duration: 40
     spawnInterval: 1.5
     startTimeInSeconds: 0
-  - name: ELITE 1
+  - name: ELITE 1 snek
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
     start_minutesAndSeconds: {x: 1, y: 30}
     duration: 20
-    spawnInterval: 0.5
+    spawnInterval: 0.75
     startTimeInSeconds: 0
-  - name: ELITE 1
+  - name: ELITE 1 spider
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
     start_minutesAndSeconds: {x: 2, y: 10}
     duration: 10
@@ -61636,9 +61643,9 @@ MonoBehaviour:
     duration: 15
     spawnInterval: 2.5
     startTimeInSeconds: 0
-  - name: ===ELITE 2
+  - name: ===ELITE 2 skull
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 0}
+    start_minutesAndSeconds: {x: 3, y: 55}
     duration: 30
     spawnInterval: 0.5
     startTimeInSeconds: 0
@@ -61652,7 +61659,7 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
     start_minutesAndSeconds: {x: 4, y: 40}
     duration: 20
-    spawnInterval: 0.5
+    spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
@@ -61662,93 +61669,99 @@ MonoBehaviour:
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 50}
-    duration: 10
-    spawnInterval: 0.95
-    startTimeInSeconds: 0
-  - name: ===Phase 3
-    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 5, y: 30}
-    duration: 15
+    start_minutesAndSeconds: {x: 4, y: 55}
+    duration: 5
     spawnInterval: 1
     startTimeInSeconds: 0
-  - name: Phase 3
+  - name: ===Phase 3 blurbo
+    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+    start_minutesAndSeconds: {x: 5, y: 40}
+    duration: 10
+    spawnInterval: 1
+    startTimeInSeconds: 0
+  - name: Phase 3 spider
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
-    start_minutesAndSeconds: {x: 5, y: 30}
+    start_minutesAndSeconds: {x: 5, y: 40}
     duration: 20
-    spawnInterval: 1
-    startTimeInSeconds: 0
-  - name: Phase 3
-    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 0}
-    duration: 10
     spawnInterval: 3
     startTimeInSeconds: 0
-  - name: Phase 3
+  - name: Phase 3 skull
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 6, y: 0}
     duration: 1
     spawnInterval: 0.05
     startTimeInSeconds: 0
+  - name: Phase 3 blurbo
+    prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+    start_minutesAndSeconds: {x: 6, y: 0}
+    duration: 10
+    spawnInterval: 3
+    startTimeInSeconds: 0
   - name: Phase 3
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     start_minutesAndSeconds: {x: 6, y: 5}
     duration: 3
-    spawnInterval: 1
+    spawnInterval: 0.85
     startTimeInSeconds: 0
-  - name: ELITE 3
+  - name: ===ELITE 3 snek
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 45}
+    start_minutesAndSeconds: {x: 6, y: 50}
     duration: 10
-    spawnInterval: 0.2
+    spawnInterval: 0.4
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 47}
+    start_minutesAndSeconds: {x: 6, y: 52}
     duration: 60
     spawnInterval: 3
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
-    start_minutesAndSeconds: {x: 6, y: 48}
+    start_minutesAndSeconds: {x: 6, y: 53}
     duration: 2
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 3
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 7, y: 0}
+    start_minutesAndSeconds: {x: 7, y: 2}
     duration: 25
     spawnInterval: 0.95
     startTimeInSeconds: 0
-  - name: Last phase
+  - name: ===Last phase spider
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
     start_minutesAndSeconds: {x: 8, y: 0}
     duration: 40
+    spawnInterval: 2
+    startTimeInSeconds: 0
+  - name: Last phase skull
+    prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
+    start_minutesAndSeconds: {x: 8, y: 1}
+    duration: 30
     spawnInterval: 1.2
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
     start_minutesAndSeconds: {x: 8, y: 1}
     duration: 30
-    spawnInterval: 3
+    spawnInterval: 6
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
     start_minutesAndSeconds: {x: 8, y: 30}
-    duration: 5
+    duration: 1
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
     start_minutesAndSeconds: {x: 8, y: 45}
     duration: 5
-    spawnInterval: 0.5
+    spawnInterval: 1
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
     start_minutesAndSeconds: {x: 8, y: 45}
     duration: 6
-    spawnInterval: 0.3
+    spawnInterval: 0.5
     startTimeInSeconds: 0
   - name: Last phase
     prefab: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
@@ -61756,7 +61769,7 @@ MonoBehaviour:
     duration: 1
     spawnInterval: 1
     startTimeInSeconds: 0
-  - name: Last phase
+  - name: Last phase skull
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 8, y: 59}
     duration: 1
