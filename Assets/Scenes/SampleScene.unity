@@ -63216,8 +63216,8 @@ MonoBehaviour:
   - name: intro 2
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     start_minutesAndSeconds: {x: 0, y: 30}
-    duration: 15
-    spawnInterval: 1
+    duration: 5
+    spawnInterval: 0.3
     startTimeInSeconds: 0
   - name: intro 3
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
@@ -63241,13 +63241,13 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 1, y: 25}
     duration: 40
-    spawnInterval: 1.5
+    spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 1 snek
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 1, y: 30}
-    duration: 20
-    spawnInterval: 0.75
+    start_minutesAndSeconds: {x: 1, y: 25}
+    duration: 2
+    spawnInterval: 0.1
     startTimeInSeconds: 0
   - name: ELITE 1 spider
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
@@ -63258,6 +63258,12 @@ MonoBehaviour:
   - name: ELITE 1
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
     start_minutesAndSeconds: {x: 2, y: 8}
+    duration: 4
+    spawnInterval: 0.1
+    startTimeInSeconds: 0
+  - name: ELITE 1
+    prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
+    start_minutesAndSeconds: {x: 2, y: 30}
     duration: 4
     spawnInterval: 0.2
     startTimeInSeconds: 0
