@@ -1231,9 +1231,9 @@ GameObject:
   m_Component:
   - component: {fileID: 54499368}
   - component: {fileID: 54499369}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crateess_4 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3910,9 +3910,9 @@ GameObject:
   m_Component:
   - component: {fileID: 172366806}
   - component: {fileID: 172366807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wallwithstuff (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4363,6 +4363,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4430,7 +4434,7 @@ GameObject:
   - component: {fileID: 191473909}
   m_Layer: 0
   m_Name: Boxes
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5365,9 +5369,9 @@ GameObject:
   m_Component:
   - component: {fileID: 248247347}
   - component: {fileID: 248247348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11168,6 +11172,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -11577,6 +11585,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -11708,9 +11720,9 @@ GameObject:
   m_Component:
   - component: {fileID: 323428181}
   - component: {fileID: 323428182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17034,9 +17046,9 @@ GameObject:
   m_Component:
   - component: {fileID: 334754389}
   - component: {fileID: 334754390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxes_2 (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17271,7 +17283,7 @@ GameObject:
   - component: {fileID: 350918094}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18835,6 +18847,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -18900,6 +18916,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -19148,9 +19168,9 @@ GameObject:
   m_Component:
   - component: {fileID: 410803255}
   - component: {fileID: 410803256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19219,6 +19239,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -25173,6 +25197,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -30852,7 +30880,7 @@ GameObject:
   - component: {fileID: 496135349}
   m_Layer: 0
   m_Name: Holes
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32321,7 +32349,7 @@ GameObject:
   - component: {fileID: 563875791}
   m_Layer: 10
   m_Name: crates_plenty (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33560,7 +33588,7 @@ GameObject:
   - component: {fileID: 594023409}
   m_Layer: 10
   m_Name: crates_plenty (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33705,6 +33733,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -33761,9 +33793,9 @@ GameObject:
   m_Component:
   - component: {fileID: 601841958}
   - component: {fileID: 601841959}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38849,9 +38881,9 @@ GameObject:
   m_Component:
   - component: {fileID: 616029178}
   - component: {fileID: 616029179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crateess_4 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39067,9 +39099,9 @@ GameObject:
   m_Component:
   - component: {fileID: 624422659}
   - component: {fileID: 624422660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39518,9 +39550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 648130644}
   - component: {fileID: 648130645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxes_2 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40236,6 +40268,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -42445,6 +42481,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -43501,9 +43541,9 @@ GameObject:
   m_Component:
   - component: {fileID: 804554894}
   - component: {fileID: 804554895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43898,9 +43938,9 @@ GameObject:
   m_Component:
   - component: {fileID: 822546639}
   - component: {fileID: 822546640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubestubes (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45233,7 +45273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 883790878}
   - component: {fileID: 883790879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wallwithstuff
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -45604,9 +45644,9 @@ GameObject:
   m_Component:
   - component: {fileID: 903989029}
   - component: {fileID: 903989030}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47077,9 +47117,9 @@ GameObject:
   m_Component:
   - component: {fileID: 959253995}
   - component: {fileID: 959253996}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48463,6 +48503,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -49481,7 +49525,7 @@ GameObject:
   - component: {fileID: 1102478245}
   m_Layer: 10
   m_Name: crates_plenty (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49923,6 +49967,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -56283,6 +56331,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -56734,9 +56786,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1201379213}
   - component: {fileID: 1201379214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56888,6 +56940,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -58171,6 +58227,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -59326,7 +59386,7 @@ GameObject:
   - component: {fileID: 1344072106}
   m_Layer: 10
   m_Name: crates_plenty (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60181,6 +60241,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -60377,9 +60441,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1386149095}
   - component: {fileID: 1386149096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: talbe and plant (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61177,9 +61241,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1421012238}
   - component: {fileID: 1421012239}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxes_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62582,6 +62646,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -62701,9 +62769,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1499728515}
   - component: {fileID: 1499728516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxesandtable
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68735,7 +68803,7 @@ GameObject:
   - component: {fileID: 1539706437}
   m_Layer: 10
   m_Name: crates_plenty (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70242,6 +70310,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -71981,9 +72053,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1685245488}
   - component: {fileID: 1685245489}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72304,6 +72376,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -72365,9 +72441,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1689067964}
   - component: {fileID: 1689067965}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubestubes (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72516,9 +72592,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1692063210}
   - component: {fileID: 1692063211}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubes_row (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72666,9 +72742,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1695832774}
   - component: {fileID: 1695832775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crateess_4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72979,7 +73055,7 @@ GameObject:
   - component: {fileID: 1709837996}
   m_Layer: 0
   m_Name: Tables
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73246,9 +73322,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1721913270}
   - component: {fileID: 1721913271}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxes_row (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73389,9 +73465,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1727471828}
   - component: {fileID: 1727471829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxes_2 (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73460,6 +73536,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -74184,9 +74264,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1770945044}
   - component: {fileID: 1770945045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxesandtable (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74323,6 +74403,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -74680,9 +74764,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1783030512}
   - component: {fileID: 1783030513}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubestubes (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74903,6 +74987,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -80343,9 +80431,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1837828253}
   - component: {fileID: 1837828254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: plant_row
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86882,9 +86970,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1946633772}
   - component: {fileID: 1946633773}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: plant_row_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88196,9 +88284,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2003881993}
   - component: {fileID: 2003881994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tubestubes
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88402,6 +88490,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -88804,6 +88896,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
