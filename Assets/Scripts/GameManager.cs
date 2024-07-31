@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     public float enemyHitFlashTime;
     public bool paused = false;
     public Transform player;
+    public LayerMask edgeLayermask;
 
     private void Awake()
     {
@@ -83,7 +85,13 @@ public class GameManager : MonoBehaviour
 
 
     // Helper methods
+    int deepnes = 0;
     public Vector3 GetRandomPosAtScreenEdge()
+    {
+        deepnes = 0;
+        return DoThat();
+    }
+    Vector3 DoThat()
     {
         Vector2 randomCoordinates;
         if (Random.Range(0, 2) == 0)
@@ -109,6 +117,22 @@ public class GameManager : MonoBehaviour
             }
         }
         var point = cam.ScreenToWorldPoint(new Vector3(randomCoordinates.x, randomCoordinates.y, cam.nearClipPlane));
+
+        if (Physics2D.OverlapPoint(point, edgeLayermask))
+        {
+            //inside a wall
+            print("inside a wall");
+            if (deepnes > 100)
+            {
+                return Vector3.zero;
+            }
+            else
+            {
+                deepnes++;
+                return GetRandomPosAtScreenEdge();
+            }
+        }
+
         return point;
     }
 

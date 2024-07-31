@@ -117,10 +117,16 @@ public class FriendSpawner : MonoBehaviour
         for (int i = 0; i < unfreedFriends.Count; i++)
         {
             Vector3 rayDir = unfreedFriends[i].transform.position - mid;
-            RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, rayDir.magnitude, edgerRaycaster);
+            float rayMag = rayDir.magnitude;
+            RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, rayMag, edgerRaycaster);
 
             if (hit.collider != null)
             {
+                // lähin = 7 - kauin = 18
+                
+                float size = (rayMag - 9) / 11;
+                //print("size: " + size + ",  rayMag: " + rayMag);
+                friendIndicators[i].transform.localScale = Vector3.Lerp(Vector3.one * 1.5f, Vector3.one * 0.3f, Mathf.Clamp(size, 0, 1));
                 friendIndicators[i].transform.position = new Vector3(hit.point.x, hit.point.y, 0);
             }
             else

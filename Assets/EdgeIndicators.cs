@@ -47,16 +47,21 @@ public class EdgeIndicators : MonoBehaviour
         mid.z = 0;
 
         Vector3 rayDir = boss.transform.position - mid;
-        RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, rayDir.magnitude, edgerRaycaster);
+        float raymag = rayDir.magnitude;
+        RaycastHit2D hit = Physics2D.Raycast(mid, rayDir.normalized, raymag, edgerRaycaster);
 
         if (hit.collider != null)
         {
+            float size = (raymag - 9) / 11;
+            bossIndicator.transform.localScale = Vector3.Lerp(Vector3.one * 2, Vector3.one * 0.5f, Mathf.Clamp(size, 0, 1));
             bossIndicator.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
         }
         else
         {
             bossIndicator.transform.position = leftBar.position + Vector3.left * 100;
         }
+
+
     }
 
     public void TrackUnfreedFriends()
