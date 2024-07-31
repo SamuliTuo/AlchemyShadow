@@ -84,7 +84,8 @@ public class BossController : MonoBehaviour
 
     void ChooseAction()
     {
-        switch (Random.Range(0, 4))
+        print("choosing action");
+        switch (3)//Random.Range(0, 4))
         {
             case 0: currentAction = StartCoroutine(weapons.ShootRings(300, 2.5f, 0.09f, 3.5f, 20)); break;
             case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 2.5f, 4, 2.2f)); break;
@@ -155,15 +156,19 @@ public class BossController : MonoBehaviour
         {
             while (t < interval)
             {
-                var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
-                pos.z = 0;
-                Instantiate(enemy, pos, Quaternion.identity);
+                print("waiting");
                 t += Time.deltaTime;
                 yield return null;
             }
+            print("spawn one, " + (summons - 1) + " remaining");
+            var pos = GameManager.Instance.GetRandomPosAtScreenEdge();
+            pos.z = 0;
+            Instantiate(enemy, pos, Quaternion.identity);
+            t = 0;
             summons--;
             yield return null;
         }
+        currentAction = StartCoroutine(WaitAfterShoot(1));
     }
 
     // MOVE ACTIONS

@@ -145,7 +145,6 @@ public class GameLoop : MonoBehaviour
         // fight phase!
         else if (phase == bossPhases.PHASE1)
         {
-            print("phase 1");
             activeBoss.UpdatePhaseOne();
             bossSpawnZone.gameObject.SetActive(false);
             // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
