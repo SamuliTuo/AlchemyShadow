@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81c7ecb8a1b61549bfe610c28509a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 10
-  period: 5
+  amplitude: 1.8
+  period: 0.2
 --- !u!50 &1895736783331632595
 Rigidbody2D:
   serializedVersion: 4

@@ -64,11 +64,12 @@ public class BossWeapons : MonoBehaviour
 
             t += Time.deltaTime;
             interval += Time.deltaTime;
+            print("shooting rings, t: " + t + ",  duration: " + duration);
             yield return null;
         }
         //then rotate
+        print("shootrings end");
         controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
-        controller.currentAction = null;
 
     }
     public IEnumerator ShootAtRandomDirections(float duration, float shootInterval, float damage, float bulletSpeed, float bulletLifetime)
@@ -82,7 +83,7 @@ public class BossWeapons : MonoBehaviour
                 Vector3 dir = Random.insideUnitCircle;
                 dir = dir.normalized;
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.SINE_WAVE, false, false, true);
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.SINE_WAVE, false, Random.Range(0,2)==0, true);
                 //GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
                 interval = 0;
             }
@@ -91,6 +92,7 @@ public class BossWeapons : MonoBehaviour
             interval += Time.deltaTime;
             yield return null;
         }
+        print("shootrandom end");
         controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
     }
 
