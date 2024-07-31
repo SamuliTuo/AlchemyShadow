@@ -191,10 +191,8 @@ public class PlayerController : MonoBehaviour
             expRequiredForLvlUp *= lvlUpExpRequirementMultiplierPerLvl;
             lvl++;
             lvlNumber.text = lvl.ToString();
-
             var options = GetRandomOptions();
             PresentOptions(options);
-
             GameManager.Instance.PauseTheGame();
         }
 
@@ -293,6 +291,7 @@ public class PowerUp
 {
     public string name;
     public string description;
+    public Sprite image;
 
     [Header("Example:  0.15 = 15% added to according stat.")]
     public float damage = 0;
@@ -309,6 +308,7 @@ public class PowerUp
     public PowerUp(
         string name, 
         string description, 
+        Sprite image,
         float damage, 
         float attackSpeed, 
         float moveSpeed, 
@@ -322,6 +322,7 @@ public class PowerUp
     {
         this.name = name;
         this.description = description;
+        this.image = image;
         this.damage = damage;
         this.attackSpeed = attackSpeed;
         this.moveSpeed = moveSpeed;
