@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameLoop GameLoop { get; private set; }
     public PauseMenu PauseManager { get; private set; }
     public RingTween RingTween { get; private set; }
+    public EdgeIndicators EdgeIndicators { get; private set; }
 
     [HideInInspector] public Material hitFlashMaterial;
     public float enemyHitFlashTime;

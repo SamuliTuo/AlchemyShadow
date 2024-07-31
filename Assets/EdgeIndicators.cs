@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class EdgeIndicators : MonoBehaviour
 {
-    private Transform leftBar;
-    //leftBar = cam.GetComponent<CameraController>().leftBar;
-
-
     public LayerMask edgerRaycaster;
     public GameObject bossIndicator;
 
     private Camera cam;
+    private Transform leftBar;
     private Transform boss;
-    public void SetBoss(Transform boss) { this.boss = boss; }
+    public void SetBoss(Transform boss)
+    {
+        this.boss = boss;
+        bossIndicator.SetActive(true);
+        TrackBoss();
+    }
 
     private void Start()
     {
+        bossIndicator.SetActive(false);
         cam = GameManager.Instance.cam;
+        leftBar = cam.GetComponent<CameraController>().leftBar;
     }
 
     int delay = 0;
@@ -51,7 +55,7 @@ public class EdgeIndicators : MonoBehaviour
         }
         else
         {
-            bossIndicator.transform.position = leftBar.position + edgeLocatorsIdlePositionOffset;
+            bossIndicator.transform.position = leftBar.position + Vector3.left * 100;
         }
     }
 

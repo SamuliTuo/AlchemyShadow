@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
         topBar.localPosition = new(topBar.localPosition.x, topBar.localPosition.y, 20);
         botBar.localPosition = new(botBar.localPosition.x, botBar.localPosition.y, 20);
     }
-
+    
     private void LateUpdate()
     {
         if (player == null)

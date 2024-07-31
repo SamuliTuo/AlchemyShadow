@@ -32,7 +32,9 @@ public class BossController : MonoBehaviour
         hp = maxHp;
         hitFlashMat = GameManager.Instance.hitFlashMaterial;
         weapons = GetComponent<BossWeapons>();
+        
         weapons.Init(this);
+        GameManager.Instance.cam.GetComponentInChildren<EdgeIndicators>().SetBoss(this.transform);
     }
 
 
