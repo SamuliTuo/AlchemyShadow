@@ -242,7 +242,7 @@ MonoBehaviour:
   barrelEnd: {fileID: 5594336393878642116}
   gunArm: {fileID: 0}
   shootInterval: 2
-  damage: 1
+  damage: 2
   bulletLifeTime: 10
   weaponsCooldownSpeedMultiplier: 1
   basicWeaponInterval: 4
