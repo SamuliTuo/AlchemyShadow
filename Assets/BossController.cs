@@ -84,7 +84,7 @@ public class BossController : MonoBehaviour
     {
         switch (Random.Range(0, 3))
         {
-            case 0: currentAction = StartCoroutine(weapons.ShootRings(100, 3, 0.06f, 2.5f, 20)); break;
+            case 0: currentAction = StartCoroutine(weapons.ShootRings(300, 3, 0.07f, 2.5f, 20)); break;
             case 1: currentAction = StartCoroutine(weapons.ShootAtRandomDirections(5, 0.1f, 1, 2.5f, 2)); break;
             case 2: currentAction = StartCoroutine(weapons.ShootAtPlayer(1, 3, 5, 5)); break;
             default: break;
