@@ -122,10 +122,6 @@ public class GameLoop : MonoBehaviour
 
     void UpdateBossFight()
     {
-        if (activeBoss == null)
-        {
-            return;
-        }
         //spawn the boss -phase
         if (phase == bossPhases.NONE)
         {
@@ -150,6 +146,11 @@ public class GameLoop : MonoBehaviour
         // fight phase!
         else if (phase == bossPhases.PHASE1)
         {
+            if (activeBoss == null)
+            {
+                return;
+            }
+
             activeBoss.UpdatePhaseOne();
         }
         else if (phase == bossPhases.PHASE2)
@@ -208,12 +209,20 @@ public class GameLoop : MonoBehaviour
 
     IEnumerator BossDoneAnimateSolsticeAway()
     {
+        Vector3 startPos = timerPlanet.transform.position;
+        Vector3 endPos = startPos + Vector3.right * 1000f;
+        timerEclipse.SetActive(false);
         float t = 0;
         while (t < 3)
         {
             float perc = t / 3;
+            perc *= perc;
+            timerPlanet.transform.position = Vector3.Lerp(startPos, endPos, perc);
+            t += Time.deltaTime;
             yield return null;
         }
+
+        GameManager.Instance.PlayerWin();
     }
 
 
