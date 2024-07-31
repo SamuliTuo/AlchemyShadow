@@ -82,7 +82,7 @@ public class PartyManager : MonoBehaviour
         List<GameObject> list;
         party.TryGetValue(control.slaveType, out list);
 
-        if (list.Count >= 2)
+        if (!friend.name.Contains("SSS") && list.Count >= 2)
         {
             var u1 = friend;
             var u2 = list[1];

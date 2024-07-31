@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class GameLoop : MonoBehaviour
 {
@@ -121,6 +122,10 @@ public class GameLoop : MonoBehaviour
 
     void UpdateBossFight()
     {
+        if (activeBoss == null)
+        {
+            return;
+        }
         //spawn the boss -phase
         if (phase == bossPhases.NONE)
         {
@@ -131,7 +136,6 @@ public class GameLoop : MonoBehaviour
         else if (phase == bossPhases.SPAWNING)
         {
             bossT += Time.deltaTime;
-            print("bosst" + bossT);
             if (bossT >= bossSpawnTime)
             {
                 print("boss activate");
@@ -139,6 +143,7 @@ public class GameLoop : MonoBehaviour
                 activeBoss.InitBoss();
                 phase = bossPhases.PHASE1;
                 bossT = 0;
+                bossSpawnZone.gameObject.SetActive(false);
             }
         }
 
@@ -146,8 +151,6 @@ public class GameLoop : MonoBehaviour
         else if (phase == bossPhases.PHASE1)
         {
             activeBoss.UpdatePhaseOne();
-            bossSpawnZone.gameObject.SetActive(false);
-            // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
         }
         else if (phase == bossPhases.PHASE2)
         {
@@ -176,6 +179,12 @@ public class GameLoop : MonoBehaviour
         // ...
     }
 
+    public void BossDied()
+    {
+        activeBoss = null;
+        StartCoroutine(BossDoneAnimateSolsticeAway());
+    }
+
 
     void SetTestStartTime()
     {
@@ -197,9 +206,14 @@ public class GameLoop : MonoBehaviour
         timerPlanet.transform.position = Vector3.Lerp(timerPlanetStartPos, timerSun.transform.position, perc);
     }
 
-    void BossDoneAnimateSolsticeAway()
+    IEnumerator BossDoneAnimateSolsticeAway()
     {
-        // siirrä jollain nopeella tweenillä auringonpimennys pois kun bossi on voitettu ennen loppuscreeniä.
+        float t = 0;
+        while (t < 3)
+        {
+            float perc = t / 3;
+            yield return null;
+        }
     }
 
 
