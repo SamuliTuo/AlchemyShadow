@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 8509049042707181729}
   - component: {fileID: 8509049042707181731}
   - component: {fileID: 8509049042707181732}
+  - component: {fileID: 712239270322566709}
   m_Layer: 7
   m_Name: Enemy_spider
   m_TagString: Enemy
@@ -194,3 +195,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &712239270322566709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509049042707181728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd603d2be94d9a04da093affa8f920bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelEnd: {fileID: 0}
+  gunArm: {fileID: 0}
+  shootInterval: 5
+  damage: 1
+  bulletLifeTime: 4
+  weaponsCooldownSpeedMultiplier: 1
+  basicWeaponInterval: 2
+  basicWeaponBulletSpeed: 3
+  basicWeaponBulletLifetime: 4
+  bullet_basic: {fileID: 4253051396830361463, guid: 1c85af0ee7fbc2547b12805e9cf3acc9, type: 3}
+  bulletSpeed: 3
+  isShooting: 1

@@ -7,6 +7,7 @@ public class Shotgun_Wave : Weapon
 {
     public int bulletCount = 8;
     public float shotSpreadAngle = 45f;
+    public bool goesThrough = false;
 
     public Shotgun_Wave(
         float weaponCooldownSpeed,
@@ -30,7 +31,7 @@ public class Shotgun_Wave : Weapon
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.BASIC, goesThrough);
             }
             GameManager.Instance.AudioManager.PlayClip("player_shoot");
             GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
@@ -45,7 +46,7 @@ public class Shotgun_Wave : Weapon
                 dir = dir.normalized;
                 dir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
                 var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
+                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.BASIC, goesThrough);
             }
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();

@@ -95,7 +95,7 @@ public class GameLoop : MonoBehaviour
             }
         }
 
-        if (gameTime >= 900)
+        if (gameTime >= 600)
         {
             StartBossFight();
             return;
@@ -109,6 +109,7 @@ public class GameLoop : MonoBehaviour
 
     void StartBossFight()
     {
+        timerEclipse.SetActive(true);
         bossFight = true;
     }
 
@@ -146,6 +147,7 @@ public class GameLoop : MonoBehaviour
         {
             print("phase 1");
             activeBoss.UpdatePhaseOne();
+            bossSpawnZone.gameObject.SetActive(false);
             // tsekkaa bossin HP, jos alle 70% aktivoi phase 2
         }
         else if (phase == bossPhases.PHASE2)
@@ -192,7 +194,7 @@ public class GameLoop : MonoBehaviour
     // Sun timer
     void UpdateGameTimer()
     {
-        float perc = gameTime / 900;
+        float perc = gameTime / 600;
         timerPlanet.transform.position = Vector3.Lerp(timerPlanetStartPos, timerSun.transform.position, perc);
     }
 

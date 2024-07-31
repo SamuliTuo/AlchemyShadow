@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -72,26 +73,25 @@ public class EnemyWeapons : MonoBehaviour
     }
     
 
-
     public void Shoot(float damage, Transform barrelEnd = null)
     {
         var dir = (player.transform.position - transform.position).normalized;
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.identity);
+            print("im enemy and shooting ");
+            var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
-            GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
+
+            //GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         }
         // whoever just shoots from stomach uses this:
         else
         {
-            var clone = Instantiate(bullet_basic, transform.position, Quaternion.identity);
+            print("shooting from hiup hyeay");
+            print("spd" + bulletSpeed);
+            var clone = Instantiate(bullet_basic, transform.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
-            //var control = GetComponent<EnemyController>();
-            //control.StopAllCoroutines();
-            //StartCoroutine(control.ShootTween());
-            //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         }
     }
 }

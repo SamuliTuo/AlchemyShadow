@@ -74,7 +74,7 @@ public class FriendSpawner : MonoBehaviour
         {
             if (unfreedFriends[i] == friend)
             {
-                friend.SetActive(false);
+                friendIndicators[i].SetActive(false);
                 unfreedFriends.RemoveAt(i);
                 friendIndicators.RemoveAt(i);
                 break;
@@ -107,6 +107,11 @@ public class FriendSpawner : MonoBehaviour
     private int indexBeingUpdated = 0;
     public void TrackUnfreedFriends()
     {
+        if (unfreedFriends.Count <= 0)
+        {
+            return;
+        }
+
         Vector3 mid = cam.ScreenToWorldPoint(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
         mid.z = 0;
 
