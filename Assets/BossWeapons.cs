@@ -54,6 +54,13 @@ public class BossWeapons : MonoBehaviour
         {
             dir = Quaternion.AngleAxis(rotationSpeed * Time.deltaTime, Vector3.forward) * dir;
 
+            //arm
+            if (gunArm != null && GameManager.Instance.paused == false)
+            {
+                var point = gunArm.position + dir;
+                gunArm.LookAt(point);
+            }
+
             if (interval >= shootInterval)
             {
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
@@ -82,6 +89,14 @@ public class BossWeapons : MonoBehaviour
             {
                 Vector3 dir = Random.insideUnitCircle;
                 dir = dir.normalized;
+
+                //arm
+                if (gunArm != null && GameManager.Instance.paused == false)
+                {
+                    var point = gunArm.position + dir;
+                    gunArm.LookAt(point);
+                }
+
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
                 clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.SINE_WAVE, false, Random.Range(0,2)==0, true);
                 //GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
@@ -105,6 +120,14 @@ public class BossWeapons : MonoBehaviour
         var dir = player.position - transform.position;
         dir.z = 0;
         dir = dir.normalized;
+
+        //arm
+        if (gunArm != null && GameManager.Instance.paused == false)
+        {
+            var point = gunArm.position + dir;
+            gunArm.LookAt(point);
+        }
+
         var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
         clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, 0, BulletTypes.BASIC, false, false, true);
         GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);

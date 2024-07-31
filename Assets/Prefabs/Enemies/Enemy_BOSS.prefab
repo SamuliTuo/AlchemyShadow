@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880012534910458343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0.15000004, y: -0.70000005, z: 0}
   m_LocalScale: {x: 14, y: 14, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2618333612513695109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21000004, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.7, z: 0}
   m_LocalScale: {x: 14, y: 14, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 82d36ce893656094c8298a42196852ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -382,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5769688188679003365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.266, z: 0}
+  m_LocalPosition: {x: 0.38, y: 0.211, z: 0.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -414,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7233663689625349240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.629, y: 0.192, z: -0}
+  m_LocalPosition: {x: 0.646, y: 0.192, z: -0}
   m_LocalScale: {x: 0.6999999, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,7 +434,6 @@ GameObject:
   - component: {fileID: 8509049042707181731}
   - component: {fileID: 8509049042707181732}
   - component: {fileID: 2886482319054412549}
-  - component: {fileID: 4306098863352449949}
   m_Layer: 7
   m_Name: Enemy_BOSS
   m_TagString: Enemy
@@ -473,10 +472,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ec8019845f0494d8925dfd3321160e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 1
+  hp: 1000
+  maxHp: 1000
   acceleration: 100
+  innerRing: {fileID: 1880012534910458343}
+  outerRing: {fileID: 2618333612513695109}
   p1_moveSpeed: 10
+  specialChargeDuration: 4
+  specialCooldownDuration: 30
+  specialDamage: 5
 --- !u!58 &8509049042707181731
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -537,23 +541,3 @@ MonoBehaviour:
   basicWeaponBulletLifetime: 2
   bullet_basic: {fileID: 4253051396830361463, guid: 8737501a4e685914881c022e7459c8b4, type: 3}
   isShooting: 0
---- !u!114 &4306098863352449949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8509049042707181728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e7d474e8984d141b908e26b7a818d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDoSpecial: 1
-  doingSpecial: 0
-  specialRangeSquared: 5
-  specialChargeDuration: 3
-  specialCooldown: 3
-  specialDamage: 3
-  outerRing: {fileID: 9134930914050841892}
-  innerRing: {fileID: 5826154742361571971}
