@@ -71,11 +71,9 @@ public class BossWeapons : MonoBehaviour
 
             t += Time.deltaTime;
             interval += Time.deltaTime;
-            print("shooting rings, t: " + t + ",  duration: " + duration);
             yield return null;
         }
         //then rotate
-        print("shootrings end");
         controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
 
     }
@@ -107,13 +105,11 @@ public class BossWeapons : MonoBehaviour
             interval += Time.deltaTime;
             yield return null;
         }
-        print("shootrandom end");
         controller.currentAction = StartCoroutine(controller.WaitAfterShoot(2));
     }
 
     public IEnumerator ShootAtPlayer(float aimTime, float damage, float bulletSpeed, float bulletLifetime)
     {
-        print("shooting at plr");
         //var point = GameManager.Instance.cam.ScreenToWorldPoint(player.posi)); //(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
         yield return new WaitForSeconds(aimTime);
 
@@ -133,7 +129,6 @@ public class BossWeapons : MonoBehaviour
         GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
         //shoot sound?
         controller.currentAction = StartCoroutine(controller.WaitAfterShoot(1));
-        print("focus shot coroutine ended");
     }
 
     //public IEnumerator ShootShotgun(float damage, Transform barrelEnd = null, int extraBullets = 0, int penetrations = 0)
