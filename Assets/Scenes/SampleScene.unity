@@ -34089,7 +34089,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.8
+      scalar: 0.6
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
@@ -34142,8 +34142,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
-      minScalar: 10
+      scalar: 10
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -37094,7 +37094,7 @@ ParticleSystem:
     positionAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -41135,9 +41135,16 @@ MonoBehaviour:
   - name: player_shoot
     clips:
     - {fileID: 8300000, guid: c176fd4be83040f40b76e6637671e905, type: 3}
+    pitch: 0.6
+    pitchRandomizationAmount: 0.11
+    volume: 0.4
+  - name: player_hurt
+    clips:
+    - {fileID: 8300000, guid: 8fde0c5c63732a9429eb94251b29e530, type: 3}
+    - {fileID: 8300000, guid: 3763264e3b8bbe6489e3d158176c3a6a, type: 3}
     pitch: 1
-    pitchRandomizationAmount: 0.3
-    volume: 0.8
+    pitchRandomizationAmount: 0.15
+    volume: 1
 --- !u!1 &718407166
 GameObject:
   m_ObjectHideFlags: 0
@@ -45228,7 +45235,7 @@ GameObject:
   - component: {fileID: 883790879}
   m_Layer: 0
   m_Name: wallwithstuff
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80233,7 +80240,7 @@ Transform:
   m_GameObject: {fileID: 1835918549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.11781245, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 628606921}
