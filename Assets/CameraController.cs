@@ -12,10 +12,10 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         var cam = Camera.main;
-        leftBar.position = cam.ScreenToWorldPoint(new (Screen.width * 0.1f, Screen.height * 0.5f, cam.nearClipPlane));
-        rightBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.9f, Screen.height * 0.5f, cam.nearClipPlane));
-        topBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.5f, Screen.height * 0.9f, cam.nearClipPlane));
-        botBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.5f, Screen.height * 0.1f, cam.nearClipPlane));
+        leftBar.position = cam.ScreenToWorldPoint(new (Screen.width * 0.03f, Screen.height * 0.5f, cam.nearClipPlane));
+        rightBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.97f, Screen.height * 0.5f, cam.nearClipPlane));
+        topBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.5f, Screen.height * 0.97f, cam.nearClipPlane));
+        botBar.position = cam.ScreenToWorldPoint(new(Screen.width * 0.5f, Screen.height * 0.03f, cam.nearClipPlane));
         leftBar.localPosition = new(leftBar.localPosition.x, leftBar.localPosition.y, 20);
         rightBar.localPosition = new(rightBar.localPosition.x, rightBar.localPosition.y, 20);
         topBar.localPosition = new(topBar.localPosition.x, topBar.localPosition.y, 20);
