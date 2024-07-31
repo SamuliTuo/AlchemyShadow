@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -315,6 +319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -473,6 +481,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -800,6 +812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -902,6 +918,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -1024,6 +1044,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -1171,7 +1195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 45140814}
   - component: {fileID: 45140813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (9)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1256,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1318,6 +1346,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -1426,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -1444,7 +1480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 50194368}
   - component: {fileID: 50194367}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (31)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1780,6 +1816,10 @@ PrefabInstance:
       value: boxes (18)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -2009,6 +2049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2065,6 +2109,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -2692,6 +2740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2754,7 +2806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 127197480}
   - component: {fileID: 127197479}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (32)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -2924,6 +2976,10 @@ PrefabInstance:
       value: boxes (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -3044,6 +3100,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -3235,7 +3295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138028514}
   - component: {fileID: 138028513}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (24)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -3488,6 +3548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -3550,7 +3614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173339905}
   - component: {fileID: 173339904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (28)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -3931,6 +3995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -4050,6 +4118,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -4281,7 +4353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207599565}
   - component: {fileID: 207599566}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (16)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -4679,7 +4751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228053834}
   - component: {fileID: 228053835}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (17)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -4763,6 +4835,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -4927,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5001,7 +5081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249283847}
   - component: {fileID: 249283846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5170,6 +5250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -5238,6 +5322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5300,6 +5388,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -5423,6 +5515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -5485,7 +5581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270795134}
   - component: {fileID: 270795133}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (26)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5569,6 +5665,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -10584,6 +10684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -10703,6 +10807,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -10829,6 +10937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -10891,6 +11003,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -11118,7 +11234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311027168}
   - component: {fileID: 311027167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (3)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -11202,6 +11318,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -11375,6 +11495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -11522,6 +11646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -11540,6 +11668,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -11603,7 +11735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329707026}
   - component: {fileID: 329707027}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (43)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -16840,6 +16972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16902,6 +17038,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -17338,6 +17478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -17489,7 +17633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389776589}
   - component: {fileID: 389776588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (19)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -17618,6 +17762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -17636,6 +17784,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -17758,6 +17910,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -17889,6 +18045,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -18268,6 +18428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -18387,6 +18551,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -18636,6 +18804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -18755,6 +18927,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -18886,6 +19062,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -19045,7 +19225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433720998}
   - component: {fileID: 433720999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (35)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -24420,6 +24600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -24716,6 +24900,10 @@ PrefabInstance:
       value: boxes (11)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -24836,6 +25024,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -25045,6 +25237,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -25274,6 +25470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -25337,6 +25537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -25399,6 +25603,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -30457,7 +30665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 498720595}
   - component: {fileID: 498720596}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (41)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -31683,6 +31891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -31757,6 +31969,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -32212,7 +32428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579977214}
   - component: {fileID: 579977215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (38)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -32381,6 +32597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -32495,6 +32715,10 @@ PrefabInstance:
     - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
       propertyPath: m_Name
       value: hole (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -32683,6 +32907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -32829,6 +33057,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -37840,7 +38072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619522071}
   - component: {fileID: 619522072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (40)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -38009,7 +38241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634518591}
   - component: {fileID: 634518592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EdgeColliders
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -38108,7 +38340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635756209}
   - component: {fileID: 635756208}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (25)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -38309,6 +38541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -38371,6 +38607,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -38488,6 +38728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -38597,6 +38841,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -38745,6 +38993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -38808,6 +39060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -38870,6 +39126,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -39243,6 +39503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -39300,6 +39564,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -39917,6 +40185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -39979,6 +40251,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -40298,6 +40574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -40350,6 +40630,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -40626,6 +40910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -40745,7 +41033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769692499}
   - component: {fileID: 769692498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (8)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40829,7 +41117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780471931}
   - component: {fileID: 780471932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (11)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40913,6 +41201,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -41045,6 +41337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -41119,6 +41415,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -41657,6 +41957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -41880,6 +42184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -41898,7 +42206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829034239}
   - component: {fileID: 829034240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (29)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -42117,6 +42425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -42248,6 +42560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -42322,6 +42638,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -42444,6 +42764,10 @@ PrefabInstance:
       value: boxes (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -42564,6 +42888,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -42840,6 +43168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -43054,6 +43386,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -43281,6 +43617,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -43763,6 +44103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -43781,7 +44125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908133821}
   - component: {fileID: 908133822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (33)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -44357,6 +44701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -44425,6 +44773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -44487,7 +44839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940764160}
   - component: {fileID: 940764159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (30)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -44723,6 +45075,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -45033,6 +45389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -45095,7 +45455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970676591}
   - component: {fileID: 970676592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (21)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -45184,7 +45544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984371218}
   - component: {fileID: 984371217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (22)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -45268,6 +45628,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -45544,6 +45908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -45562,7 +45930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1002712430}
   - component: {fileID: 1002712431}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (34)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -45679,6 +46047,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -45736,6 +46108,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -45998,6 +46374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -46072,6 +46452,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -46219,6 +46603,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -46419,6 +46807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -46442,6 +46834,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -46791,6 +47187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -46909,6 +47309,10 @@ PrefabInstance:
     - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
       propertyPath: m_Name
       value: hole (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -47074,6 +47478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -47136,7 +47544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088530094}
   - component: {fileID: 1088530093}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (7)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -47220,6 +47628,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -47359,6 +47771,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -47609,6 +48025,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -47889,7 +48309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127727778}
   - component: {fileID: 1127727779}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (20)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -52996,6 +53416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -53154,6 +53578,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -53346,6 +53774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -53359,6 +53791,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -53507,6 +53943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -53569,6 +54009,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -54051,6 +54495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -54125,6 +54573,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -54498,6 +54950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -54645,6 +55101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -54765,6 +55225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -54884,6 +55348,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -55098,6 +55566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -55172,7 +55644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230142720}
   - component: {fileID: 1230142719}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (23)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -55392,6 +55864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -55589,6 +56065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -55723,6 +56203,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -55914,6 +56398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -55989,6 +56477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -56051,7 +56543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280150613}
   - component: {fileID: 1280150614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (18)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -56217,6 +56709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -56336,6 +56832,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -56536,6 +57036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -56554,6 +57058,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -57103,6 +57611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -57372,7 +57884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333506275}
   - component: {fileID: 1333506276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (42)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -57456,6 +57968,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -57570,6 +58086,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -57717,6 +58237,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -57985,6 +58509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -58003,6 +58531,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -58195,6 +58727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -58213,6 +58749,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -58507,6 +59047,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -59067,6 +59611,10 @@ PrefabInstance:
       value: boxes (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -59247,6 +59795,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -59492,6 +60044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_straight (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -59595,6 +60151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -59657,7 +60217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418504765}
   - component: {fileID: 1418504764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (27)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -60074,6 +60634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -60401,6 +60965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -60463,6 +61031,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -60688,6 +61260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -60763,6 +61339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -60825,6 +61405,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -60939,6 +61523,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -61155,6 +61743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -61301,7 +61893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1508762811}
   - component: {fileID: 1508762810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (36)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -61434,6 +62026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -61519,13 +62115,13 @@ MonoBehaviour:
   edgeLayermask:
     serializedVersion: 2
     m_Bits: 0
-  birdMachine: {fileID: 0}
-  blurbo: {fileID: 0}
-  demon: {fileID: 0}
-  pyramid: {fileID: 0}
-  skull: {fileID: 0}
-  snek: {fileID: 0}
-  spider: {fileID: 0}
+  birdMachine: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
+  blurbo: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
+  demon: {fileID: 8509049042707181728, guid: 0ae950906b2f2f44e9865f351ae4ddf1, type: 3}
+  pyramid: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
+  skull: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
+  snek: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
+  spider: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
   playerIsAlive: 1
 --- !u!4 &1510551493
 Transform:
@@ -61841,6 +62437,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -67194,6 +67794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -67251,6 +67855,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -67393,6 +68001,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -67541,6 +68153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -67603,6 +68219,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -67723,6 +68343,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -67955,6 +68579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -68101,6 +68729,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -68449,6 +69081,10 @@ PrefabInstance:
       value: boxes (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -68561,6 +69197,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -68725,6 +69365,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -68956,6 +69600,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -69370,6 +70018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -69595,7 +70247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1648355347}
   - component: {fileID: 1648355348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (39)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -70039,6 +70691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall_angle (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -70354,6 +71010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -70557,7 +71217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693231803}
   - component: {fileID: 1693231802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -70710,6 +71370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -70784,7 +71448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702000140}
   - component: {fileID: 1702000141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (37)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -70868,7 +71532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706485660}
   - component: {fileID: 1706485661}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (15)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -71080,6 +71744,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -71361,6 +72029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -71417,6 +72089,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -71513,6 +72189,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -71699,6 +72379,10 @@ PrefabInstance:
     - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
       propertyPath: m_Name
       value: wall_straight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911004850447272750, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7911004850447272748, guid: 0be79b8a9d590b44fb4b8746a5506f38, type: 3}
@@ -71909,6 +72593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -71965,6 +72653,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -72265,6 +72957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -72339,6 +73035,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -72459,6 +73159,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -72586,6 +73290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -72660,6 +73368,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -77683,6 +78395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -77867,6 +78583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -78002,6 +78722,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -83116,6 +83840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -83263,6 +83991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -83327,6 +84059,10 @@ PrefabInstance:
       value: boxes (20)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -83386,6 +84122,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -83611,7 +84351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885394884}
   - component: {fileID: 1885394883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (13)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -83999,6 +84739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -84145,7 +84889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915608168}
   - component: {fileID: 1915608167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (6)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -84573,6 +85317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -84782,7 +85530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956175068}
   - component: {fileID: 1956175067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (10)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -84911,6 +85659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -84929,6 +85681,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -85122,6 +85878,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -85354,6 +86114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -85416,7 +86180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992524742}
   - component: {fileID: 1992524741}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (5)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -85544,6 +86308,10 @@ PrefabInstance:
     - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
       propertyPath: m_Name
       value: hole (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -85782,6 +86550,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -86071,6 +86843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -86133,6 +86909,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -86365,6 +87145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -86427,6 +87211,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -86548,6 +87336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -86667,6 +87459,10 @@ PrefabInstance:
     - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_Name
       value: wall_angle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040701148661872552, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742791751562321238, guid: 1ef5dc778ec4f384aaeb5fd1be430e62, type: 3}
       propertyPath: m_RootOrder
@@ -86793,6 +87589,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -86957,6 +87757,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -87154,6 +87958,10 @@ PrefabInstance:
     - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_Name
       value: tube (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
@@ -87450,6 +88258,10 @@ PrefabInstance:
       value: boxes (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -87562,6 +88374,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
@@ -87766,7 +88582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096676985}
   - component: {fileID: 2096676984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ground_tile (14)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -87850,6 +88666,10 @@ PrefabInstance:
     - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_Name
       value: plant (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955192423792184036, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4880304024310286414, guid: a9f3669fef02a0f409bf287c51423d1c, type: 3}
       propertyPath: m_RootOrder
@@ -88038,6 +88858,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -88330,6 +89154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -88404,6 +89232,10 @@ PrefabInstance:
     - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_Name
       value: crate (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
@@ -88797,6 +89629,10 @@ PrefabInstance:
       value: boxes (17)
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -88986,6 +89822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 4719629838905324527, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7291149920018711684, guid: 650b75cfe038da740a8aa1b2cfab7f78, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -89143,7 +89983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: slots.Array.data[0]
@@ -89175,11 +90015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].name
-      value: Flag area size
+      value: Bullet penetration
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[7].name
-      value: Bullet penetration
+      value: Extra bullet
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].name
@@ -89220,7 +90060,7 @@ PrefabInstance:
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].image
       value: 
-      objectReference: {fileID: 21300000, guid: 34a59c71948cd8f4e9e0c111e7a06026, type: 3}
+      objectReference: {fileID: 21300000, guid: 9f0d5a030be8cc041bc16353bafe340a, type: 3}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].regen
       value: 0
@@ -89228,7 +90068,7 @@ PrefabInstance:
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[7].image
       value: 
-      objectReference: {fileID: 21300000, guid: 9f0d5a030be8cc041bc16353bafe340a, type: 3}
+      objectReference: {fileID: 21300000, guid: 3f09425c0cae7134598e1021ea9716c7, type: 3}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].image
       value: 
@@ -89239,7 +90079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].flagArea
-      value: 0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[7].flagArea
@@ -89291,23 +90131,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].description
-      value: The flag can stay further from player without disappearing.
+      value: Your bullets penetrate once more when hitting something.
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[7].description
-      value: Your bullets penetrate once more when hitting something.
+      value: You shoot one more bullet each shot.
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].description
       value: You shoot one more bullet each shot.
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: powerUps.Array.data[7].additionalBullet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].additionalBullet
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
-      propertyPath: powerUps.Array.data[7].additionalBulletPenetrations
+      propertyPath: powerUps.Array.data[6].additionalBulletPenetrations
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: powerUps.Array.data[7].additionalBulletPenetrations
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].additionalBulletPenetrations
@@ -89426,6 +90274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tube
       objectReference: {fileID: 0}
+    - target: {fileID: 7376954368709410952, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7376954368709410954, guid: a2391eed0d975414ca6c879ed329aea1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -89528,6 +90380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760993456780752, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6526960340717290626, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2dd8098de51124f9b4d1146207570c, type: 3}
@@ -89541,6 +90397,10 @@ PrefabInstance:
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_Name
       value: boxes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2146691541794577234, guid: b7619a00ebeae0c4dac65635f35445d7, type: 3}
       propertyPath: m_TagString
@@ -89602,6 +90462,10 @@ PrefabInstance:
     - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_Name
       value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432122030261109095, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5544350065929380416, guid: c86cb99e431eca943bd151e19cd71e57, type: 3}
       propertyPath: m_RootOrder
