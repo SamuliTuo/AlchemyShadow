@@ -61516,6 +61516,9 @@ MonoBehaviour:
   enemyHitFlashTime: 0.3
   paused: 0
   player: {fileID: 0}
+  edgeLayermask:
+    serializedVersion: 2
+    m_Bits: 0
   playerIsAlive: 1
 --- !u!4 &1510551493
 Transform:
@@ -61582,14 +61585,20 @@ MonoBehaviour:
   - name: intro 3
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 0, y: 40}
-    duration: 10
-    spawnInterval: 0.75
+    duration: 30
+    spawnInterval: 1
     startTimeInSeconds: 0
   - name: ===ELITE 1
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
     start_minutesAndSeconds: {x: 1, y: 30}
     duration: 15
     spawnInterval: 5
+    startTimeInSeconds: 0
+  - name: ELITE 1
+    prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
+    start_minutesAndSeconds: {x: 1, y: 30}
+    duration: 40
+    spawnInterval: 1.5
     startTimeInSeconds: 0
   - name: ELITE 1
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
@@ -61601,13 +61610,7 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
     start_minutesAndSeconds: {x: 2, y: 10}
     duration: 10
-    spawnInterval: 1.75
-    startTimeInSeconds: 0
-  - name: ELITE 1
-    prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
-    start_minutesAndSeconds: {x: 2, y: 10}
-    duration: 25
-    spawnInterval: 0.2
+    spawnInterval: 2
     startTimeInSeconds: 0
   - name: ===Phase 2
     prefab: {fileID: 8509049042707181728, guid: 2f52f438baa6e1845a994c192028916c, type: 3}
@@ -61633,7 +61636,7 @@ MonoBehaviour:
     duration: 15
     spawnInterval: 2.5
     startTimeInSeconds: 0
-  - name: ELITE 2
+  - name: ===ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 4, y: 0}
     duration: 30
@@ -61642,24 +61645,24 @@ MonoBehaviour:
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
     start_minutesAndSeconds: {x: 4, y: 0}
-    duration: 3
+    duration: 1
     spawnInterval: 1
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
     start_minutesAndSeconds: {x: 4, y: 40}
     duration: 20
-    spawnInterval: 0.45
+    spawnInterval: 0.5
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}
     start_minutesAndSeconds: {x: 4, y: 40}
-    duration: 10
-    spawnInterval: 2
+    duration: 9
+    spawnInterval: 3
     startTimeInSeconds: 0
   - name: ELITE 2
     prefab: {fileID: 8509049042707181728, guid: 7c60dfc7494f4284498c69a63b99de8a, type: 3}
-    start_minutesAndSeconds: {x: 4, y: 40}
+    start_minutesAndSeconds: {x: 4, y: 50}
     duration: 10
     spawnInterval: 0.95
     startTimeInSeconds: 0
