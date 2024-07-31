@@ -33,7 +33,6 @@ public class AudioManager : MonoBehaviour
                 var _source = GetAFreeAudioSource();
                 if (_source == null)
                 {
-                    print("oops out of audio sources!");
                     return;
                 }
                 _source.clip = audio.clips[Random.Range(0, audio.clips.Count)];

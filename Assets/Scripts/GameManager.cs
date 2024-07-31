@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
     public bool playerIsAlive = true;
     public void PlayerDied()
     {
-        print("player died");
         playerIsAlive = false;
         PauseManager.OpenDiedPanel();
         //open end game popup
@@ -138,7 +137,6 @@ public class GameManager : MonoBehaviour
         if (Physics2D.OverlapPoint(point, edgeLayermask))
         {
             //inside a wall
-            print("inside a wall");
             if (deepnes > 100)
             {
                 return Vector3.zero;

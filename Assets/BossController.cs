@@ -18,7 +18,6 @@ public class BossController : MonoBehaviour
 
     float currentMoveSpeed;
     Vector2 moveVector = Vector2.zero;
-    float t = 0;
     Transform player;
     Rigidbody2D rb;
     private SpriteRenderer graphics;
@@ -53,12 +52,8 @@ public class BossController : MonoBehaviour
     {
         if (hpBar == null)
         {
-            print("hp bar is null");
             return;
         }
-        print("update hp");
-        print("hp : " + hp + ", maxHp" + maxHp);
-        print("fill amount: " + (hp / maxHp));
         hpBar.fillAmount = hp / maxHp;
     }
     void FixedUpdate()
@@ -92,13 +87,11 @@ public class BossController : MonoBehaviour
         if (currentAction == null)
         {
             Time.timeScale = 1;
-            print("currentaction is null, chhoosing.");
             ChooseAction();
         }
         if (currentMoveAction == null)
         {
             Time.timeScale = 1;
-            print("current move act null");
             ChooseMoveAction();
 
         }
@@ -241,7 +234,6 @@ public class BossController : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
-        print("folow end");
         currentMoveAction = null;
     }
     IEnumerator Wander(int dashes, float speed, float changeDirectionInterval)
@@ -259,12 +251,10 @@ public class BossController : MonoBehaviour
             }
             yield return null;
         }
-        print("wander ened");
         currentMoveAction = null;
     }
     IEnumerator Stop(float duration)
     {
-        print("stoppin");
         moveVector = Vector3.zero;
         float t = 0;
         while (t < duration)
@@ -272,7 +262,6 @@ public class BossController : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
-        print("stop ended");
         currentMoveAction = null;
     }
 
@@ -349,7 +338,6 @@ public class BossController : MonoBehaviour
 
     public void GotHit(float damage)
     {
-        print("boss got hit");
         hp -= damage;
         UpdateHPBar();
         if (hp <= 0)

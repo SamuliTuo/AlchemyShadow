@@ -49,7 +49,6 @@ public class MenuController : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
             {
-                print("go skip");
                 StopAllCoroutines();
                 ChangeToGameScene();
             }
@@ -59,7 +58,6 @@ public class MenuController : MonoBehaviour
 
     public void StartGame()
     {
-        print("pressed start game");
         StartCoroutine(Cutscene());
     }
     public void Settings()
@@ -96,8 +94,6 @@ public class MenuController : MonoBehaviour
         yield return new WaitForSeconds(firstBlackScreenDuration);
         
         // 1st pic
-        print("screen: " + screen.name);
-        print("images 0: " + images[0]);
         screen.material = images[0];
         float t2 = 0;
         while (t2 < pictureDurations[0])

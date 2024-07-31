@@ -83,7 +83,6 @@ public class EnemyWeapons : MonoBehaviour
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            print("im enemy and shooting ");
             var clone = Instantiate(bullet_basic, barrelEnd.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
 
@@ -92,8 +91,6 @@ public class EnemyWeapons : MonoBehaviour
         // whoever just shoots from stomach uses this:
         else
         {
-            print("shooting from hiup hyeay");
-            print("spd" + bulletSpeed);
             var clone = Instantiate(bullet_basic, transform.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifeTime, 0, BulletTypes.BASIC, false, false, true);
         }

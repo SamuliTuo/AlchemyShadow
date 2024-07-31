@@ -41171,9 +41171,9 @@ MonoBehaviour:
   - name: player_shoot
     clips:
     - {fileID: 8300000, guid: c176fd4be83040f40b76e6637671e905, type: 3}
-    pitch: 0.6
+    pitch: 0.65
     pitchRandomizationAmount: 0.11
-    volume: 0.4
+    volume: 0.36
   - name: player_hurt
     clips:
     - {fileID: 8300000, guid: 8fde0c5c63732a9429eb94251b29e530, type: 3}
@@ -91273,11 +91273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: hpRegenPercTic
-      value: 0.03
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: slots.Array.data[0]
@@ -91294,6 +91294,10 @@ PrefabInstance:
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[5].hp
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: powerUps.Array.data[8].hp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[3].name
@@ -91317,7 +91321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].name
-      value: Extra bullet
+      value: Max HP
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[0].image
@@ -91341,7 +91345,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 1165d37a552a79f4893f6c72df8e12ef, type: 3}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[4].regen
-      value: 0.3
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[5].image
@@ -91366,7 +91370,7 @@ PrefabInstance:
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].image
       value: 
-      objectReference: {fileID: 21300000, guid: 3f09425c0cae7134598e1021ea9716c7, type: 3}
+      objectReference: {fileID: 21300000, guid: c9b6ff2a0c2f1dd4dbdd8c5bff26699a, type: 3}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[0].damage
       value: 0.15
@@ -91433,7 +91437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].description
-      value: You shoot one more bullet each shot.
+      value: Toughen up!
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[7].additionalBullet
@@ -91441,7 +91445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[8].additionalBullet
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644984, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: powerUps.Array.data[6].additionalBulletPenetrations

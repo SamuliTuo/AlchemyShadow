@@ -79,7 +79,6 @@ public class GameLoop : MonoBehaviour
             {
                 if (gameTime >= enemySpawnEvents[i].startTimeInSeconds)
                 {
-                    print("started spawner");
                     StartCoroutine(SpawnerRunning(enemySpawnEvents[i]));
                     enemySpawnEvents.RemoveAt(i);
                 }
@@ -134,7 +133,6 @@ public class GameLoop : MonoBehaviour
             bossT += Time.deltaTime;
             if (bossT >= bossSpawnTime)
             {
-                print("boss activate");
                 activeBoss = Instantiate(bossPrefab, bossSpawnZone.position, Quaternion.identity).GetComponent<BossController>();
                 activeBoss.InitBoss();
                 phase = bossPhases.PHASE1;
