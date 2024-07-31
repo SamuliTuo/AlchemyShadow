@@ -61571,7 +61571,7 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 0, y: 25}
     duration: 20
-    spawnInterval: 70
+    spawnInterval: 5
     startTimeInSeconds: 0
   - name: intro 2
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
@@ -61583,13 +61583,7 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
     start_minutesAndSeconds: {x: 0, y: 40}
     duration: 10
-    spawnInterval: 0.25
-    startTimeInSeconds: 0
-  - name: intro 4
-    prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
-    start_minutesAndSeconds: {x: 0, y: 45}
-    duration: 3
-    spawnInterval: 1
+    spawnInterval: 0.75
     startTimeInSeconds: 0
   - name: ===ELITE 1
     prefab: {fileID: 8509049042707181728, guid: e8c9cd74da587e04fa76eaa9dc046ded, type: 3}
