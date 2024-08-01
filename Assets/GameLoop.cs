@@ -62,16 +62,16 @@ public class GameLoop : MonoBehaviour
 
 
         UpdateGameTimer();
-        //if (startingTestFriends > 0)
-        //{
-        //    for (int i = 0; i < startingTestFriends; i++)
-        //    {
-        //        GameManager.Instance.FriendSpawner.SpawnAFriend();
-        //    }
-        //    startingTestFriends = 0;
-        //}
+        if (startingTestFriends > 0)
+        {
+            for (int i = 0; i < startingTestFriends; i++)
+            {
+                GameManager.Instance.FriendSpawner.SpawnAFriend();
+            }
+            startingTestFriends = 0;
+        }
 
-        
+
         if (bossTestRun == false)
         {
             // Start enemy spawners

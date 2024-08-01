@@ -63144,7 +63144,7 @@ MonoBehaviour:
   enemyHitFlashTime: 0.3
   paused: 0
   player: {fileID: 0}
-  edgeLayermask:
+  obstacleLayermask:
     serializedVersion: 2
     m_Bits: 1024
   birdMachine: {fileID: 8509049042707181728, guid: 01123b5cb154a114eaa6563747c10cf2, type: 3}

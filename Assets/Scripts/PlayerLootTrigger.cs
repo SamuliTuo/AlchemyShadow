@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerLootTrigger : MonoBehaviour
 {
+    Transform player;
+
+    private void Start()
+    {
+        player = GameManager.Instance.player;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //print("loot trigger hit something");
@@ -26,12 +33,16 @@ public class PlayerLootTrigger : MonoBehaviour
         Vector3 startPos = thing.transform.position;
         while (t < 1)
         {
+            if (player == null)
+            {
+                yield break;
+            }
             if (thing == null)
             {
                 yield break;
             }
             perc = t * t;
-            thing.transform.position = Vector3.Lerp(startPos, transform.position, perc);
+            thing.transform.position = Vector3.Lerp(startPos, player.transform.position, perc);
             t += Time.deltaTime;
             yield return null;
         }

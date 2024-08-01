@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public float enemyHitFlashTime;
     public bool paused = false;
     public Transform player;
-    public LayerMask edgeLayermask;
+    public LayerMask obstacleLayermask;
 
     // Boss fight stuff
     public GameObject birdMachine;
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
         var point = cam.ScreenToWorldPoint(new Vector3(randomCoordinates.x, randomCoordinates.y, cam.nearClipPlane));
 
-        if (Physics2D.OverlapPoint(point, edgeLayermask))
+        if (Physics2D.OverlapPoint(point, obstacleLayermask))
         {
             //inside a wall
             if (deepnes > 100)
