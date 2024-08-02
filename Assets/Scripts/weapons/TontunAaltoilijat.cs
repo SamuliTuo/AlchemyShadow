@@ -22,9 +22,7 @@ public class TontunAaltoilijat : Weapon
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            var dir = point - transform.position;
-            dir.z = 0;
-            dir = dir.normalized;
+            var dir = GetShootingDirFromMousePos();
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, false);
             if (shootDoubleWave)
@@ -38,9 +36,11 @@ public class TontunAaltoilijat : Weapon
         // whoever just shoots from stomach uses this:
         else
         {
-            var dir = point - transform.position;
-            dir.z = 0;
-            dir = dir.normalized;
+            var dir = GetShootingDirForClosestEnemyInRange(shootRangeRadius);
+            if (dir == errorVector)
+            {
+                return;
+            }
             var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.SINE_WAVE, true, false);
             if (shootDoubleWave)

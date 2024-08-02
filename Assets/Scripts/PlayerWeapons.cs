@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public enum Weapons
 
 public class PlayerWeapons : MonoBehaviour
 {
+
     public Transform barrelEnd;
     public Transform gunArm;
 
@@ -37,7 +39,7 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Awake()
     {
-        t = 1;
+        t = 0.76f;
         cam = Camera.main;
     }
 
@@ -101,6 +103,7 @@ public class PlayerWeapons : MonoBehaviour
 [System.Serializable]
 public class Weapon : MonoBehaviour
 {
+    public float shootRangeRadius = 1;
     public float shootInterval = 2;
     public float bulletSpeed = 10;
     public float bulletLifetime = 2;
@@ -117,15 +120,51 @@ public class Weapon : MonoBehaviour
         this.bullet = bullet;
     }
 
-    public virtual void Shoot(float damage, Transform barrelEnd = null, int additionalBullets = 0, int additionalBulletPenetrations = 0)
+    public virtual Vector3 GetShootingDirFromMousePos()
     {
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
+        var dir = point - transform.position;
+        dir.z = 0;
+        return dir;
+    }
+    public Vector3 GetShootingDirForClosestEnemyInRange(float range)
+    {
+        // Loot for nearby enemies:
+        float current;
+        float closestRangeSqrd = 100000000;
+        GameObject closestEnemy = null;
+        Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, shootRangeRadius);
+        foreach (Collider2D col in overlaps)
+        {
+            if (col.CompareTag("Enemy"))
+            {
+                current = (transform.position - col.transform.position).sqrMagnitude;
+                if (current < closestRangeSqrd)
+                {
+                    closestEnemy = col.gameObject;
+                    closestRangeSqrd = current;
+                }
+            }
+        }
+        if (closestEnemy == null)
+        {
+            return errorVector;
+        }
+        var dir = closestEnemy.transform.position - transform.position;
+        dir.z = 0;
+        dir = dir.normalized;
+        return dir;
+    }
+    public Vector3 errorVector = -Vector3.one * 9999999;
+
+    public virtual void Shoot(float damage, Transform barrelEnd = null, int additionalBullets = 0, int additionalBulletPenetrations = 0)
+    {
+
 
         // player has barrel sooo...
         if (barrelEnd != null)
         {
-            var dir = point - transform.position;
-            dir.z = 0;
+            var dir = GetShootingDirFromMousePos();
             dir = dir.normalized;
             var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, additionalBulletPenetrations);
@@ -133,12 +172,14 @@ public class Weapon : MonoBehaviour
 
 
         }
-        // whoever just shoots from stomach uses this:
+
+        // whoever just shoots from stomach uses this: (minions)
         else
         {
-            var dir = point - transform.position;
-            dir.z = 0;
-            dir = dir.normalized;
+            print("find closest enemy");
+
+
+            var dir = GetShootingDirForClosestEnemyInRange(shootRangeRadius);
             var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
             clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, additionalBulletPenetrations);
             var control = GetComponent<SlaveController>();

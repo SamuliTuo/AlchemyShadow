@@ -270,11 +270,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23da9b2e14feeaa429f8375b3a9cfdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootRangeRadius: 100
   shootInterval: 2
   bulletSpeed: 10
   bulletLifetime: 3
   bullet: {fileID: 4253051396830361463, guid: ebf7e1d09849a334b80d135083e7d9f0, type: 3}
   isShooting: 0
+  errorVector: {x: 0, y: 0, z: 0}
   burstShotCount: 11
   burstShotInterval: 0.15
   burstSpread: 10

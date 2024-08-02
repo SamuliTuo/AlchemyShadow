@@ -45,9 +45,7 @@ public class SalmarinMarjapommit : Weapon
         {
             for (int i = 0; i < waveCount; i++)
             {
-                var dir = point - transform.position;
-                dir.z = 0;
-                dir = dir.normalized;
+                var dir = GetShootingDirFromMousePos();
                 dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
                 var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(dir));
                 clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
@@ -57,14 +55,18 @@ public class SalmarinMarjapommit : Weapon
         // whoever just shoots from stomach uses this:
         else
         {
+            var dir = GetShootingDirForClosestEnemyInRange(shootRangeRadius);
+            if (dir == errorVector)
+            {
+                return;
+            }
+
             for (int i = 0; i < waveCount; i++)
             {
-                var dir = point - transform.position;
-                dir.z = 0;
-                dir = dir.normalized;
-                dir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
-                var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(dir));
-                clone.GetComponent<BulletController>().Init(damage, dir, bulletSpeed, bulletLifetime, penetrations);
+                
+                var newDir = Quaternion.Euler(0, 0, Random.Range(-burstSpread, burstSpread)) * dir;
+                var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(newDir));
+                clone.GetComponent<BulletController>().Init(damage, newDir, bulletSpeed, bulletLifetime, penetrations);
             }
             var control = GetComponent<SlaveController>();
             control.StopAllCoroutines();

@@ -180,13 +180,18 @@ public class PlayerController : MonoBehaviour
     }
 
     public float lvlUpExpRequirementMultiplierPerLvl = 1.4f;
+    public bool canGainExp = true;
     public void AddExperience()
     {
+        if (canGainExp == false)
+        {
+            return;
+        }
+        // add the exp
         exp += expRate;
 
-        // LEVEL UP ! :D
         if (exp >= expRequiredForLvlUp)
-        {
+        {// LEVEL UP ! :D
             exp -= expRequiredForLvlUp;
             expRequiredForLvlUp *= lvlUpExpRequirementMultiplierPerLvl;
             lvl++;

@@ -375,11 +375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536c13125fccec24c9b2f1885cb34817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootRangeRadius: 100
   shootInterval: 1.6
   bulletSpeed: 6
   bulletLifetime: 6
   bullet: {fileID: 4253051396830361463, guid: 24949159a5fee5647b065ea1282fbff6, type: 3}
   isShooting: 0
+  errorVector: {x: 0, y: 0, z: 0}
   shootDoubleWave: 0
 --- !u!58 &5479642267838955896
 CircleCollider2D:

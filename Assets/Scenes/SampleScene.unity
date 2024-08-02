@@ -39457,7 +39457,7 @@ PolygonCollider2D:
       - {x: 75.598145, y: -83.52515}
       - {x: 18.26104, y: -83.57581}
       - {x: -3.3989735, y: -97.90494}
-      - {x: -15.701629, y: -87.15108}
+      - {x: -16.933178, y: -89.12155}
       - {x: -59.023525, y: -61.218956}
       - {x: -58.781563, y: -51.45356}
       - {x: -68.94154, y: -44.653088}
@@ -63199,7 +63199,7 @@ MonoBehaviour:
     prefab: {fileID: 8509049042707181728, guid: 09ef808f46431594fb3611337584d79f, type: 3}
     start_minutesAndSeconds: {x: 0, y: 1}
     duration: 6
-    spawnInterval: 3
+    spawnInterval: 0.1
     startTimeInSeconds: 0
   - name: alkuskullit
     prefab: {fileID: 8509049042707181728, guid: 68f259804a0c745488200e9e75d7b4bf, type: 3}
@@ -63459,7 +63459,7 @@ MonoBehaviour:
     duration: 3
     spawnInterval: 0.1
     startTimeInSeconds: 0
-  startingTestFriends: 0
+  startingTestFriends: 3
   friendSpawnEvents:
   - {x: 0, y: 8}
   - {x: 0, y: 9}
@@ -91066,6 +91066,14 @@ PrefabInstance:
     - target: {fileID: 3632265199242939480, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: m_Radius
       value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: waveInterval
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: numberOfWaves
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: shotSpreadAngle

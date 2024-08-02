@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4253051396830361465}
   - component: {fileID: -728910902577196745}
   - component: {fileID: 1895736783331632595}
+  - component: {fileID: 619346605767258096}
   m_Layer: 0
   m_Name: bullet_sineWave
   m_TagString: Untagged
@@ -69,6 +70,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &619346605767258096
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253051396830361463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.45
 --- !u!1 &6040169795726924573
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +96,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5622944300519497039}
   - component: {fileID: 4685818907977374864}
-  - component: {fileID: 4961266710700524560}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -96,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6040169795726924573}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4253051396830361465}
@@ -154,19 +170,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4961266710700524560
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040169795726924573}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
