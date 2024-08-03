@@ -63503,7 +63503,7 @@ MonoBehaviour:
     duration: 3
     spawnInterval: 0.1
     startTimeInSeconds: 0
-  startingTestFriends: 0
+  startingTestFriends: 5
   friendSpawnEvents:
   - {x: 0, y: 8}
   - {x: 0, y: 9}
@@ -91112,8 +91112,12 @@ PrefabInstance:
       value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: bulletCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: bulletSpeed
-      value: 7
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: waveInterval
@@ -91124,8 +91128,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
+      propertyPath: bulletLifetime
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632265199472644866, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: shotSpreadAngle
-      value: 8.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3632265199472644870, guid: 85f35fedc2ad7e048b6146f7b84267b2, type: 3}
       propertyPath: m_RootOrder

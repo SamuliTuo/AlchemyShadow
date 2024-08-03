@@ -23,6 +23,7 @@ public class PlayerWeapons : MonoBehaviour
     public float basicWeaponBulletLifetime = 2;
     public GameObject bullet_basic;
     public bool isShooting = false;
+    MinionGatherPoint gatherPoint;
 
     private int additionalBulletPenetrations = 0;
     private int additionalBullets = 0;
@@ -41,6 +42,10 @@ public class PlayerWeapons : MonoBehaviour
     {
         t = 0.76f;
         cam = Camera.main;
+        if (gameObject.CompareTag("Player"))
+        {
+            gatherPoint = GetComponentInChildren<MinionGatherPoint>();
+        }
     }
 
     public void Update()
@@ -50,6 +55,7 @@ public class PlayerWeapons : MonoBehaviour
         {
             var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             point.z = 0;
+            gatherPoint.UpdateGatherPointPosition(-(point - transform.position).normalized);
             gunArm.LookAt(point);
         }
 
@@ -125,6 +131,7 @@ public class Weapon : MonoBehaviour
         var point = GameManager.Instance.cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameManager.Instance.cam.nearClipPlane));
         var dir = point - transform.position;
         dir.z = 0;
+        dir = dir.normalized;
         return dir;
     }
     public Vector3 GetShootingDirForClosestEnemyInRange(float range)

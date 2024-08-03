@@ -304,7 +304,7 @@ MonoBehaviour:
   bulletCount: 1
   shotSpreadAngle: 50
   goesThrough: 1
-  numberOfWaves: 0
+  numberOfWaves: 1
   waveInterval: 0
 --- !u!58 &5479642267838955896
 CircleCollider2D:
