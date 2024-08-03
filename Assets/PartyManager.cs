@@ -8,6 +8,10 @@ public class PartyManager : MonoBehaviour
     public Transform partyFollowObject;
 
     Dictionary<SlaveTypes, List<GameObject>> party = new Dictionary<SlaveTypes, List<GameObject>>();
+    public int GetPartyCount()
+    {
+        return party.Count;
+    }
     private Camera cam;
 
     [Space(10)]
