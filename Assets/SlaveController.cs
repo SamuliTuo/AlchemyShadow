@@ -34,11 +34,11 @@ public class SlaveController : MonoBehaviour
     float actualMoveSpd;
     Animator anim;
     SlaveHPController hp;
-
+    
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
-        player = GameObject.Find("Player")?.transform;
+        player = GameObject.Find("Player/minionGatherPoint")?.transform;
         graphics = transform.GetChild(0);
         spriteGraphic = transform.GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();

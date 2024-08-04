@@ -377,16 +377,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRangeRadius: 100
   shootInterval: 3
-  bulletSpeed: 10
-  bulletLifetime: 1
+  bulletSpeed: 30
+  bulletLifetime: 0.3
   bullet: {fileID: 4253051396830361463, guid: 9bdb3a92829a26b40ae82cda4b7dddb3, type: 3}
   isShooting: 0
   errorVector: {x: 0, y: 0, z: 0}
   bulletCount: 50
   shotSpreadAngle: 30
   goesThrough: 0
-  numberOfWaves: 0
-  waveInterval: 0
+  numberOfWaves: 3
+  waveInterval: 0.1
 --- !u!58 &5479642267838955896
 CircleCollider2D:
   m_ObjectHideFlags: 0

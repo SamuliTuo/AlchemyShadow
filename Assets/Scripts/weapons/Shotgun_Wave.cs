@@ -88,33 +88,6 @@ public class Shotgun_Wave : Weapon
                     yield return null;
                 }
             }
-
-            for (int i = 0; i < numberOfWaves; i++)
-            {
-                var dir = GetShootingDirForClosestEnemyInRange(shootRangeRadius);
-                if (dir == errorVector)
-                {
-                    yield break;
-                }
-
-                for (int j = 0; j < bulletCount + extraBullets; j++)
-                {
-                    var newDir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
-                    var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(newDir));
-                    clone.GetComponent<BulletController>().Init(damage, newDir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.BASIC, goesThrough);
-                }
-                control.StopAllCoroutines();
-                StartCoroutine(control.ShootTween());
-                control.PlayCorrectShootSound();
-
-                float t = 0;
-                while (t <= waveInterval)
-                {
-                    t += Time.deltaTime;
-                    yield return null;
-                }
-            }
-            
             //GameManager.Instance.ParticleEffects.PlayParticles("shoot", transform.position, transform.forward);
         }
 

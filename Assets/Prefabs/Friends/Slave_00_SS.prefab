@@ -377,8 +377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRangeRadius: 100
   shootInterval: 1.6
-  bulletSpeed: 6
-  bulletLifetime: 6
+  bulletSpeed: 5
+  bulletLifetime: 7
   bullet: {fileID: 4253051396830361463, guid: 24949159a5fee5647b065ea1282fbff6, type: 3}
   isShooting: 0
   errorVector: {x: 0, y: 0, z: 0}
