@@ -31,15 +31,26 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    public float flagParticleInterval = 1;
+    float flagParticleT = 0;
     private void Update()
     {
         if (GameManager.Instance.paused)
         {
             return;
         }
+        if (flagParticleT > 0)
+        {
+            flagParticleT -= Time.deltaTime;
+        }
 
         if (Input.GetMouseButton(0))
         {
+            if (flagParticleT <= 0)
+            {
+                GameManager.Instance.ParticleEffects.PlayParticles("dragFlag", partyFollowObject.position, transform.forward);
+                flagParticleT = flagParticleInterval;
+            }
             flagTurnOffT = flagTurnOffCooldown;
             var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             partyFollowObject.position = new Vector3(point.x, point.y, 0);
