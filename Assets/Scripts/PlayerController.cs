@@ -273,7 +273,7 @@ public class PlayerController : MonoBehaviour
         }
         if (p.flagArea > 0)
         {
-            GameManager.Instance.PartyManager.AddFlagRange(p.flagArea, transform.position);
+            GameManager.Instance.FlagController.AddFlagRange(p.flagArea, transform.position);
         }
         if (p.additionalBulletPenetrations > 0)
         {

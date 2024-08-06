@@ -41,7 +41,7 @@ public class ParticleEffects : MonoBehaviour
             case "combineToSSS": PlayParticle(combineToSSS, position, rotation, showInFront); break;
             case "friendHeal": PlayParticle(friendHeal, position, rotation, showInFront); break;
             case "friendDamaged": PlayParticle(friendDamaged, position, rotation, showInFront); break;
-            case "dragFlag": PlayParticle(dragFlag, position, rotation, showInFront); break;
+            case "dragFlag": print("trying to drag flag particle"); break;
         }
     }
 

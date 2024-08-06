@@ -144,7 +144,7 @@ MonoBehaviour:
   stopRange: 0.1
   helpSign: {fileID: 1638287722}
   slaveType: 14
-  randomVectorStrength: 0.8
+  randomVectorStrength: 0.05
   maxSizeWhenSaved: 2.67
   freedTweenSpeed1: 18
   freedTweenSpeed2: 0.6
@@ -412,7 +412,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 2
 --- !u!114 &233220622447220806
 MonoBehaviour:
   m_ObjectHideFlags: 0

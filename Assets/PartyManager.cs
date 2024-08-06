@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    public bool followTheObject = false;
-    public Transform partyFollowObject;
+    
 
     Dictionary<SlaveTypes, List<GameObject>> party = new Dictionary<SlaveTypes, List<GameObject>>();
     public int GetPartyCount()
@@ -14,82 +13,30 @@ public class PartyManager : MonoBehaviour
     }
     private Camera cam;
 
-    [Space(10)]
-    float flagTurnOffT = 1;
-    public float flagTurnOffCooldown = 1;
 
-    private void Awake()
-    {
-        cam = Camera.main;
-        partyFollowObject.gameObject.SetActive(false);
-    }
+
+    
     private void Start()
     {
+        cam = GameManager.Instance.cam;
         foreach (SlaveTypes type in Enum.GetValues(typeof(SlaveTypes)))
         {
             party.Add(type, new List<GameObject>());
         }
     }
 
-    public float flagParticleInterval = 1;
-    float flagParticleT = 0;
+    
     private void Update()
     {
         if (GameManager.Instance.paused)
         {
             return;
         }
-        if (flagParticleT > 0)
-        {
-            flagParticleT -= Time.deltaTime;
-        }
+        
 
-        if (Input.GetMouseButton(0))
-        {
-            if (flagParticleT <= 0)
-            {
-                GameManager.Instance.ParticleEffects.PlayParticles("dragFlag", partyFollowObject.position, transform.forward);
-                flagParticleT = flagParticleInterval;
-            }
-            flagTurnOffT = flagTurnOffCooldown;
-            var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
-            partyFollowObject.position = new Vector3(point.x, point.y, 0);
-            partyFollowObject.gameObject.SetActive(true);
-            followTheObject = true;
-        }
-        else if (Input.GetMouseButton(1))
-        {
-            StopFlag();
-        }
-        else
-        {
-            flagTurnOffT -= Time.deltaTime;
-            if (flagTurnOffT < 0)
-            {
-                StopFlag();
-            }
-        }
+
     }
 
-    public void AddFlagRange(float amount, Vector3 pos)
-    {
-        partyFollowObject.position = pos;
-        flagTurnOffT = flagTurnOffCooldown;
-        partyFollowObject.gameObject.SetActive(true);
-        followTheObject = true;
-        partyFollowObject.GetComponentInChildren<RingTween>().AddRingRange(amount);
-    }
-
-    public void PlayerIsInFlagRange()
-    {
-        flagTurnOffT = flagTurnOffCooldown;
-    }
-
-    void StopFlag()
-    {
-        partyFollowObject.gameObject.SetActive(false);
-        followTheObject = false;
-    }
 
     public bool AddFriendAndCheckIfCombines(GameObject friend)
     {

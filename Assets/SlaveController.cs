@@ -88,9 +88,9 @@ public class SlaveController : MonoBehaviour
         }
 
         // Follow the target if player is holding mouse:
-        if (GameManager.Instance.PartyManager.followTheObject)
+        if (GameManager.Instance.FlagController.followTheObject)
         {
-            MoveTowards(GameManager.Instance.PartyManager.partyFollowObject);
+            MoveTowards(GameManager.Instance.FlagController.flagTransform);
             return;
         }
         // otherwise follow player:
@@ -108,7 +108,7 @@ public class SlaveController : MonoBehaviour
     void MoveTowards(Transform target)
     {
         moveVector = target.position - transform.position;
-        moveVector += randomVector * randomVectorStrength;
+        moveVector += randomVector * (GameManager.Instance.PartyManager.GetPartyCount() - 1) * randomVectorStrength;
         var sqrMag = moveVector.magnitude;
         if (sqrMag < stopRange)
         {

@@ -39,7 +39,7 @@ public class RingTween : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ChangeRingColor(ringColor_yellow);
-            GameManager.Instance.PartyManager.PlayerIsInFlagRange();
+            GameManager.Instance.FlagController.PlayerIsInFlagRange();
         }
     }
 
@@ -48,7 +48,7 @@ public class RingTween : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ChangeRingColor(ringColor_orange);
-            GameManager.Instance.PartyManager.PlayerIsInFlagRange();
+            GameManager.Instance.FlagController.PlayerIsInFlagRange();
         }
     }
 

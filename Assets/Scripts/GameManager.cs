@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public PauseMenu PauseManager { get; private set; }
     public RingTween RingTween { get; private set; }
     public EdgeIndicators EdgeIndicators { get; private set; }
+    public FlagController FlagController { get; private set; }
 
     [HideInInspector] public Material hitFlashMaterial;
     public float enemyHitFlashTime;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         GameLoop = GetComponent<GameLoop>();
         PauseManager = GetComponentInChildren<PauseMenu>();
         RingTween = GetComponentInChildren<RingTween>();
+        FlagController = GetComponentInChildren<FlagController>();
         hitFlashMaterial = Resources.Load("hitFlashMaterial") as Material;
     }
 
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseTheGame()
     {
+        FlagController.OnPause();
         paused = true;
         Time.timeScale = 0;
     }
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator Unpause()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         paused = false;
     }
 
