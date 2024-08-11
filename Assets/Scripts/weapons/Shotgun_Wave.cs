@@ -44,7 +44,14 @@ public class Shotgun_Wave : Weapon
 
                     var newdir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
                     var clone = Instantiate(bullet, barrelEnd.position, Quaternion.LookRotation(newdir));
-                    clone.GetComponent<BulletController>().Init(damage, newdir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.BASIC, goesThrough);
+                    clone.GetComponent<BulletController>().Init(
+                        damage,
+                        newdir,
+                        Random.Range(bulletSpeed * 0.9f, bulletSpeed * 1.1f),
+                        bulletLifetime,
+                        penetrations,
+                        BulletTypes.BASIC,
+                        goesThrough);
                 }
                 GameManager.Instance.AudioManager.PlayClip("player_shoot");
                 GameManager.Instance.ParticleEffects.PlayParticles("shoot", barrelEnd.position, barrelEnd.forward, true);
@@ -76,7 +83,14 @@ public class Shotgun_Wave : Weapon
                 {
                     var newDir = Quaternion.Euler(0, 0, Random.Range(-shotSpreadAngle, shotSpreadAngle)) * dir;
                     var clone = Instantiate(bullet, transform.position, Quaternion.LookRotation(newDir));
-                    clone.GetComponent<BulletController>().Init(damage, newDir, bulletSpeed, bulletLifetime, penetrations, BulletTypes.BASIC, goesThrough);
+                    clone.GetComponent<BulletController>().Init(
+                        damage, 
+                        newDir, 
+                        Random.Range(bulletSpeed * 0.9f, bulletSpeed * 1.1f), 
+                        bulletLifetime, 
+                        penetrations, 
+                        BulletTypes.BASIC, 
+                        goesThrough);
                 }
                 control.StopAllCoroutines();
                 StartCoroutine(control.ShootTween());

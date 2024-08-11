@@ -12,6 +12,7 @@ public class PlayerWeapons : MonoBehaviour
 {
 
     public Transform barrelEnd;
+    public Transform shieldArm;
     public Transform gunArm;
 
     public List<Weapon> weapons;
@@ -24,6 +25,7 @@ public class PlayerWeapons : MonoBehaviour
     public GameObject bullet_basic;
     public bool isShooting = false;
     MinionGatherPoint gatherPoint;
+    ShieldController shield;
 
     private int additionalBulletPenetrations = 0;
     private int additionalBullets = 0;
@@ -46,17 +48,69 @@ public class PlayerWeapons : MonoBehaviour
         {
             gatherPoint = GetComponentInChildren<MinionGatherPoint>();
         }
+        shield = GetComponentInChildren<ShieldController>();
     }
 
+    
     public void Update()
     {
         // only player has the gunarm
         if (gunArm != null && GameManager.Instance.paused == false)
         {
-            var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
-            point.z = 0;
-            gatherPoint.UpdateGatherPointPosition(-(point - transform.position).normalized);
-            gunArm.LookAt(point);
+            // hold shield when doubletap
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (holdShield)
+                {
+                    print("stopped holding");
+                    if (holdShieldDoubleTapCheckCoroutine != null)
+                    {
+                        StopCoroutine(holdShieldDoubleTapCheckCoroutine);
+                    }
+                    holdShieldDoubleTapCheckCoroutine = null;
+                    holdShield = false;
+                }
+                else if (holdShieldDoubleTapCheckCoroutine == null)
+                {
+                    print("started doubletap coroutine");
+                    holdShieldDoubleTapCheckCoroutine = StartCoroutine(HoldShieldDoubleclickCheckCoroutine());
+                }
+                else if (holdShield == false)
+                {
+                    print("start joldiiiiiiiing!");
+                    StopCoroutine(holdShieldDoubleTapCheckCoroutine);
+                    holdShield = true;
+                }
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                holdShield = false;
+            }
+
+            // shield when holding m2
+            if (Input.GetMouseButton(1) || holdShield)
+            {
+                shieldArm.gameObject.SetActive(true);
+                gunArm.gameObject.SetActive(false);
+
+                var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+                point.z = 0;
+                //gatherPoint.UpdateGatherPointPosition(-(point - transform.position).normalized);
+                shield.SetArmDir((point - transform.position).normalized);
+                shieldArm.LookAt(point);
+            }
+
+            // shoot gun
+            else
+            {
+                shieldArm.gameObject.SetActive(false);
+                gunArm.gameObject.SetActive(true);
+                var point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+                point.z = 0;
+                gatherPoint.UpdateGatherPointPosition(-(point - transform.position).normalized);
+                gunArm.LookAt(point);
+            }
+            
         }
 
         if (isShooting == false)
@@ -83,6 +137,20 @@ public class PlayerWeapons : MonoBehaviour
                 t = Mathf.Max(weapons[0].shootInterval / attackSpd, 0.05f);
             }
         }
+    }
+
+    bool holdShield = false;
+    Coroutine holdShieldDoubleTapCheckCoroutine = null;
+    public float holdShieldTapInterval = 0.5f;
+    IEnumerator HoldShieldDoubleclickCheckCoroutine()
+    {
+        float t = 0;
+        while (t < holdShieldTapInterval)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        holdShieldDoubleTapCheckCoroutine = null;
     }
 
     float attackSpd = 1;
